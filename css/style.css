@@ -79,43 +79,53 @@
 }
 #sponsorsHead{
   text-align: center;
-  font-size: 50px;
+  font-size: 40px;
   color: white;
   margin-top: 0px;
   font-family:  "nexabold", serif;
 }
-hr {
+#sponsorsHead1{
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  margin-top: 0px;
+  font-family:  "nexa", serif;
+}
+
+#sponsorsHead>hr {
   width: 65%;
   border: 0;
   height: 4px;
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255 , 255, 1), rgba(255, 255, 255, 0));
 }
 #sponsorsContainer{
-  margin-top: 10%;
+  margin-top: 100px;
 }
-.card{
-    min-width: 350px;
+#sponsorsContainer>.card{
     height: auto;
     padding-top: 10px;
     padding-bottom: 20px;
 }
-.sponsorImage{
+.sponsorImage, .wtsImg{
     height: 200px;
     width: auto;
     margin-top: 25px;
 }
+#wtsContainer{
+  width: 80%;
+}
+
 .sponsorImage1{
     width: 70%;
     height: auto;
     margin-top: 25px;
 }
-.sponsorImageG{
-    height: 200px;
-    width: auto;
-    margin-left: 5%;
-    float: left;
+@media screen and (max-width: 768px) {
+  .sponsorImage {
+    width: 70%;
+    height: auto;
+  }
 }
-
 .sponsorName{
     text-align: center;
     font-size: 20px;
@@ -129,6 +139,33 @@ a:hover{
 .sponsors{
     width: 100%;
     padding: 50px;
+}
+#sponsorsPoints
+{
+  margin-top: 10%;
+  border-top: 2px solid white;
+  width: 95%;
+  margin-left: 2.5%;
+}
+
+#sponsorPointHead{
+  color: white;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-left:15%;
+}
+#card1{
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0 , 0.95));
+  height: 350px;
+  margin-bottom: 50px;
+}
+#sponsorPointInfo{
+  color: white;
+  font-size: 14px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  text-align: center;
 }
 /* SPONSORS CSS END */
 

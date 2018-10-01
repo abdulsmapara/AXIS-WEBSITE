@@ -40,6 +40,7 @@
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 1002;
 }
 
 .icon-bar a {
@@ -236,7 +237,7 @@
 }
 #sponsorsHead{
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   margin-top: 0px;
   font-family:  "nexabold", serif;
@@ -312,6 +313,7 @@ a:hover{
   margin-left:15%;
 }
 #card1{
+  z-index: 0;
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0 , 0.95));
   height: 350px;
   margin-bottom: 50px;

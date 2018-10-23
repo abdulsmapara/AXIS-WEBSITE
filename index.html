@@ -58,6 +58,14 @@
 <!-- 	<body style="background-image:url('images/bg.png');background-attachment: fixed;background-position:center;background-size: cover;">
  -->
  	<body>
+		<div style="display: none" id="hideAll"><div class="herologo">
+			<img src="images/logo.png" alt="axislogo">
+		</div></div>
+		<script type="text/javascript">
+		document.getElementById("hideAll").style.display = "block";
+		window.onload = function()
+ { document.getElementById("hideAll").style.display = "none"; }
+	</script>
 	<div id="page">
 	<nav class="fh5co-nav" role="navigation">
 		<div class="container">
@@ -490,6 +498,7 @@ AXIS also indulges in social activities with the help of the organisations like 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>

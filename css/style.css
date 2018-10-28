@@ -44,6 +44,7 @@
   display: inline-block;
   margin: 0 5px;
   color: #fff;
+  font-size: 100px !important;
 }
 .loading-text span:nth-child(1) {
   -webkit-filter: blur(0px);

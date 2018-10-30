@@ -59,7 +59,7 @@
     <!--<div id="hideAll">
 	<img src="images/logo.png" alt="axislogo">
       <div class="herologo">
-        
+
         <h1 id="brandaxis">LOADING</h1>
         <!-- <div class="loading">
 					<div class="loading-text" id="brandaxis">
@@ -72,25 +72,25 @@
 					<span class="loading-text-words">G</span>
 					</div>
 				</div>
-      </div> 
+      </div>
     </div>-->
-	
-	
+
+
 	<script>
-	$('body').append('<div style="" id="loadingDiv"></div>');
+	$('body').append('<div style="" id="loadingDiv"><div class="loading"><div class="loading-text"><span class="loading-text-words">L</span><span class="loading-text-words">O</span><span class="loading-text-words">A</span><span class="loading-text-words">D</span><span class="loading-text-words">I</span><span class="loading-text-words">N</span><span class="loading-text-words">G</span></div></div></div>');
 $(window).on('load', function(){
   setTimeout(removeLoader, 2000); //wait for page load PLUS two seconds.
 });
 function removeLoader(){
     $( "#loadingDiv" ).fadeOut(500, function() {
       // fadeOut complete. Remove the loading div
-      $( "#loadingDiv" ).remove(); //makes page more lightweight 
-  });  
+      $( "#loadingDiv" ).remove(); //makes page more lightweight
+  });
 }
-	
+
 	</script>
-	
-	
+
+
     <!-- Initialize this script to check browser compatibility -->
 			 <script type="text/javascript">
 				navigator.sayswho= (function() {
@@ -112,9 +112,9 @@ function removeLoader(){
 				var bro = str.substr(0, 6);
 				/*window.alert(str);*/
 				if (bro != "Chrome") {
-				window.confirm("Please use Chrome Browser for better user experience");
+				window.alert("Please use Chrome Browser for better user experience");
 				}
-			</script> 
+			</script>
     <div id="page">
       <nav class="fh5co-nav" role="navigation">
         <div class="container">
@@ -162,10 +162,13 @@ function removeLoader(){
         </div>
       </nav>
       <div class="video-container">
-        
+
         <div class="herologo">
           <img src="images/logo.png" alt="axislogo">
         </div>
+        <video src="vid/bgvid.mp4" autoplay muted loop poster="images/bg.png">
+
+        </video>
       </div>
       <h1 id="brandaxis">AXIS'19
       </h1>

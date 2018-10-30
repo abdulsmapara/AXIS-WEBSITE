@@ -5,8 +5,8 @@
    right: 0px;
    top: 0px;
    bottom: 0px;
-   background-color: red;
-   opacity: 0.8;
+   background-color: black;
+   opacity: 0.95;
    z-index: 99; /* Higher than anything else in the document */
 
  }
@@ -18,7 +18,7 @@
 
 /* PRELOADER STYLES */
 
-/* .loading {
+ .loading {
   position: fixed;
   top: 0;
   left: 0;
@@ -26,9 +26,11 @@
   height: 100%;
   background: #000;
   z-index: 9999;
-} */
+  font-size: 40px;
+  font-family: govagent;
+}
 
-/* .loading-text {
+ .loading-text {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -40,7 +42,7 @@
   height: 100px;
   line-height: 100px;
 } */
-/* .loading-text span {
+ .loading-text span {
   display: inline-block;
   margin: 0 5px;
   color: #fff;
@@ -111,7 +113,7 @@
   }
 }
 
- */
+
 
 
 /* END */
@@ -246,7 +248,7 @@
   /* Setting width & height to auto prevents the browser from stretching or squishing the video */
   width: auto;
   height: auto;
-
+  z-index: -10;
   /* Center the video */
   position: absolute;
   top: 50%;

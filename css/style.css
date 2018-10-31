@@ -13,9 +13,6 @@
 
 
 
-
-
-
 /* PRELOADER STYLES */
 
  .loading {
@@ -475,7 +472,7 @@ a:hover{
 #card1{
   z-index: 0;
   background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.95), rgba(0, 0, 0 , 0.95));
-  height: 350px;
+  height: auto;
   margin-bottom: 50px;
 }
 #sponsorPointInfo{

@@ -1,0 +1,114 @@
+<!--    {% if message %}
+        <p>Unable to create account:</p>
+        <p>Possible causes:</p>
+        <p>- Weak password</p>
+        <p>- User already exists</p>
+    {% endif %}
+
+    <form action="/postsignup/" method="post">
+        {% csrf_token %}
+        Name:
+        <input type="text" name="name">
+        Email:
+        <input type="email" name="email">
+        Password:
+        <input type="password" name="pass">
+        <input type="submit" value="SignUp">
+
+    </form>-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    {% load static %}
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static "fonts/material-icon/css/material-design-iconic-font.min.css" %}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+{% if message %}
+            <center>
+            <p style="color: red">Unable to create account:</p>
+            <p style="color: red">Possible causes:</p>
+            <p style="color: red">- Weak password</p>
+            <p style="color: red">- User already exists</p>
+            </center>
+    {% endif %}
+    <div class="main">
+
+        <div class="container">
+            <div class="booking-content">
+                <div class="booking-image">
+                    <img class="" src="{% static "assets/images/logoaxis.png" %}" alt="">
+                </div>
+                <div class="booking-form">
+                    <form id="booking-form" action="/postsignin/" method="post">
+                                {% csrf_token %}
+
+                        <div class="form-group form-input">
+                            <input type="email" name="email" id="emaili" value="" required/>
+                            <label for="emaili" class="form-label">Email ID</label>
+                        </div>
+                        <div class="form-group form-input">
+                            <input type="password" name="pass" id="passw" value="" required/>
+                            <label for="passw" class="form-label">Password</label>
+                        </div>
+
+                     <!--   <div class="form-group">
+                            <div class="select-list">
+                                <select name="food" id="food" required>
+                                    <option value="">Food</option>
+                                    <option value="seasonalfish">Seasonal steamed fish</option>
+                                    <option value="assortedmushrooms">Assorted mushrooms</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-radio">
+                            <label class="label-radio"> Select Your Dining Space</label>
+                            <div class="radio-item-list">
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="2" id="number_people_2" />
+                                    <label for="number_people_2">2</label>
+                                </span>
+                                <span class="radio-item active">
+                                    <input type="radio" name="number_people" value="4" id="number_people_4" checked="checked" />
+                                    <label for="number_people_4">4</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="6" id="number_people_6" />
+                                    <label for="number_people_6">6</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="8" id="number_people_8" />
+                                    <label for="number_people_8">8</label>
+                                </span>
+                                <span class="radio-item">
+                                    <input type="radio" name="number_people" value="10" id="number_people_10" />
+                                    <label for="number_people_10">10</label>
+                                </span>
+                            </div>
+                        </div>-->
+
+                        <div class="form-submit">
+                            <input type="submit" value="Sign In" class="submit" id="submit" name="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static "vendor/jquery/jquery.min.js" %}"></script>
+    <script src="{% static "js/main.js" %}"></script>
+</body>
+</html>

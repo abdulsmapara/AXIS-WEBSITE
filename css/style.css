@@ -2341,3 +2341,58 @@ text-align: center;
   color: red;
   font-size: 1em;
 }
+
+
+/* CA Main Page */
+
+.caRegister {
+  text-align: center;
+  background-color: rgba(10, 20, 30, 0.9);
+  margin: 20px 0 20px 0;
+  /* height: 500px; */
+}
+
+.caRegister h1 {
+  font-size: 40px;
+  color: white;
+  padding: 1em 0;
+}
+
+.caRegister h2 {
+  font-size: 30px;
+  color: white;
+  padding:0;
+}
+
+.caRegister button {
+  color: black;
+  margin: 2em 0;
+  font-size: 20px;
+}
+
+
+/* Why CA? */
+.caincent h3, .cainfo h3 {
+  color: #128;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  padding: 10px 0;
+}
+
+.caincent ul>li {
+  font-size: 20px;
+}
+
+.whyca {
+  padding: 40px 20px;
+}
+
+.caincent h4, .whyca h4, .cafuq h4 {
+  color: white;
+  font-size: 30px;
+}
+
+.cafuq h3 {
+  text-align: center;
+}

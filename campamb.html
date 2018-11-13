@@ -121,6 +121,39 @@
       <!-- Card -->
       <div id="sponsorsHead">CAMPUS AMBASSADOR<hr></div>
       <br>
+
+      <div class="container animate-box  logModal" id="wtsContainer">
+        <div class="row">
+
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div id="card1" align="center">
+              <img src="images/login.png" class="wtsImg" style="width:100px;height:100px">
+              <hr>
+              <h4>LOGIN</h4>
+
+              <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                  <form class="form-inline">
+
+                    <div class="col-md-4 col-sm-4 col-sm-offset-3">
+                      &nbsp;
+                      <button type="submit" class="btn btn-default btn-block logmein">LOGIN</button>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-sm-offset-3">
+                      &nbsp;
+                      <button type="submit" class="btn btn-default btn-block signmeup">SIGN UP</button>
+                      &nbsp;
+                    </div>
+
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container animate-box loginModal" id="wtsContainer">
         <div class="row">
 
@@ -136,23 +169,28 @@
                     <div class="col-md-4 col-sm-4 col-sm-offset-4">
                       <div class="form-group">
                         <label for="email" class="sr-only">email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
                       </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-sm-offset-4">
                       <div class="form-group">
                         <label for="wordpass" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="wordpass" placeholder="Password">
+                        <input type="password" class="form-control" id="wordpass" placeholder="Password" required>
                       </div>
+                    </div>
+                    <div class="formError" style="display:none;">
+
                     </div>
                     <div class="col-md-4 col-sm-4 col-sm-offset-3">
                       &nbsp;
-                      <button type="submit" class="btn btn-default btn-block">LOGIN</button>
+                      <button type="submit" class="btn btn-default btn-block" id="login">LOGIN</button>
+                      &nbsp;
                     </div>
-                    <p>&nbsp;</p>
-                    <p id="sponsorPointInfo">
+
+                    <p>
                       Not yet registered? <br><a href="#" class="signmeup">Sign Up here!</a>
                     </p>
+
                   </form>
                 </div>
               </div>
@@ -174,27 +212,33 @@
                   <form class="form-inline">
                     <div class="col-md-4 col-sm-4 col-sm-offset-4">
                       <div class="form-group">
-                        <label for="email" class="sr-only">email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Email">
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
                       </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-sm-offset-4">
                       <div class="form-group">
                         <label for="wordpass" class="sr-only">Password</label>
-                        <input type="password" class="form-control" id="wordpass" placeholder="Password">
+                        <input type="password" class="form-control" id="wordpass" placeholder="Password" required>
                       </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-sm-offset-4">
                       <div class="form-group">
                         <label for="wordpassre" class="sr-only">Confirm Password</label>
-                        <input type="password" class="form-control" id="wordpassre" placeholder="Confirm Password">
+                        <input type="password" class="form-control" id="wordpassre" placeholder="Confirm Password" required>
                       </div>
+                    </div>
+                    <div class="formError">
+                      <p></p>
                     </div>
                     <div class="col-md-4 col-sm-4 col-sm-offset-3">
                       &nbsp;
-                      <button type="submit" class="btn btn-default btn-block">SIGN UP</button>
+                      <button type="submit" class="btn btn-default btn-block" id="signup">SIGN UP</button>
+                      &nbsp;
                     </div>
-                    <p>&nbsp;</p>
+                    <p>
+                      Already registered? <br><a href="#" class="logmein">Login here!</a>
+                    </p>
                   </form>
                 </div>
               </div>
@@ -241,13 +285,45 @@
     <script src="js/main.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-    $(".signmeup").click(function(){
-        $(".signUpModal").show();
-       $(".loginModal").hide();
-
-    });
-
-});
+        $(".signmeup").click(function(){
+          $(".signUpModal").show();
+          $(".loginModal").hide();
+          $(".logModal").hide();
+        });
+        $(".logmein").click(function(){
+          $(".signUpModal").hide();
+          $(".loginModal").show();
+          $(".logModal").hide();
+        });
+      });
+    </script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#signup").click(function() {
+          var email = $("#email").val();
+          var password = $("#wordpass").val();
+          var cpassword = $("#wordpassre").val();
+          console.log(email);
+          if (email == '' || password == '' || cpassword == '') {
+            $('.formError p').text(" &#9888; Fill in all the fields!");
+          } else if ((password.length) < 8) {
+            $('.formError p').text(" &#9888; Password should be of at least 8 characters");
+          } else if (!(password).match(cpassword)) {
+            $('.formError p').text(" &#9888; Your Passwords don't match! Try again.");
+          } else {
+            // $.post("register.php", {
+            //   name1: name,
+            //   email1: email,
+            //   password1: password
+            // }, function(data) {
+            //   if (data == 'You have Successfully Registered.....') {
+            //     $("form")[0].reset();
+            //   }
+            //   alert(data);
+            // });
+          }
+        });
+      });
     </script>
 
 

@@ -2334,6 +2334,10 @@ text-align: center;
 .signUpModal a, .loginModal a {
   color: red;
 }
-.signUpModal {
+.signUpModal, .loginModal {
   display: none;
+}
+.formError {
+  color: red;
+  font-size: 1em;
 }

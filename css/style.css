@@ -2369,3 +2369,30 @@ text-align: center;
   margin: 2em 0;
   font-size: 20px;
 }
+
+
+/* Why CA? */
+.caincent h3, .cainfo h3 {
+  color: #128;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bolder;
+  padding: 10px 0;
+}
+
+.caincent ul>li {
+  font-size: 20px;
+}
+
+.whyca {
+  padding: 40px 20px;
+}
+
+.caincent h4, .whyca h4, .cafuq h4 {
+  color: white;
+  font-size: 30px;
+}
+
+.cafuq h3 {
+  text-align: center;
+}

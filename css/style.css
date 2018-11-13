@@ -2322,11 +2322,15 @@ form label {
 /* Campus Ambassador */
 /* Login Modal */
 
-.loginModal {
-
+.loginModal p {
+  width: 100%;
+text-align: center;
 }
 
 .loginModal h4 {
   color: white;
   font-size: 1.5em;
+}
+.loginModal a {
+  color: red;
 }

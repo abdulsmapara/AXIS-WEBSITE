@@ -74,14 +74,31 @@
 
       gtag('config', 'UA-128358429-1');
     </script>
+    <style type="text/css">
+	body:after{
+      content:"";
+      position:fixed; /* stretch a fixed position to the whole screen */
+      top:0;
+      height:100vh; /* fix for mobile browser address bar appearing disappearing */
+      left:0;
+      right:0;
+      z-index:-1; /* needed to keep in the background */
+      
+      background-image: url('images/bg.jpg'); 
+      background-attachment: fixed;
+      background-size: cover;
+	  -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    
+	  background-position: center center;
 
+}
+    </style>
   </head>
   <!-- <body style="background-image:url('images/bg.png');background-attachment: fixed;background-position: center;background-size: cover;">
 -->
-<body style="background-image: url('images/bg.jpg'); background-attachment: fixed;background-size: cover;width: 100%;-moz-background-size: cover;
--webkit-background-size: cover;
--o-background-size: cover;
-background-position: center center;" >
+<body >
   <div id="page">
     <nav class="fh5co-nav" role="navigation">
       <div class="container">

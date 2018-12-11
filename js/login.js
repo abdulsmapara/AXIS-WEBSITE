@@ -120,9 +120,11 @@
     function app(user)
     {
 
-        var key = user.displayName;
+        var emailkey = user.email;
+        var key = emailkey.slice(0,emailkey.search('@'));
         //document.getElementById("clientName").innerHTML = user.displayName;
         firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            // if signing in for the first time we cannot find any related entry in the database
             if (snapshot.val() == null) {
 
                 var axis_id = generate_axis_id();
@@ -133,6 +135,13 @@
                     username: user.displayName,
                     email: user.email,
                     axisid: axis_id,
+                    gender: null,
+                    DOB: null,
+                    college: null,
+                    phone: -1,
+                    address: null,
+                    zipcode: -1,
+                    country: null,
                     //set remaining fields as null  
                 }).then(function onSuccess(res) {
                     firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
@@ -147,6 +156,11 @@
                         //document.getElementById("AXISid").innerHTML = axisid;
                     });
                 });
+            }
+            // if signed up earlier but form not filled  
+            else if (snapshot.val().phone == -1 && window.location.href != "form.html")
+            {
+                window.location.href = "form.html";
             }
             else
             {
@@ -175,4 +189,22 @@
         r = (r+milisec)%1000;
         var id = ((r < 100)?'0': ((r<10)?'00':'') )+ r.toString();
         return "AXIS19" + (day < 10 ? '0' : '') + day.toString() + id;
+    }
+
+    function register_user( gender, dob, college, phone, address, zipcode, country)
+    {
+        var emailkey = user.email;
+        var key = emailkey.slice(0,emailkey.search('@'));
+        usersRef.child(key).set({
+                        username: user.displayName,
+                        email: user.email,
+                        axisid: axis_id,
+                        gender: gender,
+                        DOB: dob,
+                        college: college,
+                        phone: phone,
+                        address: address,
+                        zipcode: zipcode,
+                        country: country, 
+                    });
     }

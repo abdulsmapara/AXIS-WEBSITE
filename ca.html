@@ -48,6 +48,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -112,8 +113,26 @@
               <li><a href="#cainfo1">Why CA?</a></li>
               <li><a href="#incentivesInfo">Incentives</a></li>
               <li><a href="#responsibilitiesInfo"> Responsibilities </a></li>
-              <li class="active"><a href="ca.html">Campus Ambassador</a></li>
-              <li><a href="#contactInfo">Contact Us</a></li>
+              <li class="active"><a href="ca.html">CA</a></li>
+              <li><a href="#contactInfo">Contact Us</a></li>     
+              <li class="loginBUTTON">
+               <button class="quickstart-sign-in" id="quickstart-sign-in" onmouseleave="this.style.color = 'gray'" onmouseenter="this.style.color = 'white'" style="background:transparent;border: none;">LOGIN
+               </button>
+              </li>  
+
+              <li class="axisLOGIN" style="visibility: hidden;">
+                <div class="dropdown" style="z-index: 5000;">
+                  <button onmouseleave="this.style.color = 'gray'" onmouseenter="this.style.color = 'white'" class="dropbtn" style="background: transparent;border: none;font-size: 22px;">
+                    <span class="glyphicon glyphicon-user" style="border: 1px solid gray;border-radius: 50%;padding: 10px;"></span>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="#" style="padding: 5px;color: black;"><span style="font-size: 15px;" class="clientName" id="clientName"></span></a>
+                    <a href="#" style="padding: 5px;color: black;"><span style="font-size: 15px;" class="AXISid" id="AXISid"></span></a>
+                    <a href="#" style="padding: 5px;color: black;" onclick="logout()">LOGOUT</a>      
+                  </div>
+                  <br>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -489,6 +508,8 @@
     <script src="js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="js/login.js" ></script>
 
 
 

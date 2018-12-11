@@ -13,12 +13,15 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Website Font style -->
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 		<link rel="stylesheet" href="style.css">
 		<!-- Google Fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
 		<title>Admin</title>
 		<style type="text/css">
 			/*
@@ -140,11 +143,6 @@
 	</head>
 	<body>
 		<center>
-			<div class="loginBUTTON" style="visibility: hidden;">
-                 <button class="quickstart-sign-in" id="quickstart-sign-in" style="background:transparent;border: none;">LOGIN
-                 </button>
-            </div>  
-
             <div class="axisLOGIN" style="visibility: hidden;font-size: 22px;color: white;">    
 			  <span class="glyphicon glyphicon-user" style="border: 1px solid gray;border-radius: 50%;padding: 10px;"></span>
         	  <span style="font-size: 15px;" class="clientName" id="clientName"></span>
@@ -158,13 +156,13 @@
 			<div class="row main">
 				<div class="main-login main-center">
 				<center><h2>Sign up</h2></center>
-					<form method="post" action="#" name="myForm" autocomplete onsubmit="return validate()">
+					<form method="post" name="myForm" autocomplete onsubmit="return validate()">
 					
 						<div class="form-group">
 							<label for="gender" class="cols-sm-2 control-label">Gender</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
 									<select name="gender" class="form-control" id="gender" required>
 									    <option value="Male">Male</option>
 									    <option value="Female">Female</option>
@@ -178,7 +176,7 @@
 							<label for="dob" class="cols-sm-2 control-label">DOB</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i></span>
 									<input type="date" class="form-control" name="dob" id="dob"  placeholder="Enter your date of birth" required />
 								</div>
 							</div>
@@ -189,7 +187,7 @@
 							<label for="college" class="cols-sm-2 control-label">College</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-education" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="college" id="college"  placeholder="Enter your College" required />
 								</div>
 							</div>
@@ -199,7 +197,7 @@
 							<label for="phone1" class="cols-sm-2 control-label">Phone No</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i></span>
 									<input type="number" class="form-control" name="phone1" id="phone1"  placeholder="Enter your phone no" required />
 								</div>
 							</div>
@@ -209,7 +207,7 @@
 							<label for="phone2" class="cols-sm-2 control-label">Confirm No</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i></span>
 									<input type="number" class="form-control" name="phone2" id="phone2"  placeholder="confirm your phone" required />
 								</div>
 							</div>
@@ -220,7 +218,7 @@
 							<label for="zipcode" class="cols-sm-2 control-label">Zip Code</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-pencil" aria-hidden="true"></i></span>
 									<input type="number" class="form-control" name="zipcode" id="zipcode"  placeholder="Enter Zip code" required />
 								</div>
 							</div>
@@ -230,7 +228,7 @@
 							<label for="address" class="cols-sm-2 control-label">Address</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="address" id="address"  placeholder="Enter your Address" required />
 								</div>
 							</div>
@@ -241,7 +239,7 @@
 							<label for="country" class="cols-sm-2 control-label">Country</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<span class="input-group-addon"><i class="glyphicon glyphicon-globe" aria-hidden="true"></i></span>
 									<input type="text" class="form-control" name="country" id="country"  placeholder="Enter your country" required />
 								</div>
 							</div>
@@ -257,50 +255,209 @@
 			</div>
 		</div>
  
-		<!--don't remove it -->
-		<center>
-			<div class="loginBUTTON">
-                 <button class="quickstart-sign-in" id="quickstart-sign-in" style="background:transparent;border: none;">LOGIN
-                 </button>
-            </div>  
-
-            <div class="axisLOGIN" style="visibility: hidden;">    
-        	  <span style="font-size: 15px;color: black;" class="clientName" id="clientName"></span>
-              <span style="font-size: 15px;color: black;" class="AXISid" id="AXISid"></span>
-            </div>
-		</center>
 
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-		<script src="js/login.js" ></script>
+		<!-- <script src="js/login.js" ></script> -->
 		<script type="text/javascript">
-			
-		    function validate(){
-/*
-		        var name = document.forms["myForm"]["name"].value;
-		        var email = document.forms["myForm"]["email"].value;
-		        var id = document.forms["myForm"]["axisid"].value;*/
-		        
-		        var gender = document.forms["myForm"]["gender"].value;
-		        var dob = document.forms["myForm"]["dob"].value;
-		        var college = document.forms["myForm"]["college"].value;
-		        var phone1 = document.forms["myForm"]["phone1"].value;
-		        var phone2 = document.forms["myForm"]["phone2"].value;
-		        var zipcode = document.forms["myForm"]["zipcode"].value;
-		        var address = document.forms["myForm"]["address"].value;
-		        var country = document.forms["myForm"]["country"].value;
-		        if(phone1 != phone2)
-		        {
-		            alert("Enter same phone numbers");
-		            return false;
-		        }
+			    // Initialize Firebase
+	    function logout()
+	    {
+	        toggleSignIn();
+	    }
+	    var config = {
+	        apiKey: "AIzaSyAOzIIUWqCvEUGxTeHBFpHXk-AL-Am7u4o",
+	        authDomain: "axis2019-47b13.firebaseapp.com",
+	        databaseURL: "https://axis2019-47b13.firebaseio.com",
+	        projectId: "axis2019-47b13",
+	        storageBucket: "axis2019-47b13.appspot.com",
+	        messagingSenderId: "282546345277"
+	    };
+	    firebase.initializeApp(config);
 
-		        return true;
+	    var usersRef = firebase.database().ref().child('users');
+	    function toggleSignIn() {
+	        if (!firebase.auth().currentUser) {
+	            // [START createprovider]
+	            var provider = new firebase.auth.GoogleAuthProvider();
+	            // [END createprovider]
+	            // [START addscopes]
+	            provider.addScope('https://www.googleapis.com/auth/plus.login');
+	            // [END addscopes]
+	            // [START signin]
+	            firebase.auth().signInWithRedirect(provider);
+	            // [END signin]
+	        } else {
+	            // [START signout]
 
-		    }
+	            firebase.auth().signOut();
+
+	            // [END signout]
+	        }
+	        document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'hidden';
+	    }
+	    // [END buttoncallback]
+
+	    function initApp() {
+	        firebase.auth().onAuthStateChanged(function(user) {
+	            if (user)
+	            {
+	                // User is signed in.    
+	                document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'visible';
+	                app(user);
+	            }
+	            else
+	            {
+	            	// user is not sign in
+	            	window.location.href = "index.html";
+	            }
+	        });
+	    }
+
+	    window.onload = function() {
+	        initApp();
+	    };
+
+
+	    function app(user)
+	    {
+
+	        var emailkey = user.email;
+	        var key = emailkey.slice(0,emailkey.search('@'));
+	        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+
+	        firebase.database().ref('/users/' + key).once('value').then(function(snapshot) 
+	        {
+	            if(snapshot.val() == null)
+	            {
+	                
+	                var axis_id = generate_axis_id();
+
+	                window.location.href = "form.html";
+	                
+	                usersRef.child(key).set({
+	                    username: user.displayName,
+	                    email: user.email,
+	                    axisid: axis_id,
+	                    gender: "null",
+	                    DOB: "null",
+	                    college: "null",
+	                    phone: -1,
+	                    address: "null",
+	                    zipcode: -1,
+	                    country: "null",
+	                    //set remaining fields as null  
+	                }).then(function onSuccess(res) {
+	                    firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
+	                        var axisid = (snapshot.val() && snapshot.val().axisid) || null;
+
+	                        document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
+	                        document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
+	                    });
+	                });
+	            }
+	            else
+	            {
+	            	// 
+	                var axisid = (snapshot.val() && snapshot.val().axisid) || null;
+	                document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
+	                document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
+
+	            }
+	        });
+	    }
+
+
+	    function initApp2(gender, dob, college, phone, address, zipcode, country) {
+	        firebase.auth().onAuthStateChanged(function(user) {
+	            if (user) {
+	                // User is signed in.
+	                document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'visible';
+	                app2(user,gender, dob, college, phone, address, zipcode, country);
+	                // [END_EXCLUDE]
+	            } 
+	            else 
+	            {
+        			window.location.href = "index.html";    
+	            }
+	        });
+	    }
+
+	    function app2(user,gender, dob, college, phone, address, zipcode, country)
+	    {
+	        var emailkey = user.email;
+	        var key = emailkey.slice(0,emailkey.search('@'));
+            key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+
+	        //document.getElementById("clientName").innerHTML = user.displayName;
+	        firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+	            // if signing in for the first time we cannot find any related entry in the database
+	            if (snapshot.val() != null) {
+	                
+	                var axis_id = generate_axis_id();
+	                usersRef.child(key).set({
+	                    username: user.displayName,
+	                    email: user.email,
+	                    axisid: axis_id,
+	                    gender: gender,
+	                    DOB: dob,
+	                    college: college,
+	                    phone: phone,
+	                    address: address,
+	                    zipcode: zipcode,
+	                    country: country,
+	                    //set remaining fields as null  
+	                }).then(function onSuccess(res) {
+	                    firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
+	                        var axisid = (snapshot.val() && snapshot.val().axisid) || null;
+	                        alert("Successfully registered");
+                            window.location.href = "index.html";
+	                    });
+	                });
+	            }
+	        });
+	    }
+
+
+	    function generate_axis_id()
+	    {
+	        var r = Math.floor(Math.random()*1000) + 1;
+	        var d = new Date();
+	        var milisec = d.getMilliseconds();
+	        var day = d.getDate();
+	        r = Math.pow(r,2); milisec = Math.pow(milisec,2);
+	        r = (r+milisec)%1000;
+	        var id = ((r < 100)?'0': ((r<10)?'00':'') )+ r.toString();
+	        return "AXIS19" + (day < 10 ? '0' : '') + day.toString() + id;
+	    }
+
+	    function validate()
+	    {
+		    var gender = document.forms["myForm"]["gender"].value;
+	        var dob = document.forms["myForm"]["dob"].value;
+	        var college = document.forms["myForm"]["college"].value;
+	        var phone1 = document.forms["myForm"]["phone1"].value;
+	        var phone2 = document.forms["myForm"]["phone2"].value;
+	        var zipcode = document.forms["myForm"]["zipcode"].value;
+	        var address = document.forms["myForm"]["address"].value;
+	        var country = document.forms["myForm"]["country"].value;
+	        
+	        if( phone1.length != 10 )
+	        {
+	            alert("Enter valid mobile number ");
+	            return false;	
+	        }
+	        if(phone1 != phone2)
+	        {
+	            alert("Enter same phone numbers");
+	            return false;
+	        }
+        	initApp2(gender, dob, college, phone1, address, zipcode, country);
+	        return false;
+	    }
 		</script>
 	</body>
 </html>

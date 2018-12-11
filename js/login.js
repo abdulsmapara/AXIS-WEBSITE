@@ -113,20 +113,19 @@
         initApp();
     };
 
-    var globalName = "NULL";
-    var globalID = "NULL";
-    var globalEmail = "NULL";
-
     function app(user)
     {
 
         var emailkey = user.email;
         var key = emailkey.slice(0,emailkey.search('@'));
+        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
         //document.getElementById("clientName").innerHTML = user.displayName;
+
         firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
             // if signing in for the first time we cannot find any related entry in the database
-            if (snapshot.val() == null) {
-
+            if (snapshot.val() == null) 
+            {    
                 var axis_id = generate_axis_id();
 
                 window.location.href = "form.html";
@@ -135,13 +134,13 @@
                     username: user.displayName,
                     email: user.email,
                     axisid: axis_id,
-                    gender: null,
-                    DOB: null,
-                    college: null,
+                    gender: "null",
+                    DOB: "null",
+                    college: "null",
                     phone: -1,
-                    address: null,
+                    address: "null",
                     zipcode: -1,
-                    country: null,
+                    country: "null",
                     //set remaining fields as null  
                 }).then(function onSuccess(res) {
                     firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
@@ -157,8 +156,7 @@
                     });
                 });
             }
-            // if signed up earlier but form not filled  
-            else if (snapshot.val().phone == -1 && window.location.href != "form.html")
+            else if (snapshot.val().phone == -1 && window.location.href !== "form.html")
             {
                 window.location.href = "form.html";
             }
@@ -166,17 +164,12 @@
             {
                 var axisid = (snapshot.val() && snapshot.val().axisid) || null;
 
-            
                 document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
                 document.getElementsByClassName("clientName")[1].innerHTML = user.displayName;
                 document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
                 document.getElementsByClassName("AXISid")[1].innerHTML = axisid;
-
-                //document.getElementById("clientName").innerHTML = user.displayName;
-                //document.getElementById("AXISid").innerHTML = axisid;
             }
         });
-
     }
 
     function generate_axis_id()
@@ -189,22 +182,4 @@
         r = (r+milisec)%1000;
         var id = ((r < 100)?'0': ((r<10)?'00':'') )+ r.toString();
         return "AXIS19" + (day < 10 ? '0' : '') + day.toString() + id;
-    }
-
-    function register_user( gender, dob, college, phone, address, zipcode, country)
-    {
-        var emailkey = user.email;
-        var key = emailkey.slice(0,emailkey.search('@'));
-        usersRef.child(key).set({
-                        username: user.displayName,
-                        email: user.email,
-                        axisid: axis_id,
-                        gender: gender,
-                        DOB: dob,
-                        college: college,
-                        phone: phone,
-                        address: address,
-                        zipcode: zipcode,
-                        country: country, 
-                    });
     }

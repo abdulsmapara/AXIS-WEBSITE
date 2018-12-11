@@ -46,6 +46,7 @@
         <!--Theme custom css -->
         <link rel="stylesheet" href="assets/css/style.css">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="assets/css/responsive.css" />
         <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
@@ -105,10 +106,29 @@
                     <ul>
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../gallery/single.html" target="_blank">Gallery</a></li>
-                        <li><a href="../sponsorUs.html">Sponsor Us</a></li>
+                        <!-- <li><a href="../sponsorUs.html">Sponsor Us</a></li> -->
                         <li><a href="../sponsors.html">Previous Sponsors</a></li>
-                        <li><a href="../ca.html">Campus Ambassador</a></li>
+                        <li><a href="../ca.html">CA</a></li>
                         <li class="active"><a href="contact.html">Contact Us</a></li>
+                        <li class="loginBUTTON">
+                         <button class="quickstart-sign-in" id="quickstart-sign-in" onmouseleave="this.style.color = 'gray'" onmouseenter="this.style.color = 'white'" style="background:transparent;border: none;">LOGIN
+                         </button>
+                        </li>  
+
+                        <li class="axisLOGIN" style="visibility: hidden;">
+                          <div class="dropdown" style="z-index: 5000;">
+                            <button onmouseleave="this.style.color = 'gray'" onmouseenter="this.style.color = 'white'" class="dropbtn" style="background: transparent;border: none;font-size: 22px;">
+                              <span class="glyphicon glyphicon-user" style="border: 1px solid gray;border-radius: 50%;padding: 10px;"></span>
+                            </button>
+                            <div class="dropdown-content">
+                              <a href="#" style="padding: 5px;color: black;"><span style="font-size: 15px;" class="clientName" id="clientName"></span></a>
+                              <a href="#" style="padding: 5px;color: black;"><span style="font-size: 15px;" class="AXISid" id="AXISid"></span></a>
+                              <a href="#" style="padding: 5px;color: black;" onclick="logout()">LOGOUT</a>      
+                            </div>
+                            <br>
+                          </div>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -466,23 +486,21 @@
                         <div class="main_teams_content fix">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
-                                                            <center>
-
-                                <div class="teams_item">
-                                    <div class="head_title">
-                                        <h2 class="" style="color:white"><strong>The Web Developers</strong></h2>
+                                <center>
+                                    <div class="teams_item">
+                                        <div class="head_title">
+                                            <h2 class="" style="color:white"><strong>The Web Developers</strong></h2>
+                                        </div>
                                     </div>
-                                </div>
-                                                                    </center>
-
+                                </center>
                             </div>
-                            </div>
+                        </div>
                             <div class="row">
                             <div class="col-md-3"></div>
                             <div class="col-md-6">
                                 <div class="teams_item text-center sm-m-top-50">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                    <div class="row">                                        
+                                        <div class="col-sm-6 col-md-6 col-lg-4">
                                             <a href="http://priyank.xyz" target="_blank"><img style="width: 130px;height: 130px;border-radius: 50%" src="assets/images/team/Priyank_Nagarnaik.jpeg" alt="" class="img-circle" /></a>
                                             <h4 class="m-top-20" style="color: white">Priyank Nagarnaik</h4><br />
                                             <h5 style="color: white">CIV 2020</h5>
@@ -494,7 +512,8 @@
 
                                             <div class="seperator"></div>
                                         </div><!-- End off col-md-4 -->
-                                        <div class="col-sm-6 col-md-6 col-lg-3">
+
+                                        <div class="col-sm-6 col-md-6 col-lg-4">
                                             <img style="width: 130px;height: 130px;border-radius: 50%" src="assets/images/team/Bhumesh_Bhoyar.jpg" alt="" class="img-circle" />
                                             <h4 class="m-top-20" style="color: white">Bhumesh Bhoyar</h4><br />
                                             <h5 style="color: white">CSE 2020</h5>
@@ -506,7 +525,24 @@
 
                                             <div class="seperator"></div>
                                         </div><!-- End off col-md-4 -->
-                                        <div class="col-sm-6 col-md-6 col-lg-3">
+
+                                        <div class="col-sm-6 col-md-6 col-lg-4">
+                                            <img style="width: 130px;height: 130px;border-radius: 50%" src="assets/images/team/chaitya.jpg" alt="" class="img-circle" />
+                                            <h4 class="m-top-20" style="color: white">Chaitya Chheda</h4><br />
+                                            <h5 style="color: white">CSE 2020</h5>
+                                            <ul class="list-inline">
+                                                <li><a href="https://www.facebook.com/chaitya.chheda" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://github.com/ChaityaChheda" target="_blank"><i class="fa fa-github"></i></a></li>
+                                                <li><a href="mailto:chaityachheda@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+                                            </ul>
+
+                                            <div class="seperator"></div>
+                                        </div><!-- End off col-md-4 -->
+                                    
+                                        <div class="col-sm-6 col-md-6 col-lg-2">
+                                        </div>
+
+                                        <div class="col-sm-6 col-md-6 col-lg-4">
                                             <img style="width: 130px;height: 130px;border-radius: 50%" src="assets/images/team/Abdul_Sattar_Mapara.jpeg" alt="" class="img-circle" />
                                             <h4 class="m-top-20" style="color: white">Abdul Sattar Mapara</h4><br />
                                             <h5 style="color: white">CSE 2020</h5>
@@ -518,7 +554,7 @@
 
                                             <div class="seperator"></div>
                                         </div><!-- End off col-md-4 -->
-                                        <div class="col-sm-6 col-md-6 col-lg-3">
+                                        <div class="col-sm-6 col-md-6 col-lg-4">
                                             <img style="width: 130px;height: 130px;border-radius: 50%" src="assets/images/team/Saket_Chopade.jpeg" alt="" class="img-circle" />
                                             <h4 class="m-top-20" style="color: white">&nbsp;Saket&nbsp;&nbsp; Chopade</h4><br />
                                             <h5 style="color: white">CSE 2020</h5>
@@ -529,6 +565,9 @@
                                             </ul>
                                             <div class="seperator"></div>
                                         </div>
+                                        <div class="col-sm-6 col-md-6 col-lg-2">
+                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div><!-- End off col-md-6 -->
@@ -598,6 +637,8 @@
     <script src="../js/magnific-popup-options.js"></script>
     <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
     <script src="../js/main.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="../js/login.js" ></script>
     <script>
     var d = new Date(new Date().getTime() + 488.72 * 120 * 120 * 2000);
      // default example

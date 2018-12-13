@@ -127,9 +127,8 @@
             if (snapshot.val() == null) 
             {    
                 var axis_id = generate_axis_id();
-
                 window.location.href = "form.html";
-                
+                                                
                 usersRef.child(key).set({
                     username: user.displayName,
                     email: user.email,
@@ -150,7 +149,6 @@
                         document.getElementsByClassName("clientName")[1].innerHTML = user.displayName;
                         document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
                         document.getElementsByClassName("AXISid")[1].innerHTML = axisid;
-
                         //document.getElementById("clientName").innerHTML = user.displayName;
                         //document.getElementById("AXISid").innerHTML = axisid;
                     });

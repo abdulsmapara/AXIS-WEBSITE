@@ -581,7 +581,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: #eeeeee;
 }
 
-.fh5co-nav {
+/* .fh5co-nav {
   position: absolute;
   top: 0;
   margin: 0;
@@ -611,13 +611,13 @@ h1, h2, h3, h4, h5, h6, figure {
 .fh5co-nav a {
   padding: 5px 10px;
   color: #fff;
-}
-@media screen and (max-width: 768px) {
-  .fh5co-nav .menu-1, .fh5co-nav .menu-2 {
+} */
+/* @media screen and (max-width: 768px) { */
+  /* .fh5co-nav .menu-1, .fh5co-nav .menu-2 {
     display: none;
-  }
-}
-.fh5co-nav ul {
+  } */
+/* } */
+/* .fh5co-nav ul {
   padding: 0;
   margin: 2px 0 0 0;
 }
@@ -715,7 +715,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-nav ul li.active > a {
   color: #fff !important;
-}
+} */
 
 #fh5co-counter,
 #fh5co-event,
@@ -1919,20 +1919,42 @@ form label {
   border: 2px solid #eeeeee;
 }
 
+/* @media screen and (max-width: 768px) {
 #fh5co-offcanvas {
   position: absolute;
   z-index: 1901;
-  width: 270px;
-  background: black;
+  width: 320px !important;
+  background: rgba(0, 0, 0, 0.5);
   top: 0;
-  right: 0;
+  left: 0;
   top: 0;
   bottom: 0;
   padding: 45px 40px 40px 40px;
   overflow-y: auto;
-  -webkit-transform: translateX(270px);
-  -ms-transform: translateX(270px);
-  transform: translateX(270px);
+  -webkit-transform: translateX(-320px) !important;
+  -ms-transform: translateX(-320px) !important;
+  transform: translateX(-320px) !important;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+} */
+
+}
+
+#fh5co-offcanvas {
+  position: absolute;
+  z-index: 1901;
+  width: 320px;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 45px 40px 40px 40px;
+  overflow-y: auto;
+  -webkit-transform: translateX(-320px);
+  -ms-transform: translateX(-320px);
+  transform: translateX(-320px);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -2033,7 +2055,7 @@ form label {
   outline: none;
 }
 
-.fh5co-nav-toggle {
+/* .fh5co-nav-toggle {
   width: 25px;
   height: 25px;
   cursor: pointer;
@@ -2114,8 +2136,8 @@ form label {
 }
 
 .fh5co-nav-toggle {
-  position: absolute;
-  right: 0px;
+  position: fixed;
+  left: 20px;
   top: 10px;
   z-index: 21;
   padding: 6px 0 0 0;
@@ -2127,11 +2149,11 @@ form label {
   z-index: 2001;
   border-bottom: none !important;
 }
-@media screen and (max-width: 768px) {
-  .fh5co-nav-toggle {
+/* @media screen and (max-width: 768px) { */
+  /* .fh5co-nav-toggle {
     display: block;
-  }
-}
+  }  */
+/* } */
 
 .btn {
   margin-right: 4px;
@@ -2417,3 +2439,207 @@ text-align: center;
 .cafuq h3 {
   text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* new navigation bar code! */
+/***************************
+ *	Variables
+ **************************/
+/***************************
+ *	Project Main Styles
+ **************************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/***************************
+ *	Application Main Styles
+ **************************/
+#menu--toggle[type="checkbox"]:not(:checked),
+#menu--toggle[type="checkbox"]:checked {
+  display: none;
+}
+
+.menu--toggle__trigger,
+.menu--toggle__burger,
+.menu--toggle__burger:before,
+.menu--toggle__burger:after {
+  position: absolute;
+  top: 1.6em;
+  left: 1.6em;
+  width: 2em;
+  height: 5px;
+  background-color: #282828;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 100;
+  transition: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.menu--toggle__trigger {
+  height: 2em;
+  background: none;
+}
+
+.menu--toggle__burger:before {
+  content: "";
+  top: 10px;
+  left: 0;
+}
+.menu--toggle__burger:after {
+  content: "";
+  top: 20px;
+  left: 0;
+}
+
+.menu__body {
+  position: absolute;
+  width: 7em;
+  height: 7em;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom-right-radius: 100%;
+  box-shadow: 3px 3px 7px rgba(40, 40, 40, 0.2);
+  z-index: 10;
+  -webkit-animation: checkboxUncheckedAnimation 0.35s both;
+          animation: checkboxUncheckedAnimation 0.35s both;
+}
+
+.menu__body-element,
+.menu__body-link {
+  display: none;
+  margin: 4.4em 0 -3.3em -.1em;
+  font-weight: normal;
+  color: #282828;
+  text-decoration: none;
+  text-transform: none;
+  list-style: none;
+  outline: 0;
+}
+
+.menu__body-element {
+  text-indent: 2em;
+}
+
+.menu__body-link:hover {
+  display: block;
+  width: 0;
+  color: #282828;
+  background-color: #e2e2e2;
+  -webkit-animation: changeWidthOfElementAnimation 0.35s both;
+          animation: changeWidthOfElementAnimation 0.35s both;
+}
+
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger {
+  top: 35px;
+  -webkit-transform: rotate(405deg);
+          transform: rotate(405deg);
+  transition: -webkit-transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger:before {
+  top: 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  transition: -webkit-transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger:after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  transition: -webkit-transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+#menu--toggle:checked + .menu--toggle__trigger + .menu--toggle__burger + .menu__body {
+  -webkit-animation: checkboxCheckedAnimation 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+          animation: checkboxCheckedAnimation 1s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+#menu--toggle:checked + .menu--toggle__trigger ~ .menu__body .menu__body-element, #menu--toggle:checked + .menu--toggle__trigger ~ .menu__body .menu__body-link {
+  display: block;
+}
+
+.promotion {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.0);
+  background-size: cover;
+}
+
+/**
+ *	Animations
+ *
+ *  @note checkboxCheckedAnimation - added fix for Microsoft Edge
+ */
+@-webkit-keyframes checkboxCheckedAnimation {
+  50% {
+    width: 100vw;
+    height: 100vh;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+@keyframes checkboxCheckedAnimation {
+  50% {
+    width: 100vw;
+    height: 100vh;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+@-webkit-keyframes checkboxUncheckedAnimation {
+  0% {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@keyframes checkboxUncheckedAnimation {
+  0% {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@-webkit-keyframes changeWidthOfElementAnimation {
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes changeWidthOfElementAnimation {
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* nav code ends here */

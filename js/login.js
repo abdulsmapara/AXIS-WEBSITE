@@ -126,9 +126,7 @@
             // if signing in for the first time we cannot find any related entry in the database
             if (snapshot.val() == null) 
             {    
-                var axis_id = generate_axis_id();
-                window.location.href = "form.html";
-                                                
+                var axis_id = generate_axis_id();                                 
                 usersRef.child(key).set({
                     username: user.displayName,
                     email: user.email,
@@ -142,16 +140,7 @@
                     country: "null",
                     //set remaining fields as null  
                 }).then(function onSuccess(res) {
-                    firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
-                        var axisid = (snapshot.val() && snapshot.val().axisid) || null;
-
-                        document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
-                        document.getElementsByClassName("clientName")[1].innerHTML = user.displayName;
-                        document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
-                        document.getElementsByClassName("AXISid")[1].innerHTML = axisid;
-                        //document.getElementById("clientName").innerHTML = user.displayName;
-                        //document.getElementById("AXISid").innerHTML = axisid;
-                    });
+                     window.location.href = "form.html";
                 });
             }
             else if (snapshot.val().phone == -1 && window.location.href !== "form.html")

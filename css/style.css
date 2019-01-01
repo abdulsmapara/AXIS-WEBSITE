@@ -2850,7 +2850,7 @@ text-align: center;
 	width: 100%;
 	position: relative;
 	/* top: 50%; */
-  margin-top: 2em;
+  margin-top: 8em;
 	-webkit-transform: translatey(-50%);
 	-moz-transform: translatey(-50%);
 	-ms-transform: translatey(-50%);
@@ -3428,3 +3428,13 @@ text-align: center;
 }
 
 /* testimonial styles end */
+
+
+/* footer styles start */
+
+footer {
+  background: black;
+  color: white;
+
+}
+/* footer styles end */

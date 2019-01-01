@@ -2056,6 +2056,74 @@ form label {
   outline: none;
 }
 
+
+.navlog {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.navlog.active {
+  opacity: 1;
+  visibility: visible;
+}
+.navlog a {
+  width: 50px;
+  height: 50px;
+  display: table;
+  background: rgba(255, 255, 255, 1);
+  color: #000;
+  text-align: center;
+  border-radius: 4px;
+}
+.navlog a i {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.navlog a:hover, .navlog a:active, .navlog a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.logon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.logon.active {
+  opacity: 1;
+  visibility: visible;
+}
+.logon a {
+  width: 50px;
+  height: 50px;
+  display: table;
+  background: rgba(255, 255, 255, 1);
+  color: #000;
+  text-align: center;
+  border-radius: 4px;
+}
+.logon a i {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+.logon a:hover, .logon a:active, .logon a:focus {
+  text-decoration: none;
+  outline: none;
+}
 /* .fh5co-nav-toggle {
   width: 25px;
   height: 25px;

@@ -23,7 +23,7 @@ body.fh5co-overflow {
 body:before, body:after {
   content: "";
   position: fixed;
-  background: #fef7ec;
+  background: black;
   left: 0;
   right: 0;
   height: 20px;
@@ -44,8 +44,8 @@ body:after {
 }
 
 body {
-  border-left: 20px solid #fef7ec;
-  border-right: 20px solid #fef7ec;
+  border-left: 20px solid grey;
+  border-right: 20px solid grey;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -283,8 +283,11 @@ p {
   visibility: visible;
 }
 
-#fh5co-main {
+/* #fh5co-main {
   padding: 3.5em 0 7em 0;
+} */
+#fh5co-main {
+  padding: 2em 0;
 }
 @media screen and (max-width: 768px) {
   #fh5co-main {
@@ -294,7 +297,10 @@ p {
 #fh5co-main > .container {
   position: relative;
 }
-
+@media (min-width: 992px) {
+.container {
+    width: 80% ;
+}
 .fh5co-heading {
   margin-bottom: 1.5em;
 }

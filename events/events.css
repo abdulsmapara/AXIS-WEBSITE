@@ -36,8 +36,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  /* max-width: 1000px; */
-  max-width: -webkit-fill-available;
+  max-width: 1240px;
 }
 
 .heading {

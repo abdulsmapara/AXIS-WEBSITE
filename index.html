@@ -923,12 +923,15 @@
           <i class="icon-arrow-up">
           </i>
         </a></div>
-        <div class="navlog active" onclick="toCross(this)">
-          <a href="#" class="nav"  onclick="openNav()">
+        <!-- <div class="navlog active" onclick="toCross(this)">
+          <a href="#" class="nav">
                 <div class="one"></div>
                 <div class="two"></div>
                 <div class="three"></div>
             </a>
+          </div> -->
+          <div class="navlog active"  onclick="openNav()">
+            <a><i class="icon-menu"></i></a>
           </div>
           <div class="googin active">
             <a href="#" class=""><i class="icon-google"></i></a>
@@ -976,10 +979,16 @@
     //   function toCross(x) {
     //     x.classList.toggle("change");
     // }
-    /* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
+    /* Set the width of the side navigation according to screen size */
+
+      function openNav() {
+        if (screen.width >= 768) {
+        document.getElementById("mySidenav").style.width = "768px";
+      }
+      else {
+        document.getElementById("mySidenav").style.width = "100%";
+      }}
+
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {

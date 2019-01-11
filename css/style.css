@@ -2120,6 +2120,9 @@ form label {
     } */
     .nav {
       padding-top: 12px;
+      height: 50px;
+      width: 50px;
+      background-color: transparent;
     }
     .one
     {
@@ -2218,6 +2221,32 @@ form label {
   text-decoration: none;
   outline: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Navigation Styling Begins */
+
+
+
+/* Navigation Styling Ends */
+
+
+
+
+
+
+
+
+
+
 /* .fh5co-nav-toggle {
   width: 25px;
   height: 25px;

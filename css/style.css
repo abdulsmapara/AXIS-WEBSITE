@@ -2278,6 +2278,37 @@ form label {
   .sidenav a {font-size: 18px;}
 }
 
+/* search box */
+.sidenav .search-container {
+  float: right;
+  /* width: 100%; */
+  padding-right: 0;
+}
+
+.sidenav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  /* width: 100%; */
+}
+
+.sidenav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.sidenav .search-container button:hover {
+  background: #ccc;
+}
+
+
 /* Navigation Styling Ends */
 
 

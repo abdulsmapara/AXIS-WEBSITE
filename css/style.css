@@ -2118,6 +2118,9 @@ form label {
         background-color: transparent;
         border-radius: 25px;
     } */
+    .nav {
+      padding-top: 12px;
+    }
     .one
     {
         width: 30px;
@@ -2135,15 +2138,15 @@ form label {
     }
 
 .change .one {
-    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
-    transform: rotate(-45deg) translate(  -10px , 10px);
+    -webkit-transform: rotate(-45deg) translate(-5px, 5px);
+    transform: rotate(-45deg) translate(  -5px , 5px);
 }
 
 .change .two {opacity: 0;}
 
 .change .three {
-    -webkit-transform: rotate(45deg) translate(-10px, -10px);
-    transform: rotate(45deg) translate(-15px,-15px);
+    -webkit-transform: rotate(45deg) translate(-5px, -5px);
+    transform: rotate(45deg) translate(-5px,-5px);
 
 }
 

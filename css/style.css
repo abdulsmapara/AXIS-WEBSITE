@@ -2099,7 +2099,55 @@ form label {
   text-decoration: none;
   outline: none;
 }
+/* Navigation Cross Animation Start*/
 
+.nav div
+    {
+        height: 2px;
+        background-color: #000;
+        /* margin: 0px 10px; */
+        border-radius: 24px;
+        transition: .3s ease;
+    }
+    /* .nav
+    {
+        display: block;
+        /* margin: -4px 0;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border-radius: 25px;
+    } */
+    .one
+    {
+        width: 30px;
+        margin: 5px 10px;
+    }
+    .two
+    {
+        width: 30px;
+        margin: 5px 10px;
+    }
+    .three
+    {
+        width: 30px;
+        margin: 5px 10px;
+    }
+
+.change .one {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+    transform: rotate(-45deg) translate(  -10px , 10px);
+}
+
+.change .two {opacity: 0;}
+
+.change .three {
+    -webkit-transform: rotate(45deg) translate(-10px, -10px);
+    transform: rotate(45deg) translate(-15px,-15px);
+
+}
+
+/* Navigation Cross Animation Ends */
 .logon {
   position: fixed;
   top: 20px;

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Workshops</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage fixed full-screen backgrounds." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed,fullscreen,backgrounds,full-screen" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
+
+	<link rel="icon" type="image/ico" href="images/favlogo.ico">
+	<link rel="stylesheet" type="text/css" href="css/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="css/workshopStyle.css" />
+
+	<style>
+
+    body,html{
+      height: 100%;
+      margin-top: 0px;
+    }
+	
+	#backButton{
+		position: fixed;
+		margin-top: 20px;
+		margin-left: 20px;
+		z-index: 1000;
+	}
+
+	h1{
+		font-size: 5em;
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+
+	.section{
+		text-align:center;
+		background-size: cover;
+		background-attachment: fixed;
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	#section0{
+		background-image: url(images/iot.jpg);
+	}
+	h1{
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+	}
+	#section1{
+		background-image: url(images/seo.jpg);
+	}
+	#section2{
+		background-image: url(images/ppb.jpg);
+	}
+	#section3{
+		background-image: url(images/bg4.jpg);
+	}
+	#menu{
+		position: fixed;
+		width: 170px;
+		height: auto;
+  		-ms-transform: translateX(-100%);
+  		transform: translateX(-100%);
+  		left:100%;	
+	}
+	.workshopList{
+		width: 150px;
+		color: white;
+	}
+	</style>
+
+</head>
+<body>
+	<div id="backButton">
+		<a href="index.html">
+		  <i class="fa fa-arrow-left text-center flex-center" style="color: white;font-size: 25px;border: 2px solid white;border-radius: 50%;height: 45px;width: 45px;"></i>
+		</a>
+	</div>
+
+	<ul id="menu">
+		<li class="workshopList" style="" data-menuanchor="firstPage">
+			<a href="#firstPage">IOT</a>
+		</li>
+		<li class="workshopList" style="" data-menuanchor="secondPage">
+			<a href="#secondPage">SEO</a>
+		</li>
+		<li class="workshopList" style="" data-menuanchor="3rdPage">
+			<a href="#3rdPage">PPB</a>
+		</li><!-- 
+		<li class="workshopList" style="" data-menuanchor="4thpage">
+			<a href="#4thpage">NEXT ONE</a>
+		</li> -->
+	</ul>
+	
+	<div id="fullpage1">
+		<div class="section" id="section0">
+			<div style="background: rgba(0,0,0,0.7);height: 100%;">
+				<h1>IOT</h1>
+			</div>
+		</div>
+		<div class="section" id="section1">
+			<div style="background: rgba(0,0,0,0.7);height: 100%;">
+			<h1>SEO</h1>
+			</div>
+		</div>
+		<div class="section" id="section2">
+			<div style="background: rgba(0,0,0,0.7);height: 100%;">
+			<h1>PYTHON PROGRAMMING BOOTCAMP</h1>
+			</div>
+		</div><!-- 
+		<div class="section" id="section3">
+			<div style="background: rgba(0,0,0,0.7);height: 100%;">
+			<h1>NEXT ONE</h1>
+			</div>
+		</div> -->
+	</div>
+
+	<script type="text/javascript" src="js/fullpage.js"></script>
+	<script src="js/easings.min.js"></script>
+	<script type="text/javascript">
+	    var myFullpage = new fullpage('#fullpage1', {
+	        verticalCentered: false,
+	        //sectionsColor: ['#4A6FB1', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+			//anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+			sectionsColor: ['#4A6FB1', '#4BBFC3', '#7BAABE', '#ccddff'],
+			anchors: ['firstPage', 'secondPage', '3rdPage', 'lastPage'],
+			resize: false,
+			animateAnchor:false,
+			scrollOverflow: true,
+			autoScrolling:true,
+			responsive: 900,
+			fitSection: false,
+			menu: '#menu',
+			navigation:true,
+			verticalCentered: false,
+			css3:false,
+			continuousVertical:true,
+	        css3:false
+	    });
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+
+</body>
+</html>

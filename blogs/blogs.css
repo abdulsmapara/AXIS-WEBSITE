@@ -1,0 +1,28 @@
+body {
+  width: 100%;
+  height: -webkit-fill-available;
+  background-image: linear-gradient(to bottom right, #eee, #dfd);
+}
+
+a {
+  transition: .25s all;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  transition: .25s box-shadow;
+  margin: 1.5em;
+}
+.card:focus, .card:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-inverse .card-img-overlay {
+  background-color: rgba(51, 51, 51, 0.85);
+  border-color: rgba(51, 51, 51, 0.85);
+}
+
+.card-block {
+  margin: 2em;
+}

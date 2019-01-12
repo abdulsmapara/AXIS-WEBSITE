@@ -10,7 +10,7 @@
 
 
 		<!-- Website CSS style -->
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- Website Font style -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -259,7 +259,7 @@
 		 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 		<!-- <script src="js/login.js" ></script> -->
 		<script type="text/javascript">
@@ -335,6 +335,7 @@
 	            {
 	                
 	                var axis_id = generate_axis_id();
+	                
 	                usersRef.child(key).set({
 	                    username: user.displayName,
 	                    email: user.email,
@@ -406,8 +407,8 @@
 	                }).then(function onSuccess(res) {
 	                    firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
 	                        var axisid = (snapshot.val() && snapshot.val().axisid) || null;
-	                        alert("Successfully Signed Up");
-                            window.location.href = "index.html";
+	                        alert("Successfully Signed Up \n Now you can register for MUN ");
+                            window.location.href = "register.html";
 	                    });
 	                });
 	            }

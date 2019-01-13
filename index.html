@@ -938,7 +938,7 @@
     </div> -->
 
     <div class="navlog active"  onclick="openNav()">
-      <a><i class="icon-menu"></i></a>
+      <a href="#"><i class="icon-menu"></i></a>
     </div>
     <div class="googin active">
       <a href="#" class="">
@@ -960,17 +960,18 @@
         </form>
       </div>
       <a href="#"><i class="icon-home"></i> Home</a>
-      <a href="#"><i class="icon-star"></i> Events</a>
-      <a href="#"><i class="icon-image"></i> Gallery</a>
-      <a href="#"><i class="icon-globe"></i> MUN</a>
+      <a href="events/category.html"><i class="icon-star"></i> Events</a>
+      <a href="gallery/single.html" target="__blank"><i class="icon-image"></i> Gallery</a>
+      <a href="MUN/index.html" target="__blank"><i class="icon-globe"></i> MUN</a>
       <a href="#"><i class="icon-grid"></i> Attractions</a>
       <a href="#"><i class="icon-star"></i> Exhibitons</a>
-      <a href="#"><i class="icon-list"></i> Workshops</a>
+      <a href="workshop.html"><i class="icon-list"></i> Workshops</a>
+      <a href="guestLectures.html"><i class="icon-bag"></i> Guest Lectures</a>      
       <a href="#"><i class="icon-help"></i> Social Initiatives</a>
-      <a href="#"><i class="icon-user"></i> Campus Ambassador</a>
+      <a href="ca.html"><i class="icon-user"></i> Campus Ambassador</a>
       <a href="#"><i class="icon-document"></i> Blogs</a>
-      <a href="#"><i class="icon-address"></i> Previous Sponsors</a>
-      <a href="#"><i class="icon-users"></i> Our Team</a>
+      <a href="sponsors.html"><i class="icon-address"></i> Previous Sponsors</a>
+      <a href="Contact/contact.html"><i class="icon-users"></i> Our Team</a>
       <br>
       <br>
       <a href="#" class="" style="float:left"><i class="icon-facebook"></i></a>
@@ -1011,6 +1012,16 @@
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
       }
+
+      $(document).mouseup(function (e)
+        {
+        var container = $("#mySidenav"); // YOUR CONTAINER SELECTOR
+        if (!container.is(e.target) // if the target of the click isn't the container...
+            && container.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+          closeNav();
+        }
+      });
     </script>
 
     <script>

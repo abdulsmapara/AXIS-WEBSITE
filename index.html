@@ -937,18 +937,24 @@
       </a>
     </div> -->
 
-    <div class="navlog active"  onclick="openNav()">
+    <div class="navlog active" title="navbar" onclick="openNav()">
       <a href="#"><i class="icon-menu"></i></a>
     </div>
-    <div class="googin active">
-      <a href="#" class="">
+    <div class="googin loginBUTTON" title="login">
+      <a href="#!" class="quickstart-sign-in" id="quickstart-sign-in">
         <i class="icon-google"></i>
       </a>
     </div>
-    <div class="logon active">
-      <a href="#" class=""><i class="icon-user"></i></a>
+    <div class="logon axisLOGIN" id="axisLOGIN" title="user">
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="icon-user"></i></a>
+        <div class="dropdown-content">
+          <div style="text-align: center;"><span class="clientName" id="clientName" title="name"></span></div>
+          <div style="text-align: center;"><span class="AXISid" id="AXISid" title="axis id"></span></div>
+          <div style="text-align: center;"><button onclick="logout()" class="logout" title="logout">LOGOUT</button></div>
+        </div>
+      </div>
     </div>
-
 
     <!-- Navigation Code starts here-->
     <div id="mySidenav" class="sidenav">
@@ -997,7 +1003,7 @@
     <script src="js/main.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="js/login.js" ></script>
-
+    
     <script type="text/javascript">
       /* Set the width of the side navigation according to screen size */
       function openNav() {
@@ -1032,22 +1038,11 @@
         month: d.getMonth() + 1,
         day: d.getDate(),
       }
-                     );
-      //jQuery example
-      $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-      }
-      );
+     );      
     </script>
 
     <script src="https://use.fontawesome.com/1744f3f671.js"></script>
-    <script src="script.js"></script>
     <script type="text/javascript">
-      // vars
-      "use strict";
       var testim = document.getElementById("testim"),
         testimDots = Array.prototype.slice.call(
           document.getElementById("testim-dots").children
@@ -1065,7 +1060,7 @@
         touchEndPos,
         touchPosDiff,
         ignoreTouch = 30;
-      window.onload = function() {
+      
         // Testim Script
         function playSlide(slide) {
           for (var k = 0; k < testimDots.length; k++) {
@@ -1153,7 +1148,7 @@
             return;
           }
         });
-      };
+      
     </script>
     <script type="text/javascript">
       $('.owl-carousel').owlCarousel({
@@ -1179,7 +1174,7 @@
       }
       });
     </script>
-    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
         $("#testimonial-slider").owlCarousel({
@@ -1193,6 +1188,6 @@
         });
       });
     </script>
-
+ -->
   </body>
 </html>

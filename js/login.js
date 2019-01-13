@@ -41,10 +41,8 @@
         //document.getElementsByClassName("quickstart-sign-in")[1].disabled = true;
 
         document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'hidden';
-        document.getElementsByClassName("axisLOGIN")[1].style.visibility = 'hidden';
 
         document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'visible';
-        document.getElementsByClassName("loginBUTTON")[1].style.visibility = 'visible';
                 
         // [END_EXCLUDE]
     }
@@ -70,13 +68,11 @@
                 //document.getElementsByClassName("quickstart-sign-in")[1].textContent = 'Sign out';
                 
                 document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'hidden';
-                document.getElementsByClassName("loginBUTTON")[1].style.visibility = 'hidden';
                         
                 //document.getElementsByClassName("quickstart-sign-in")[0].style.display = 'none';
                 //document.getElementsByClassName("quickstart-sign-in")[1].style.display = 'none';
                 
                 document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'visible';
-                document.getElementsByClassName("axisLOGIN")[1].style.visibility = 'visible';
 
                 app(user);
                 // [END_EXCLUDE]
@@ -90,10 +86,8 @@
                 //document.getElementsByClassName("quickstart-sign-in")[1].textContent = 'Login';
 
                 document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'visible';
-                document.getElementsByClassName("loginBUTTON")[1].style.visibility = 'visible';
                         
                 document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'hidden';
-                document.getElementsByClassName("axisLOGIN")[1].style.visibility = 'hidden';
                 
                 // [END_EXCLUDE]
             }
@@ -107,7 +101,7 @@
         //document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
 
         document.getElementsByClassName("quickstart-sign-in")[0].addEventListener('click', toggleSignIn, false);
-        document.getElementsByClassName("quickstart-sign-in")[1].addEventListener('click', toggleSignIn, false);
+
     }
     window.onload = function() {
         initApp();
@@ -152,9 +146,7 @@
                 var axisid = (snapshot.val() && snapshot.val().axisid) || null;
 
                 document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
-                document.getElementsByClassName("clientName")[1].innerHTML = user.displayName;
                 document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
-                document.getElementsByClassName("AXISid")[1].innerHTML = axisid;
             }
         });
     }

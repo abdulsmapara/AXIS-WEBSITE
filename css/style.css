@@ -1,3 +1,18 @@
+#carouselHeading{
+  font-size: 45px;
+}
+#carouselHeading>button{
+  font-size: 22px;
+}
+@media screen and (max-width: 768px) {
+  #carouselHeading{
+    font-size: 35px;
+  }
+
+  #carouselHeading>button{
+    font-size: 15px;
+  }
+}
 #loadingDiv
  {
    position: fixed;
@@ -3519,7 +3534,7 @@ footer {
   background-color: white;
   text-align: center;
   padding: 30px 30px 50px;
-  margin: 100px 15px 160px;
+  margin: 50px 15px 160px;
   position: relative;
 }
 

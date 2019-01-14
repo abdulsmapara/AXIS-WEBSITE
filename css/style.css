@@ -1,8 +1,24 @@
 #carouselHeading{
-  font-size: 45px;
+  font-size: 55px;
 }
+#carouselHeading>span{
+  font-weight: 1000px;
+  font-family: nexabold;
+}
+
 #carouselHeading>button{
   font-size: 22px;
+  font-weight: 800;
+}
+.carouselImageContainer{
+  max-height: 500px;
+}
+.carouselImage{
+  width: 100%;
+  height: auto;
+}
+#myCarousel{
+  border : 1px solid white;
 }
 @media screen and (max-width: 768px) {
   #carouselHeading{

@@ -23,7 +23,7 @@
     .semi-transparent-button {
       display: block;
       box-sizing: border-box;
-      margin: 0 auto;      
+      margin: 0 auto;
       width: 80%;
       max-width: 200px;
       background: #000; /* fallback color for old browsers */background: rgba(0, 0, 0, 0.5);
@@ -43,7 +43,7 @@
         width: 100wh;
         height: 90vh;
         color: #fff;
-        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
         background-size: 400% 400%;
         background-attachment: fixed;
         -webkit-animation: Gradient 15s ease infinite;
@@ -90,7 +90,7 @@
     </style>
 </head>
 <body>
-    
+
     <script>
         $(document).ready(function(){
           // Add smooth scrolling to all links
@@ -119,9 +119,9 @@
         });
         new WOW().init();
     </script>
-    
+
     <div id="wrapper">
-          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background: black;">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -131,8 +131,8 @@
                 </button>
                 <a class="navbar-brand" href="index.html"> AXIS' 19 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
             </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul id="active" class="nav navbar-nav side-nav">
+            <div class="collapse navbar-collapse navbar-ex1-collapse" style="background: black;">
+                <ul id="active" class="nav navbar-nav side-nav" style="background: black;">
                     <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Introduction</a></li>
                     <li><a href="#about"><i class="fa fa-tasks"></i> About</a></li>
                     <li><a href="#schedule"><i class="fa fa-globe"></i> Schedule</a></li>
@@ -140,7 +140,7 @@
                     <li><a href="#rules"><i class="fa fa-font"></i> General Rules</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-left navbar-user">
-                        
+
                     <li class="dropdown user-dropdown">
                         <a href="../../index.html" >Home</a>
                     </li>
@@ -148,31 +148,31 @@
                         <a href="../category.html" >Events</a>
                     </li>
                     <li class="dropdown user-dropdown">
-                        <a href="#">Contact</a> 
+                        <a href="#">Contact</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </nav>
 
         <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Robowars <small>Tech, Enthusiasm and much more...</small></h1>
-                    
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3"> 
+          <div class="col-lg-3" style="float: right">
 
-                    <a class="semi-transparent-button" style="text-decoration: none;font-size: 23px;" onmouseenter="style.color='red'" onmouseleave="style.color='white'" data-toggle="modal" data-target="#myModal" >Register Now</a>
+              <a class="semi-transparent-button" style="text-decoration: none;font-size: 23px;" onmouseenter="style.color='red'" onmouseleave="style.color='white'" data-toggle="modal" data-target="#myModal" >Register Now</a>
+          </div>
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <h1>Robowars <br> <small>Tech, Enthusiasm and much more...</small></h1>
+
                 </div>
             </div>
+
             <br/>
             <div class="row">
-                
+
                 <div class="col-md-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-primary" style="border: black">
                         <div class="panel-heading" style="background: black;">
                             <h3 class="panel-title"><i class="fa fa-rss"></i> Introduction</h3>
                         </div>
@@ -195,16 +195,16 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                                     </div>
                                 </div>
                             </section>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
 
     <div class="row" id="about">
-                
+
                 <div class="col-md-12">
-                    <div class="panel panel-primary animated">
+                    <div class="panel panel-primary" style="border: black" >
                         <div class="panel-heading" style="background: black;">
                             <h3 class="panel-title"><i class="fa fa-rss"></i> About </h3>
                         </div>
@@ -227,16 +227,16 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                                     </div>
                                 </div>
                             </section>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
             <br />
             <div class="row">
-                
+
                 <div class="col-md-12">
-                    <div class="panel panel-primary animated">
+                    <div class="panel panel-primary" style="border: black">
                         <div class="panel-heading" style="background: black;">
                             <h3 class="panel-title"><i class="fa fa-rss"></i> About </h3>
                         </div>
@@ -255,7 +255,7 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                                     </div>
                                 </div>
                             </section>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -272,9 +272,9 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
         </h4>
       </div>
       <div class="modal-body">
-        
+
                 <!-- Material input -->
-            <form name="myForm" method="post" onsubmit="return register()" autocomplete>    
+            <form name="myForm" method="post" onsubmit="return register()" autocomplete>
                 <div class="md-form">
 
                     <div class="row" style="margin-bottom: 40px;">
@@ -284,34 +284,34 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                                 <input type="text" name="eventName" value="ROBOWAR" hidden />
                             </center>
                         </div>
-                        
+
                     </div>
                     <br />
                     <div class="row">
                         <div class="col-md-2 flex-center">
                             <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Team Leader</span>
-                        
+
                         </div>
-                            
+
                         <div class="col-md-2">
                           <input type="text"  name="name1" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="id1" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="email" name="email1" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="contact1" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="college1" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-                  
+
                         </div>
                     </div>
 
@@ -319,28 +319,28 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                     <div class="row">
                         <div class="col-md-2 flex-center">
                             <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 2</span>
-                        
+
                         </div>
-                            
+
                         <div class="col-md-2">
                           <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="id2" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="email" name="email2" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="contact2" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="college2" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                     </div>
 
@@ -348,28 +348,28 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                     <div class="row">
                         <div class="col-md-2 flex-center">
                             <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 3</span>
-                        
+
                         </div>
-                            
+
                         <div class="col-md-2">
                           <input type="text"  name="name3" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="id3" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="email" name="email3" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="contact3" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="college3" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                     </div>
 
@@ -377,28 +377,28 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                     <div class="row">
                         <div class="col-md-2 flex-center">
                             <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 4</span>
-                        
+
                         </div>
-                            
+
                         <div class="col-md-2">
                           <input type="text"  name="name4" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="id4" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="email" name="email4" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="contact4" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="college4" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                     </div>
 
@@ -406,28 +406,28 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                     <div class="row">
                         <div class="col-md-2 flex-center">
                             <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 5</span>
-                        
+
                         </div>
-                            
+
                         <div class="col-md-2">
                           <input type="text"  name="name5" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="id5" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="email" name="email5" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="contact5" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="college5" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                     </div>
 
@@ -435,28 +435,28 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                     <div class="row">
                         <div class="col-md-2 flex-center">
                             <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member6</span>
-                        
+
                         </div>
-                            
+
                         <div class="col-md-2">
                           <input type="text"  name="name6" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="id6" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="email" name="email6" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="contact6" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                         <div class="col-md-2">
                           <input type="text" name="college6" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-                  
+
                         </div>
                     </div>
 
@@ -464,12 +464,12 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                         <div class="col-md-12">
                             <center>
                                 <input type="submit" name="Submit" value="Submit" class="btn btn-warning" />
-                                    
+
                             </center>
                         </div>
                     </div>
                 </div>
-                </form>  
+                </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
@@ -478,8 +478,8 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
 
   </div>
 </div>
-            
-    
+
+
     <div style="visibility: hidden;">
         <div class="loginBUTTON" title="login">
         </div>
@@ -489,7 +489,7 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
             <button>LOGOUT</button>
         </div>
         </div>
-    </div>          
+    </div>
     <!-- /#wrapper -->
 
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
@@ -503,13 +503,13 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
           var window_height = $window.height();
           var window_top_position = $window.scrollTop();
           var window_bottom_position = (window_top_position + window_height);
-         
+
           $.each($animation_elements, function() {
             var $element = $(this);
             var element_height = $element.outerHeight();
             var element_top_position = $element.offset().top;
             var element_bottom_position = (element_top_position + element_height);
-         
+
             //check to see if this current container is within viewport
             if ((element_bottom_position >= window_top_position) &&
                 (element_top_position <= window_bottom_position)) {
@@ -591,12 +591,12 @@ Each team has to come up with a wirelessly controlled robot capable of a one on 
                 paging: false,
                 columns: [
                 { field: "Source", width: "170px", title: "Source" },
-                { field: "Amount", title: "Amount" },                
+                { field: "Amount", title: "Amount" },
                 { field: "Percent", title: "Percent", format: "{0} %" },
                 { field: "Target", title: "Target" },
                 ]
-            });            
-        });        
+            });
+        });
     </script>
 </body>
 </html>

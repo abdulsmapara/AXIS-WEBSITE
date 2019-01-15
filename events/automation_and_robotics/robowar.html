@@ -5,24 +5,92 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AXIS EVENT - ROBOWARS</title>
-    
-    <link rel="icon" type="image/ico" href="../../images/favlogo.ico">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../local.css" />
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <link rel="stylesheet" type="text/css" href="../local.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    
+
     <style type="text/css">
+    .semi-transparent-button {
+      display: block;
+      box-sizing: border-box;
+      margin: 0 auto;      
+      width: 80%;
+      max-width: 200px;
+      background: #000; /* fallback color for old browsers */background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease-out;
+
+    }
+
+    .wow {
+      visibility: hidden;
+    }
+    body {
+        width: 100wh;
+        height: 90vh;
+        color: #fff;
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background-size: 400% 400%;
+        background-attachment: fixed;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+        animation: Gradient 15s ease infinite;
+        text-align: justify;
+    }
+
+    @-webkit-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @-moz-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
     </style>
 </head>
 <body>
-    	
+    
     <script>
         $(document).ready(function(){
           // Add smooth scrolling to all links
@@ -47,11 +115,13 @@
               });
             } // End if
           });
-        });
-    </script>
 
-    <div id="wrapper" style="background: url('../download.gif') ;">
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        });
+        new WOW().init();
+    </script>
+    
+    <div id="wrapper">
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -65,31 +135,20 @@
                 <ul id="active" class="nav navbar-nav side-nav">
                     <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Introduction</a></li>
                     <li><a href="#about"><i class="fa fa-tasks"></i> About</a></li>
-                    <li><a href="blog.html"><i class="fa fa-globe"></i> Schedule</a></li>
+                    <li><a href="#schedule"><i class="fa fa-globe"></i> Schedule</a></li>
                     <li><a href="signup.html"><i class="fa fa-list-ol"></i> Prizes</a></li>
-                    <li><a href="register.html"><i class="fa fa-font"></i> General Rules</a></li>
+                    <li><a href="#rules"><i class="fa fa-font"></i> General Rules</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-left navbar-user">
-                    	
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
                         
+                    <li class="dropdown user-dropdown">
+                        <a href="../../index.html" >Home</a>
                     </li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About</a>
-                        
+                        <a href="../category.html" >Events</a>
                     </li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact</a>
-                        
-                    </li>
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sponsors</a>
-                        
-                    </li>
-                    <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Previous Sponsors</a>
-                        
+                        <a href="#">Contact</a> 
                     </li>
                     
                 </ul>
@@ -99,16 +158,17 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Robowars <small>Tech, Enthusiasm and much more...</small></h1>      
+                    <h1>Robowars <small>Tech, Enthusiasm and much more...</small></h1>
+                    
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-3"> 
-                    <a class="semi-transparent-button" style="text-decoration: none;font-size: 23px;" onmouseenter="style.color='red'" onmouseleave="style.color='white'" href="#register">Register Now</a>
+
+                    <a class="semi-transparent-button" style="text-decoration: none;font-size: 23px;" onmouseenter="style.color='red'" onmouseleave="style.color='white'" data-toggle="modal" data-target="#myModal" >Register Now</a>
                 </div>
             </div>
             <br/>
-            
             <div class="row">
                 
                 <div class="col-md-12">
@@ -125,7 +185,13 @@
                                     <div class="text" style="font-size: 20px;">
                                         Something about the event .. its introduction.
                                         The ultimate test of engineering excellence, teamwork, strategy, and gaming is here! Techkriti brings to you its flagship event, Robowars. Witness the brightest engineers in India build the mightiest monsters which shall unleash Armageddon on the battle turf!
-                                        Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions.The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions.The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+
                                     </div>
                                 </div>
                             </section>
@@ -134,16 +200,16 @@
                     </div>
                 </div>
             </div>
-          
-            <div class="row">
+
+    <div class="row" id="about">
                 
                 <div class="col-md-12">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-primary animated">
                         <div class="panel-heading" style="background: black;">
                             <h3 class="panel-title"><i class="fa fa-rss"></i> About </h3>
                         </div>
-                        <div class="panel-body feed">
-                            <section class="feed-item" id="about">
+                        <div class="panel-body">
+                            <section class="feed-item">
                                 <div class="icon pull-left">
                                     <i class="fa fa-bolt"></i>
                                 </div>
@@ -151,7 +217,13 @@
                                     <div class="text" style="font-size: 20px;">
                                         Something about the event .. its introduction.
                                         The ultimate test of engineering excellence, teamwork, strategy, and gaming is here! Techkriti brings to you its flagship event, Robowars. Witness the brightest engineers in India build the mightiest monsters which shall unleash Armageddon on the battle turf!
-                                        Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+
                                     </div>
                                 </div>
                             </section>
@@ -160,9 +232,300 @@
                     </div>
                 </div>
             </div>
-        </div>
+            <br />
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <div class="panel panel-primary animated">
+                        <div class="panel-heading" style="background: black;">
+                            <h3 class="panel-title"><i class="fa fa-rss"></i> About </h3>
+                        </div>
+                        <div class="panel-body">
+                            <section class="feed-item">
+                                <div class="icon pull-left">
+                                    <i class="fa fa-bolt"></i>
+                                </div>
+                                <div class="feed-item-body">
+                                    <div class="text" style="font-size: 20px;">
+                                        Something about the event .. its introduction.
+                                        The ultimate test of engineering excellence, teamwork, strategy, and gaming is here! Techkriti brings to you its flagship event, Robowars. Witness the brightest engineers in India build the mightiest monsters which shall unleash Armageddon on the battle turf!
+Each team has to come up with a wirelessly controlled robot capable of a one on one and trio combat. With pneumatic pincers, mighty armors, nifty axes and more innovative weapons, these merciless mercenaries shall fight for the glory of their makers, upholders of the dignity of their institutions. The law of the jungle, of 'might is right,' shall prevail. Only the toughest shall survive! Sparks shall fly, and temperatures shall soar high this Techkriti’19! Be there to witness the raw aggression, the crude violence of these mean machines as they rip each other apart!
+
+
+                                    </div>
+                                </div>
+                            </section>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog" style="width: 90%;max-width: 90%;">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" style="color: white;" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">
+            <center> REGISTRATION </center>
+        </h4>
+      </div>
+      <div class="modal-body">
+        
+                <!-- Material input -->
+            <form name="myForm" method="post" onsubmit="return register()" autocomplete>    
+                <div class="md-form">
+
+                    <div class="row" style="margin-bottom: 40px;">
+                        <div class="col-md-12">
+                            <center>
+                                <input type="text" name="teamName"  placeholder="Team Name" style="color: white;font-size: 17px;max-width: 40%;" id="inputValidationEx" class="form-control validate" required="true" />
+                                <input type="text" name="eventName" value="ROBOWAR" hidden />
+                            </center>
+                        </div>
+                        
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 flex-center">
+                            <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Team Leader</span>
+                        
+                        </div>
+                            
+                        <div class="col-md-2">
+                          <input type="text"  name="name1" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="id1" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="email" name="email1" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="contact1" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="college1" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                  
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 flex-center">
+                            <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 2</span>
+                        
+                        </div>
+                            
+                        <div class="col-md-2">
+                          <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="id2" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="email" name="email2" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="contact2" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="college2" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 flex-center">
+                            <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 3</span>
+                        
+                        </div>
+                            
+                        <div class="col-md-2">
+                          <input type="text"  name="name3" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="id3" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="email" name="email3" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="contact3" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="college3" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 flex-center">
+                            <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 4</span>
+                        
+                        </div>
+                            
+                        <div class="col-md-2">
+                          <input type="text"  name="name4" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="id4" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="email" name="email4" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="contact4" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="college4" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 flex-center">
+                            <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 5</span>
+                        
+                        </div>
+                            
+                        <div class="col-md-2">
+                          <input type="text"  name="name5" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="id5" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="email" name="email5" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="contact5" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="college5" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2 flex-center">
+                            <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member6</span>
+                        
+                        </div>
+                            
+                        <div class="col-md-2">
+                          <input type="text"  name="name6" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="id6" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="email" name="email6" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="contact6" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                        <div class="col-md-2">
+                          <input type="text" name="college6" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                  
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <center>
+                                <input type="submit" name="Submit" value="Submit" class="btn btn-warning" />
+                                    
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                </form>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
     </div>
+
+  </div>
+</div>
+            
+    
+    <div style="visibility: hidden;">
+        <div class="loginBUTTON" title="login">
+        </div>
+        <div class="axisLOGIN" id="axisLOGIN" title="user">
+            <span class="clientName" id="clientName" title="name"></span>
+            <span class="AXISid" id="AXISid" title="axis id"></span>
+            <button>LOGOUT</button>
+        </div>
+        </div>
+    </div>          
+    <!-- /#wrapper -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="../../js/login.js" ></script>
+    <script src="../registration.js"></script>
     <script type="text/javascript">
+        var $animation_elements = $('.animated');
+        var $window = $(window);
+
+        function check_if_in_view() {
+          var window_height = $window.height();
+          var window_top_position = $window.scrollTop();
+          var window_bottom_position = (window_top_position + window_height);
+         
+          $.each($animation_elements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+         
+            //check to see if this current container is within viewport
+            if ((element_bottom_position >= window_top_position) &&
+                (element_top_position <= window_bottom_position)) {
+              $element.addClass('bounceIn');
+
+
+            $(".wow").addClass("bounceIn");
+
+            } else {
+              $element.removeClass('bounceIn');
+            }
+          });
+        }
+
+        $window.on('scroll resize', check_if_in_view);
+        $window.trigger('scroll');
         jQuery(function ($) {
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
                 visits = [123, 323, 443, 32],
@@ -234,6 +597,6 @@
                 ]
             });            
         });        
-    </script>      
+    </script>
 </body>
 </html>

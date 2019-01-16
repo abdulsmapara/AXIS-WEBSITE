@@ -1,41 +1,95 @@
 ﻿/*CSS EVENTS*/
-  ::-webkit-scrollbar {
-    width: 5px;
-    color:black;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: black;
-    color: black;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #003333;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #265940; 
-    box-shadow: inset 1px white; 
-  }
-.semi-transparent-button {
-    display: block;
-    box-sizing: border-box;
-    margin: 0 auto;
-
-    width: 80%;
-    max-width: 200px;
-    background: #000; /* fallback color for old browsers */background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: 1px;
-    transition: all 0.3s ease-out;
+.Name{
+    font-size: 25px;
+    font-weight: 800;
+    font-family: nexalight;
+    color: white;
 }
+.contactDetails{
+  margin-bottom: 25px;
+}
+.Number{
+    font-size: 22px;
+    font-weight: 600;
+    font-family: nexalight;
+    color: white;
+}
+    .semi-transparent-button {
+      display: block;
+      box-sizing: border-box;
+      margin: 0 auto;
+      width: 80%;
+      max-width: 200px;
+      background: #000; /* fallback color for old browsers */background: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: all 0.3s ease-out;
+
+    }
+
+    .wow {
+      visibility: hidden;
+    }
+    body {
+        width: 100wh;
+        height: 90vh;
+        color: #fff;
+        background: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        background-size: 400% 400%;
+        background-attachment: fixed;
+        -webkit-animation: Gradient 15s ease infinite;
+        -moz-animation: Gradient 15s ease infinite;
+        animation: Gradient 15s ease infinite;
+        text-align: justify;
+    }
+
+    @-webkit-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @-moz-keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+
+    @keyframes Gradient {
+        0% {
+            background-position: 0% 50%
+        }
+        50% {
+            background-position: 100% 50%
+        }
+        100% {
+            background-position: 0% 50%
+        }
+    }
+    .eventInfo{
+        font-size: 20px;
+        font-family: nexalight;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: justify; 
+        color: white;
+    }
+
 
 /*END OF CSS EVENTS*/
 html {

@@ -25,7 +25,7 @@ function lectureRegistration(lecturer,key)
 {
 
     var oldRef = firebase.database().ref().child('/users/'+ key);
-    var newRef = firebase.database().ref().child('GUEST LECTURES/' + lecturer + '/' + key);
+    var newRef = firebase.database().ref().child('GUEST LECTURES/' + lecturer + '/' + 'Registration' + '/' + key);
 
      oldRef.once('value', function(snap)  {
         var info = {
@@ -330,4 +330,57 @@ function guestLecturesRegister(lecturer){
     {
         alert("Please Sign up before Registration ");
     }
+}
+function submitQuery(lecturer,key,query){
+
+    var oldRef = firebase.database().ref().child('/users/'+ key);
+    var newRef = firebase.database().ref().child('GUEST LECTURES/' + lecturer + '/' + 'Queries' + '/' + query + '/' + key);
+
+     oldRef.once('value', function(snap)  {
+        var info = {
+            username : snap.val().username,
+            email : snap.val().email,
+            phone : snap.val().phone,
+            college : snap.val().college,
+            axisid : snap.val().axisid
+        };
+          newRef.set( info, function(error) {
+               if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
+          });
+          alert("Query submited successfully !");
+     });
+}
+
+function AskQuery(lecturer){
+
+
+    var query = document.forms["myForm"]["query"].value;
+
+    var user = firebase.auth().currentUser;
+    if (user) {
+        var emailkey = user.email;
+        var key = emailkey.slice(0,emailkey.search('@'));
+        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+
+        firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            // if signing in for the first time we cannot find any related entry in the database
+            if (snapshot.val() == null) 
+            {    
+               
+            }
+            else if (snapshot.val().phone == -1 && window.location.href !== "form.html")
+            {
+                alert("Sign Up first");
+            }
+            else
+            {
+                submitQuery(lecturer,key,query);    
+            }
+        });
+    } 
+    else  
+    {
+        alert("Please Sign up for asking any Queries ");
+    }
+    return false;
 }

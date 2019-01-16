@@ -1,25 +1,3 @@
-  ::-webkit-scrollbar {
-    width: 5px;
-    color:black;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background: black;
-    color: black;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #003333;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #265940; 
-    box-shadow: inset 1px white; 
-  }
 *, *:before, *:after {
   box-sizing: border-box;
 }

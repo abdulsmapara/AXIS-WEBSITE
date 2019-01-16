@@ -58,6 +58,7 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
 
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
@@ -131,14 +132,6 @@
             </div>
         </div>
         
-        <div class="icon-bar">
-        <a href="https://www.facebook.com/axisvnit/" target="_blank"><i class="icon-facebook"></i></a>
-        <a href="https://twitter.com/axisvnit?lang=en"  target="_blank"><i class="icon-twitter"></i></a>
-        <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank"><i class="icon-linkedin"></i></a>
-        <a href="https://www.youtube.com/user/AXISVNIT"  target="_blank"><i class="icon-youtube"></i></a>
-        <a href="https://www.instagram.com/axis_vnit/"  target="_blank"><i class="icon-instagram"></i></a>
-        </div>
-
         <div class="container" id="sponsorsContainer">
             <!-- Card -->
             <div id="sponsorsHead">PREVIOUS SPONSORS<hr></div>
@@ -502,6 +495,49 @@
     </div>    
     <br>
 <br><br><br>
+    
+    <div class="navlog active" title="navbar" onclick="openNav()">
+      <a href="#"><i class="icon-menu"></i></a>
+    </div>
+    <div class="googin loginBUTTON" title="login">
+      <a href="#!" class="quickstart-sign-in" id="quickstart-sign-in">
+        <i class="icon-google"></i>
+      </a>
+    </div>
+    <div class="logon axisLOGIN" id="axisLOGIN" title="user">
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="icon-user"></i></a>
+        <div class="dropdown-content">
+          <div style="text-align: center;"><span class="clientName" id="clientName" title="name"></span></div>
+          <div style="text-align: center;"><span class="AXISid" id="AXISid" title="axis id"></span></div>
+          <div style="text-align: center;"><button onclick="logout()" class="logout" title="logout">LOGOUT</button></div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Navigation Code starts here-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html" class="navLink"><i class="icon-home"></i> Home</a>
+        <a href="events/category.html" class="navLink"><i class="icon-star"></i> Events</a>
+        <a href="MUN/index.html" target="__blank"  class="navLink"><i class="icon-globe"></i> MUN</a>
+        <a href="guestLectures.html" class="navLink"><i class="icon-bag"></i> Guest Lectures</a>
+        <a href="workshop.html" class="navLink"><i class="icon-list"></i> Workshops</a>
+        <a href="#" class="navLink"><i class="icon-grid"></i> Attractions</a>
+        <a href="#" class="navLink"><i class="icon-star"></i> Exhibitons</a>
+        <a href="#" class="navLink"><i class="icon-help"></i> Social Initiatives</a>
+        <a href="#" class="navLink"><i class="icon-document"></i> Blogs</a>
+        <a href="sponsors.html" class="navLink"><i class="icon-address"></i> Previous Sponsors</a>
+        <a href="Contact/contact.html" class="navLink"><i class="icon-users"></i> Our Team</a>
+        <br>
+        <a href="https://www.facebook.com/axisvnit" target="_blank" class="navSocial" ><i class="icon-facebook"></i></a>
+        <a href="https://www.instagram.com/axis_vnit/" target="_blank" class="navSocial" ><i class="icon-instagram"></i></a>
+        <a href="https://www.youtube.com/user/AXISVNIT" target="_blank" class="navSocial"><i class="icon-youtube"></i></a>
+        <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank" class="navSocial"><i class="icon-linkedin"></i></a>
+    
+    </div>
+  <!-- Navigation Code ends here -->
+
 
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -535,8 +571,11 @@
     <script src="js/simplyCountdown.js"></script>
     <!-- Main -->
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="js/login.js" ></script>
+    <script type="text/javascript" src="events/registration.js"></script>
+
 
 
 </body>

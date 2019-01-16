@@ -1,7 +1,11 @@
-.carousel-caption {
-  position: absolute;
-  top: 40%;
+@media screen and (min-width: 500px) {
+  .carousel-caption
+  {
+    position: absolute;
+    top: 40%;
+  }
 }
+
 
 #carouselHeading{
   font-size: 55px;
@@ -34,6 +38,7 @@
     font-size: 15px;
   }
 }
+
 #loadingDiv
  {
    position: fixed;

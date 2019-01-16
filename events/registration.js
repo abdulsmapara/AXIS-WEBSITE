@@ -1,10 +1,8 @@
-
 function eventRegistration(eventName, teamName, key)
 {
 
     var oldRef = firebase.database().ref().child('/users/'+ key);
     var newRef = firebase.database().ref().child('eventRegistration/'+ eventName + '/' + teamName + '/' + key);
-
 
      oldRef.once('value', function(snap)  {
 
@@ -23,6 +21,27 @@ function eventRegistration(eventName, teamName, key)
      });
 }
 
+function lectureRegistration(lecturer,key)
+{
+
+    var oldRef = firebase.database().ref().child('/users/'+ key);
+    var newRef = firebase.database().ref().child('GUEST LECTURES/' + lecturer + '/' + key);
+
+     oldRef.once('value', function(snap)  {
+        var info = {
+            username : snap.val().username,
+            email : snap.val().email,
+            phone : snap.val().phone,
+            college : snap.val().college,
+            axisid : snap.val().axisid
+        };
+          newRef.set( info, function(error) {
+               if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
+          });
+          oldRef.child('GUEST LECTURES/'+lecturer).set("Registered");
+          alert("You have successfully registered for guest lecture of " + lecturer + " !");
+     });
+}
 function checkEntry(name,id,email,contact,college) {
 
     if(name!="" || id!="" || email!="" || contact!="" || college !="" )
@@ -272,7 +291,7 @@ function isTeamNameValid(eventName, teamName, key , id , contact , college , nam
     firebase.database().ref('/eventRegistration/' + eventName + '/' + teamName).once('value').then(function(snapshot) {
 
         if (snapshot.exists()) {
-            alert("team name exists");
+            alert("team name already exists");
         }
         else
         {
@@ -282,4 +301,33 @@ function isTeamNameValid(eventName, teamName, key , id , contact , college , nam
             checkUsers(eventName , teamName , key,id, name, 0, len);    
         }
     });
+}
+
+function guestLecturesRegister(lecturer){
+    var user = firebase.auth().currentUser;
+    if (user) {
+        var emailkey = user.email;
+        var key = emailkey.slice(0,emailkey.search('@'));
+        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+
+        firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            // if signing in for the first time we cannot find any related entry in the database
+            if (snapshot.val() == null) 
+            {    
+               
+            }
+            else if (snapshot.val().phone == -1 && window.location.href !== "form.html")
+            {
+                alert("Sign Up first");
+            }
+            else
+            {
+                lectureRegistration(lecturer,key);    
+            }
+        });
+    } 
+    else  
+    {
+        alert("Please Sign up before Registration ");
+    }
 }

@@ -1,4 +1,5 @@
-/*function eventRegistration(eventName, teamName, key )
+
+function eventRegistration(eventName, teamName, key)
 {
 
     var oldRef = firebase.database().ref().child('/users/'+ key);
@@ -9,30 +10,6 @@
 
         var info = {
 
-            username : snap.val().username,
-            email : snap.val().email,
-            phone : snap.val().phone,
-            college : snap.val().college,
-            axisid : snap.val().axisid
-        };
-          newRef.set( info, function(error) {
-               if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
-          });
-          oldRef.child('Competitions/'+eventName).set("Registered");
-     });
-}
-*/
-function eventRegistration(eventName, teamName, key ,contact , college)
-{
-
-    var oldRef = firebase.database().ref().child('/users/'+ key);
-    var newRef = firebase.database().ref().child('eventRegistration/'+ eventName + '/' + teamName + '/' + key);
-
-
-     oldRef.once('value', function(snap)  {
-
-        var info = {
-            
             username : snap.val().username,
             email : snap.val().email,
             phone : snap.val().phone,
@@ -166,10 +143,10 @@ function register(){
     status = checkEntry(name3,id3,email3,contact3,college3);
     if( status == 1)
     {
+
         name.push(name3);
         id.push(id3);
         email.push(email3);
-
         var key1 = email3.slice(0,email3.search('@'));
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
@@ -248,6 +225,48 @@ function register(){
     return false;
 }
 
+function checkUsers(eventName , teamName , key, id, name, i, len)
+{
+    var isValidEmail = false;
+    var flag = false;
+    firebase.database().ref('/users/' + key[i]).once('value').then(function(snapshot) {
+            if (snapshot.val() == null)
+            {
+                isValidEmail = false;
+                alert("email is not valid " + name[i]);
+            }
+            else if( snapshot.val().axisid != id[i] )
+            {
+                flag = false;
+                alert("id not valid " + name[i] );
+            }
+            else if( snapshot.val().college == "null" )
+            {
+                alert(name[i] + " Please Complete your registration in axisvnit.org ");
+            }
+            else
+            {
+                flag = true;
+                isValidEmail = true;
+
+            } 
+        }).then(function onSuccess(res) {
+            i++;
+            if(i == len && isValidEmail && flag)
+            {
+                for (j = 0; j < len; j++) {
+                  eventRegistration(eventName, teamName , key[j]);
+                } 
+                alert("Successfully Registered !");   
+            }
+            else if(isValidEmail && flag)
+            {
+                checkUsers(eventName , teamName , key, id, name, i, len);
+            }
+        });
+    
+}
+
 function isTeamNameValid(eventName, teamName, key , id , contact , college , name)
 {
     firebase.database().ref('/eventRegistration/' + eventName + '/' + teamName).once('value').then(function(snapshot) {
@@ -260,203 +279,7 @@ function isTeamNameValid(eventName, teamName, key , id , contact , college , nam
             var len = key.length;
             var flag = true;
             var isValidEmail = true;
-            if( len <=  1)
-            {
-                firebase.database().ref('/users/' + key[len-1]).once('value').then(function(snapshot) {
-                    if (snapshot.val() == null)
-                    {
-                        alert("email is not valid " + name[len-1]);
-                    }
-                    else
-                    {
-                        if( snapshot.val().axisid != id[len-1]   )
-                        {
-                            alert("id not valid " + name[len-1] );
-                        }
-                        else
-                        {
-                            if( len <=  2)
-                            {
-                                firebase.database().ref('/users/' + key[len-1]).once('value').then(function(snapshot) {
-                                    if (snapshot.val() == null)
-                                    {
-                                        alert("email is not valid " + name[len-1]);
-                                    }
-                                    else
-                                    {
-                                        if( snapshot.val().axisid != id[len-1]   )
-                                        {
-                                            alert("id not valid " + name[len-1] );
-                                        }
-                                        else
-                                        {
-                                            if( len <=  3)
-                                            {
-                                                firebase.database().ref('/users/' + key[len-1]).once('value').then(function(snapshot) {
-                                                    if (snapshot.val() == null)
-                                                    {
-                                                        alert("email is not valid " + name[len-1]);
-                                                    }
-                                                    else
-                                                    {
-                                                        if( snapshot.val().axisid != id[len-1]   )
-                                                        {
-                                                            alert("id not valid " + name[len-1] );
-                                                        }
-                                                        else
-                                                        {
-                                                            if( len <=  4)
-                                                            {
-                                                                firebase.database().ref('/users/' + key[len-1]).once('value').then(function(snapshot) {
-                                                                    if (snapshot.val() == null)
-                                                                    {
-                                                                        alert("email is not valid " + name[len-1]);
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        if( snapshot.val().axisid != id[len-1]   )
-                                                                        {
-                                                                            alert("id not valid " + name[len-1] );
-                                                                        }
-                                                                        else
-                                                                        {
-                                                                            if( len <=  5)
-                                                                            {
-                                                                                firebase.database().ref('/users/' + key[len-1]).once('value').then(function(snapshot) {
-                                                                                    if (snapshot.val() == null)
-                                                                                    {
-                                                                                        alert("email is not valid " + name[len-1]);
-                                                                                    }
-                                                                                    else
-                                                                                    {
-                                                                                        if( snapshot.val().axisid != id[len-1]   )
-                                                                                        {
-                                                                                            alert("id not valid " + name[len-1] );
-                                                                                        }
-                                                                                        else
-                                                                                        {
-                                                                                            if( len <=  6)
-                                                                                            {
-                                                                                                firebase.database().ref('/users/' + key[len-1]).once('value').then(function(snapshot) {
-                                                                                                    if (snapshot.val() == null)
-                                                                                                    {
-                                                                                                        alert("email is not valid " + name[len-1]);
-                                                                                                    }
-                                                                                                    else
-                                                                                                    {
-                                                                                                        if( snapshot.val().axisid != id[len-1]   )
-                                                                                                        {
-                                                                                                            alert("id not valid " + name[len-1] );
-                                                                                                        }
-                                                                                                        else
-                                                                                                        {
-                                                                                                            for (i = 0; i < len; i++) {
-                                                                                                              eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-                                                                                                            }  
-                                                                                                            alert("You have Successfully Registered !");  
-                                                                                                        }
-                                                                                                    }
-                                                                                                });
-                                                                                            }   
-                                                                                        }
-                                                                                    }
-                                                                                });
-                                                                            }
-                                                                            else
-                                                                            {
-                                                                                for (i = 0; i < len; i++) {
-                                                                                  eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-                                                                                }  
-                                                                                alert("You have Successfully Registered !");  
-                                                                            }
-                                                                            
-                                                                        }
-                                                                    }
-                                                                });
-                                                            }
-                                                            else
-                                                            {
-                                                                for (i = 0; i < len; i++) {
-                                                                  eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-                                                                }  
-                                                                alert("You have Successfully Registered !");  
-                                                            }
-                                                        }
-                                                    }
-                                                });
-                                            }
-                                            else
-                                            {
-                                                for (i = 0; i < len; i++) {
-                                                  eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-                                                }  
-                                                alert("You have Successfully Registered !");  
-                                            }    
-                                        }
-                                    }
-                                });
-                            }
-                            else
-                            {
-                                for (i = 0; i < len; i++) {
-                                  eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-                                }  
-                                alert("You have Successfully Registered !");  
-                            }                
-                        }
-                    }
-                });
-            }
-            /*
-            for(i = 0; i < len; i++) {
-                alert(key[i]+" "+id[i]+" "+contact[i]+" "+college[i]+" "+name[i]);
-                firebase.database().ref('/users/' + key[i]).once('value').then(function(snapshot) {
-                    if (snapshot.val() == null)
-                    {
-                        isValidEmail = false;
-                        alert("email is not valid " + name[i]);
-                    }
-                    else
-                    {
-                        if( snapshot.val().axisid != id[i]   )
-                        {
-                            flag = false;
-                            alert("id not valid " + name[i] );
-                        }
-                    }
-                });
-            }*/
-
-            if(flag && isValidEmail )
-            {
-                for (i = 0; i < len; i++) {
-                  eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-                }  
-                alert("You have Successfully Registered !");                
-            }
-
+            checkUsers(eventName , teamName , key,id, name, 0, len);    
         }
     });
 }
-
-/*function isTeamNameValid(eventName, teamName, key , contact , college)
-{
-    firebase.database().ref('/eventRegistration/' + eventName + '/' + teamName).once('value').then(function(snapshot) {
-
-        if (snapshot.exists()) {
-
-            alert("team name exists");
-        }
-        else if(){
-
-        }
-        else
-        {
-            var len = key.length;
-            for (i = 0; i < len; i++) {
-              eventRegistration(eventName, teamName , key[i], contact[i] , college[i]);
-            }  
-            alert("You have Successfully Registered !")
-        }
-    });
-}*/

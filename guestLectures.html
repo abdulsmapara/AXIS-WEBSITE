@@ -6,12 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Guest Lectures</title>  
-  
+
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
   <link rel="icon" type="image/ico" href="images/favlogo.ico">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
   <link href="css/guestStyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/myStyle.css">
+  
+  <link rel="stylesheet" href="css/icomoon.css">
 
   <style type="text/css">
     ::placeholder {
@@ -62,7 +66,7 @@
 
           <center>
 
-            <button type="button" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER <i class="fa fa-pen"></i></button>
+            <button type="button" onclick="guestLecturesRegister('JAAP HAARTSEN')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER <i class="fa fa-pen"></i></button>
           
           </center>
           <br>
@@ -109,19 +113,69 @@
               <div class="" style="color:aqua;">
                 24 <sup>th</sup> January 2019 , 06.00 pm . 
               </div>
-              <button type="button" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER</button>
+              <button type="button" onclick="guestLecturesRegister('JAAP HAARTSEN')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER</button>
             </div>
           </div>
         </div>        
       </div>
 
     </div>
-
   </div>
+
+
+    <div class="navlog active" title="navbar" onclick="openNav()">
+      <a href="#"><i class="icon-menu"></i></a>
+    </div>
+    <div class="googin loginBUTTON" title="login">
+      <a href="#!" class="quickstart-sign-in" id="quickstart-sign-in">
+        <i class="icon-google"></i>
+      </a>
+    </div>
+    <div class="logon axisLOGIN" id="axisLOGIN" title="user">
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="icon-user"></i></a>
+        <div class="dropdown-content">
+          <div style="text-align: center;"><span class="clientName" id="clientName" title="name"></span></div>
+          <div style="text-align: center;"><span class="AXISid" id="AXISid" title="axis id"></span></div>
+          <div style="text-align: center;"><button onclick="logout()" class="logout" title="logout">LOGOUT</button></div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Navigation Code starts here-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html" class="navLink"><i class="icon-home"></i> Home</a>
+        <a href="events/category.html" class="navLink"><i class="icon-star"></i> Events</a>
+        <a href="MUN/index.html" target="__blank"  class="navLink"><i class="icon-globe"></i> MUN</a>
+        <a href="guestLectures.html" class="navLink"><i class="icon-bag"></i> Guest Lectures</a>
+        <a href="workshop.html" class="navLink"><i class="icon-list"></i> Workshops</a>
+        <a href="#" class="navLink"><i class="icon-grid"></i> Attractions</a>
+        <a href="#" class="navLink"><i class="icon-star"></i> Exhibitons</a>
+        <a href="#" class="navLink"><i class="icon-help"></i> Social Initiatives</a>
+        <a href="#" class="navLink"><i class="icon-document"></i> Blogs</a>
+        <a href="sponsors.html" class="navLink"><i class="icon-address"></i> Previous Sponsors</a>
+        <a href="Contact/contact.html" class="navLink"><i class="icon-users"></i> Our Team</a>
+        <br>
+        <a href="https://www.facebook.com/axisvnit" target="_blank" class="navSocial" ><i class="icon-facebook"></i></a>
+        <a href="https://www.instagram.com/axis_vnit/" target="_blank" class="navSocial" ><i class="icon-instagram"></i></a>
+        <a href="https://www.youtube.com/user/AXISVNIT" target="_blank" class="navSocial"><i class="icon-youtube"></i></a>
+        <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank" class="navSocial"><i class="icon-linkedin"></i></a>
+    </div>
+  <!-- Navigation Code ends here -->
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="events/registration.js"></script>
+  
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+
 </body>
 
 </html>

@@ -28,23 +28,15 @@
         } else {
             // [START signout]
 
-            //document.getElementById("clientName").innerHTML = null;
-            //document.getElementById("AXISid").innerHTML = null;
             firebase.auth().signOut();
 
             // [END signout]
         }
-        // [START_EXCLUDE]
-        //document.getElementById('quickstart-sign-in').disabled = true;
-        
-        //document.getElementsByClassName("quickstart-sign-in")[0].disabled = true;
-        //document.getElementsByClassName("quickstart-sign-in")[1].disabled = true;
 
         document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'hidden';
-
         document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'visible';
-                
-        // [END_EXCLUDE]
+        document.getElementsByClassName("myRegistrations")[0].style.visibility = 'visible';        
+        
     }
     // [END buttoncallback]
 
@@ -59,43 +51,23 @@
             if (user) {
                 // User is signed in.
 
-                //document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-                //document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-                //document.getElementsByClassName("quickstart-sign-in")[0].textContent = 'Sign out';
-                //document.getElementsByClassName("quickstart-sign-in")[1].textContent = 'Sign out';
-                
-                //document.getElementsByClassName("quickstart-sign-in")[0].textContent = 'Sign out';
-                //document.getElementsByClassName("quickstart-sign-in")[1].textContent = 'Sign out';
                 
                 document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'hidden';
-                        
-                //document.getElementsByClassName("quickstart-sign-in")[0].style.display = 'none';
-                //document.getElementsByClassName("quickstart-sign-in")[1].style.display = 'none';
-                
                 document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'visible';
+                document.getElementsByClassName("myRegistrations")[0].style.visibility = 'visible';
 
                 app(user);
                 // [END_EXCLUDE]
             } else {
                 // User is signed out.
                 // [START_EXCLUDE]
-                //document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-                //document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-
-                //document.getElementsByClassName("quickstart-sign-in")[0].textContent = 'Login';
-                //document.getElementsByClassName("quickstart-sign-in")[1].textContent = 'Login';
-
-                document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'visible';
-                        
+                
+                document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'visible';        
                 document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'hidden';
+                document.getElementsByClassName("myRegistrations")[0].style.visibility = 'hidden'; 
                 
                 // [END_EXCLUDE]
             }
-            // [START_EXCLUDE]
-            //document.getElementById('quickstart-sign-in').disabled = false;
-            //document.getElementsByClassName("quickstart-sign-in")[0].disabled = false;
-            //document.getElementsByClassName("quickstart-sign-in")[1].disabled = false;
-            // [END_EXCLUDE]
         });
         // [END authstatelistener]
         //document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
@@ -103,10 +75,9 @@
         document.getElementsByClassName("quickstart-sign-in")[0].addEventListener('click', toggleSignIn, false);
 
     }
-    window.onload = function() {
-        initApp();
-    };
 
+    initApp();
+    
     function app(user)
     {
 
@@ -147,6 +118,7 @@
 
                 document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
                 document.getElementsByClassName("AXISid")[0].innerHTML = axisid;
+                myRegistrations();
             }
         });
     }

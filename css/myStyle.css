@@ -275,3 +275,50 @@
 }
 
 .dropdown:hover .dropdown-content {display: block;}
+
+/*Droup up*/
+
+.dropbtn2 {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content2 {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  bottom: 50px;
+  z-index: 1;
+}
+
+.dropup-content2 a {
+  color: black;
+  padding: 5px 5px;
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup-content2 a:hover {
+  font-size: 15px;
+  
+}
+
+.dropup:hover .dropup-content2 {
+  display: block;
+  margin-left: 50px;
+}
+
+.dropup:hover .dropbtn2 {
+  background-color: #2980B9;
+}
+/*Droup up end*/

@@ -11,7 +11,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/css/mdb.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+    
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.2.0/js/mdb.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
@@ -63,16 +63,16 @@
         </nav>
 
         <div id="page-wrapper">
-            <div class="col-lg-3" style="float: right">
-              <a class="semi-transparent-button" style="text-decoration: none;font-size: 23px;" onmouseenter="style.color='red'" onmouseleave="style.color='white'" data-toggle="modal" data-target="#myModal" >Register Now</a>
-            </div>
-            <div class="row">
-
+           <div class="row">
                 <div class="col-lg-12">
-                    <h1>Robowars <br> <small>Tech, Enthusiasm and much more...</small></h1>
-
+                    <div class="eventHeading">ROBOWARS</div>
+                    
+                    <div id="RegisterContainer">
+                      <a class="semi-transparent-button" data-toggle="modal" data-target="#myModal" id="semi-transparent-button" >REGISTER </a>
+                    </div>
                 </div>
             </div>
+            
 
             <br/>
             <div class="row" id="about">
@@ -83,9 +83,7 @@
                         </div>
                         <div class="panel-body feed">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
                                         Everyone has watched and enjoyed Transformers since their childhood. Autobots using their
@@ -114,9 +112,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo" >
                                         Design and fabricate a wired or wireless manually controlled robot
@@ -141,9 +137,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo"">
                                        <li> The maximum number of participants allowed per team is 6.</li>
@@ -181,9 +175,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
 									<li>Max permissible dimensions: 65x65x85 cm at the starting of the match.
@@ -238,9 +230,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
 									Matches shall be 3 minutes of active fight time exclusive of any time-outs. Hence, it is not
@@ -263,9 +253,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
 									<li>A robot is declared victorious if its opponent is immobilized.
@@ -317,9 +305,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
         								Safety Precautions: The battle area available to the robots for motion, during the match, shall be
@@ -344,9 +330,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
                                         Participants have to submit an abstract of their machine, consisting of a written abstract and a
@@ -370,9 +354,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
         								<li>The weapon systems and power supply method should be explained in detail, along with
@@ -417,9 +399,7 @@
                         </div>
                         <div class="panel-body">
                             <section class="feed-item">
-                                <div class="icon pull-left">
-                                    
-                                </div>
+                                 
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
                                         <center>
@@ -481,7 +461,7 @@
                                 <div class="col-md-12">
                                     <center>
                                         <input type="text" name="teamName"  placeholder="Team Name" style="color: white;font-size: 17px;max-width: 40%;" id="inputValidationEx" class="form-control validate" required="true" />
-                                        <input type="text" name="eventName" value="ROBOWAR" hidden />
+                                        <input type="text" name="eventName" value="ROBOWARS" hidden />
                                     </center>
                                 </div>
                             </div>
@@ -680,6 +660,7 @@
 
     <div style="visibility: hidden;">
         <div class="loginBUTTON" title="login">
+            <a href="#!" class="quickstart-sign-in" id="quickstart-sign-in"></a>
         </div>
         <div class="axisLOGIN" id="axisLOGIN" title="user">
             <span class="clientName" id="clientName" title="name"></span>

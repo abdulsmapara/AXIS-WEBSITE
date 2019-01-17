@@ -1,3 +1,4 @@
+
 function eventRegistration(eventName, teamName, key)
 {
 
@@ -304,6 +305,7 @@ function isTeamNameValid(eventName, teamName, key , id , contact , college , nam
 }
 
 function guestLecturesRegister(lecturer){
+
     var user = firebase.auth().currentUser;
     if (user) {
         var emailkey = user.email;
@@ -383,4 +385,90 @@ function AskQuery(lecturer){
         alert("Please Sign up for asking any Queries ");
     }
     return false;
+}
+
+function myRegistrations(){
+    
+    var user = firebase.auth().currentUser;
+    if(user)
+    {
+        var emailkey = user.email;
+        var key = emailkey.slice(0,emailkey.search('@'));
+        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+
+        firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            document.getElementById("name").innerHTML = snapshot.val().username;
+            document.getElementById("id").innerHTML = snapshot.val().axisid;
+            document.getElementById("email").innerHTML = snapshot.val().email; 
+        });
+
+        var CompetitionRef = firebase.database().ref().child('/users/'+ key + '/Competitions');
+        var GuestLecRef = firebase.database().ref().child('/users/'+ key+ '/GUEST LECTURES');
+        var workshopRef = firebase.database().ref().child('/users/'+ key+ '/WORKSHOPS');
+
+        var retval = "";
+        var count = 0;
+        CompetitionRef.once('value').then(function(snapshot) {
+            retval = retval + "<div class='heading'> EVENTS </div><div class='eventsName'><ul>" ; 
+            snapshot.forEach(function (element)
+            {
+                retval =  retval + "<li>" + element.key + "</li>" ;
+                count = count + 1;
+            });
+            retval = retval + "</ul></div>";
+            
+        }).then(function onSuccess(res) {
+            if(count > 0)
+            {
+                document.getElementById("myEvent").innerHTML = retval;                
+            }
+        });
+
+        var guestLecture = "";    
+        count2 = 0;
+        GuestLecRef.once('value').then(function(snapshot) {
+            guestLecture = guestLecture + "<div class='heading'> GUEST LECTURES </div><div class='eventsName'><ul>" ; 
+            snapshot.forEach(function (element)
+            {
+                guestLecture = guestLecture + "<li>" + element.key + "</li>" ;
+                count2 = count2 + 1;
+            });
+            guestLecture = guestLecture + "</ul></div>";
+            
+        }).then(function onSuccess(res) {
+            if( count2 > 0 )
+            {
+                document.getElementById("myLect").innerHTML = guestLecture;
+            }
+        });
+
+        var workshop = "";    
+        count3 = 0;
+        workshopRef.once('value').then(function(snapshot) {
+            workshop = workshop + "<div class='heading'> WORKSHOPS </div><div class='eventsName'><ul>" ; 
+            snapshot.forEach(function (element)
+            {
+                workshop = workshop + "<li>" + element.key + "</li>" ;
+                count3 = count3 + 1;
+            });
+            workshop = workshop + "</ul></div>";
+            
+        }).then(function onSuccess(res) {
+            if( count3 > 0 )
+            {
+                document.getElementById("workshop").innerHTML = workshop;
+            }
+        });
+
+      
+    }
+    
+}
+function showMyRegistrations(path){
+    var user = firebase.auth().currentUser;
+    if(user)
+    {
+        window.location.href = path;        
+    }
 }

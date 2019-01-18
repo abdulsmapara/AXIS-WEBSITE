@@ -119,6 +119,12 @@ function register(){
     var college = [];
     var key = [];
     
+    if (teamName == -1) {
+        var key1 = email1.slice(0,email1.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        teamName = key1;
+    }
+
     var allEntriesValid = true;
     var status ;
 

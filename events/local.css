@@ -1,4 +1,8 @@
-﻿.eventImage{
+﻿.date{
+  font-family: nexabold;
+  margin-top: 8px;
+}
+.eventImage{
   max-width: 500px;
   width: 100%;
   height: auto;

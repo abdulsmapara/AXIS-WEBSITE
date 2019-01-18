@@ -66,6 +66,10 @@
     <link rel="stylesheet" href="../css/owl.theme.default.min.css">
     <!-- Theme style  -->
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/myStyle.css">
+
+    <link rel="stylesheet" href="../css/icomoon.css">
+
     <!-- Modernizr JS -->
     <script src="../js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
@@ -92,48 +96,67 @@
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="100" style="background-image:url('../images/bg.png');background-attachment: fixed;background-position: center;background-size: cover;" >
      -->
      <body>
+
+            <div class="navlog active" title="navbar" onclick="openNav()">
+      <a href="#"><i class="icon-menu"></i></a>
+    </div>
+    <div class="googin loginBUTTON" title="login">
+      <a href="#!" class="quickstart-sign-in" id="quickstart-sign-in">
+        <i class="icon-google"></i>
+      </a>
+    </div>
+    <div class="logon axisLOGIN" id="axisLOGIN" title="user">
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="icon-user"></i></a>
+        <div class="dropdown-content">
+          <div style="text-align: center;"><span class="clientName" id="clientName" title="name"></span></div>
+          <div style="text-align: center;"><span class="AXISid" id="AXISid" title="axis id"></span></div>
+          <div style="text-align: center;"><button onclick="logout()" class="logout" title="logout">LOGOUT</button></div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Navigation Code starts here-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div onclick="showMyRegistrations('myEvents.html')">
+          <a href="#!" class="navLink myRegistrations" style="visibility: hidden;"><i class="icon-user"></i> My Registration</a>
+        </div>
+        
+        <a href="../index.html" class="navLink"><i class="icon-home"></i> Home</a>
+        <a href="../events/category.html" class="navLink"><i class="icon-star"></i> Events</a>
+        <a href="../MUN/index.html" target="__blank"  class="navLink"><i class="icon-globe"></i> MUN</a>
+        <a href="../guestLectures.html" class="navLink"><i class="icon-bag"></i> Guest Lectures</a>
+        <a href="../workshop.html" class="navLink"><i class="icon-list"></i> Workshops</a>
+        <a href="../comingsoon.html" class="navLink"><i class="icon-grid"></i> Attractions</a>
+        <a href="../comingsoon.html" class="navLink"><i class="icon-star"></i> Exhibitons</a>
+        <a href="../comingsoon.html" class="navLink"><i class="icon-help"></i> Social Initiatives</a>
+        <a href="../comingsoon.html" class="navLink"><i class="icon-document"></i> Blogs</a>
+        <a href="../sponsors.html" class="navLink"><i class="icon-address"></i> Previous Sponsors</a>
+        <a href="../Contact/contact.html" class="navLink"><i class="icon-users"></i> Our Team</a>
+        <div class="dropup">
+        <a href="Contact/contact.html" class="navLink" class="dropbtn2"><i class="icon-home"></i> Accommodation</a>
+        <div class="dropup-content2">
+          <a href="https://drive.google.com/file/d/1g5RW8WkpBogooHKQDR3WBKAj24IwIbB1/view?usp=sharing" target="_blank">ACCOMMODATION POLICY</a>
+          <a href="https://bit.ly/2PzXiyV" target="_blank">ACCOMMODATION FORM</a>
+        </div>
+        </div>
+
+        <br>
+        <a href="https://www.facebook.com/axisvnit" target="_blank" class="navSocial" ><i class="icon-facebook"></i></a>
+        <a href="https://www.instagram.com/axis_vnit/" target="_blank" class="navSocial" ><i class="icon-instagram"></i></a>
+        <a href="https://www.youtube.com/user/AXISVNIT" target="_blank" class="navSocial"><i class="icon-youtube"></i></a>
+        <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank" class="navSocial"><i class="icon-linkedin"></i></a>
+    </div>
+
+  <!-- Navigation Code ends here -->
+  
+
+
     <section style="height: 100vh">
 
     <div id="page">
-
-    <nav class="fh5co-nav" role="navigation">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-2">
-                <div id="fh5co-logo"><img src="../images/logo.png" alt="AXIS'19 logo"><a href="../index.html" style="padding-left: 1.2em;">AXIS'19</a></div>
-                </div>
-                <div class="col-xs-10 text-right menu-1">
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../gallery/single.html" target="_blank">Gallery</a></li>
-                        <!-- <li><a href="../sponsorUs.html">Sponsor Us</a></li> -->
-                        <li><a href="../sponsors.html">Previous Sponsors</a></li>
-                        <li><a href="../ca.html">CA</a></li>
-                        <li class="active"><a href="contact.html">Contact Us</a></li>
-                        <li class="loginBUTTON">
-                         <button class="quickstart-sign-in" id="quickstart-sign-in" onmouseleave="this.style.color = 'gray'" onmouseenter="this.style.color = 'white'" style="background:transparent;border: none;">LOGIN
-                         </button>
-                        </li>  
-
-                        <li class="axisLOGIN" style="visibility: hidden;">
-                          <div class="dropdown" style="z-index: 5000;">
-                            <button onmouseleave="this.style.color = 'gray'" onmouseenter="this.style.color = 'white'" class="dropbtn" style="background: transparent;border: none;font-size: 22px;">
-                              <span class="glyphicon glyphicon-user" style="border: 1px solid gray;border-radius: 50%;padding: 10px;"></span>
-                            </button>
-                            <div class="dropdown-content">
-                              <a href="#" style="padding: 5px;color: black;"><span style="font-size: 15px;" class="clientName" id="clientName"></span></a>
-                              <a href="#" style="padding: 5px;color: black;"><span style="font-size: 15px;" class="AXISid" id="AXISid"></span></a>
-                              <a href="#" style="padding: 5px;color: black;" onclick="logout()">LOGOUT</a>      
-                            </div>
-                            <br>
-                          </div>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <!-- The video -->
     <div class="video-container">
@@ -147,13 +170,6 @@
         <br />
     </div>
 
-    <div class="icon-bar">
-      <a href="https://www.facebook.com/axisvnit/" target="_blank"><i class="icon-facebook"></i></a>
-      <a href="https://twitter.com/axisvnit?lang=en"  target="_blank"><i class="icon-twitter"></i></a>
-      <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank"><i class="icon-linkedin"></i></a>
-      <a href="https://www.youtube.com/user/AXISVNIT"  target="_blank"><i class="icon-youtube"></i></a>
-        <a href="https://www.instagram.com/axis_vnit/"  target="_blank"><i class="icon-instagram"></i></a>
-    </div>
    <!-- <h1 id="brandaxis">AXIS'19</h1>-->
 
 
@@ -637,8 +653,14 @@
     <script src="../js/magnific-popup-options.js"></script>
     <!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
     <script src="../js/main.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-    <script src="../js/login.js" ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="../events/registration.js"></script>
+
+
     <script>
     var d = new Date(new Date().getTime() + 488.72 * 120 * 120 * 2000);
      // default example

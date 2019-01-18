@@ -147,6 +147,11 @@
   font-weight: 1000;
   font-size: 24px;
 }
+.dropup-content2 a:hover{
+  color: black;
+  font-size: 10px;
+  font-weight: 0px;
+}
 .navSocial{
   float: left;
 }
@@ -306,11 +311,13 @@
   font-size: 15px;
   text-decoration: none;
   display: block;
+  width: 230px;
+  text-align: center;
 }
 
 .dropup-content2 a:hover {
   font-size: 15px;
-  
+  background: lightgray;
 }
 
 .dropup:hover .dropup-content2 {

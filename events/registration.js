@@ -259,16 +259,16 @@ function checkUsers(eventName , teamName , key, id, name, i, len)
             if (snapshot.val() == null)
             {
                 isValidEmail = false;
-                alert("email is not valid " + name[i]);
+                alert( name[i] + " you have not Sign up . Please sign up in www.axisvnit.org and get the Axis ID !" );
             }
             else if( snapshot.val().axisid != id[i] )
             {
                 flag = false;
-                alert("id not valid " + name[i] );
+                alert(  name[i] + " your ID not valid . You can check your axis id by login in www.axisvnit.org " );
             }
-            else if( snapshot.val().college == "null" )
+            else if( snapshot.val().phone == -1 )
             {
-                alert(name[i] + " Please Complete your registration in axisvnit.org ");
+                alert(name[i] + " Please Complete your registration in www.axisvnit.org ");
             }
             else
             {
@@ -298,7 +298,7 @@ function isTeamNameValid(eventName, teamName, key , id , contact , college , nam
     firebase.database().ref('/eventRegistration/' + eventName + '/' + teamName).once('value').then(function(snapshot) {
 
         if (snapshot.exists()) {
-            alert("team name already exists");
+            alert("team name already exists . Please take another team name.");
         }
         else
         {

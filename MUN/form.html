@@ -202,7 +202,7 @@
 								</div>
 							</div>
 						</div>
-
+<!-- 
 						<div class="form-group">
 							<label for="phone2" class="cols-sm-2 control-label">Confirm No</label>
 							<div class="cols-sm-10">
@@ -211,9 +211,9 @@
 									<input type="number" class="form-control" name="phone2" id="phone2"  placeholder="confirm your phone" required />
 								</div>
 							</div>
-						</div>
+						</div> -->
 
-
+<!-- 
 						<div class="form-group">
 							<label for="zipcode" class="cols-sm-2 control-label">Zip Code</label>
 							<div class="cols-sm-10">
@@ -222,19 +222,19 @@
 									<input type="number" class="form-control" name="zipcode" id="zipcode"  placeholder="Enter Zip code" required />
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<div class="form-group">
-							<label for="address" class="cols-sm-2 control-label">Address</label>
+							<label for="city" class="cols-sm-2 control-label">city</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="glyphicon glyphicon-home" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="address" id="address"  placeholder="Enter your Address" required />
+									<input type="text" class="form-control" name="city" id="city"  placeholder="Enter your city" required />
 								</div>
 							</div>
 						</div>
 
-
+<!-- 
 						<div class="form-group">
 							<label for="country" class="cols-sm-2 control-label">Country</label>
 							<div class="cols-sm-10">
@@ -243,7 +243,7 @@
 									<input type="text" class="form-control" name="country" id="country"  placeholder="Enter your country" required />
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 
 						<div class="form-group ">
@@ -317,9 +317,7 @@
 	        });
 	    }
 
-	    window.onload = function() {
-	        initApp();
-	    };
+        initApp();
 
 
 	    function app(user)
@@ -344,9 +342,7 @@
 	                    DOB: "null",
 	                    college: "null",
 	                    phone: -1,
-	                    address: "null",
-	                    zipcode: -1,
-	                    country: "null",
+	                    city: "null",
 	                    //set remaining fields as null  
 	                }).then(function onSuccess(res) {
 		                window.location.href = "form.html";
@@ -365,12 +361,12 @@
 	    }
 
 
-	    function initApp2(gender, dob, college, phone, address, zipcode, country) {
+	    function initApp2(gender, dob, college, phone, city) {
 	        firebase.auth().onAuthStateChanged(function(user) {
 	            if (user) {
 	                // User is signed in.
 	                document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'visible';
-	                app2(user,gender, dob, college, phone, address, zipcode, country);
+	                app2(user,gender, dob, college, phone, city);
 	                // [END_EXCLUDE]
 	            } 
 	            else 
@@ -380,7 +376,7 @@
 	        });
 	    }
 
-	    function app2(user,gender, dob, college, phone, address, zipcode, country)
+	    function app2(user,gender, dob, college, phone, city)
 	    {
 	        var emailkey = user.email;
 	        var key = emailkey.slice(0,emailkey.search('@'));
@@ -400,9 +396,7 @@
 	                    DOB: dob,
 	                    college: college,
 	                    phone: phone,
-	                    address: address,
-	                    zipcode: zipcode,
-	                    country: country,
+	                    city: city,
 	                    //set remaining fields as null  
 	                }).then(function onSuccess(res) {
 	                    firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
@@ -434,22 +428,15 @@
 	        var dob = document.forms["myForm"]["dob"].value;
 	        var college = document.forms["myForm"]["college"].value;
 	        var phone1 = document.forms["myForm"]["phone1"].value;
-	        var phone2 = document.forms["myForm"]["phone2"].value;
-	        var zipcode = document.forms["myForm"]["zipcode"].value;
-	        var address = document.forms["myForm"]["address"].value;
-	        var country = document.forms["myForm"]["country"].value;
+	        var city = document.forms["myForm"]["city"].value;
 	        
 	        if( phone1.length != 10 )
 	        {
 	            alert("Enter valid mobile number ");
 	            return false;	
 	        }
-	        if(phone1 != phone2)
-	        {
-	            alert("Enter same phone numbers");
-	            return false;
-	        }
-        	initApp2(gender, dob, college, phone1, address, zipcode, country);
+
+        	initApp2(gender, dob, college, phone1, city);
 	        return false;
 	    }
 		</script>

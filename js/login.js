@@ -100,9 +100,7 @@
                     DOB: "null",
                     college: "null",
                     phone: -1,
-                    address: "null",
-                    zipcode: -1,
-                    country: "null",
+                    city: "null",
                     //set remaining fields as null  
                 }).then(function onSuccess(res) {
                      var formPath = sessionStorage.getItem("formPath");  

@@ -226,6 +226,13 @@
 
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
   <script src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    if (typeof(Storage) !== "undefined")
+    {
+      sessionStorage.setItem("path", "workshop.html");
+      sessionStorage.setItem("formPath","form.html");
+    }
+  </script>
   <script type="text/javascript" src="js/script.js"></script>
   <script type="text/javascript" src="js/login.js"></script>
   <script type="text/javascript" src="events/registration.js"></script>

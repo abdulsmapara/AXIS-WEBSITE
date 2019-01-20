@@ -1019,6 +1019,14 @@
     <script type="text/javascript" src="events/registration.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
+    <script type="text/javascript">
+      if (typeof(Storage) !== "undefined")
+      {
+        sessionStorage.setItem("path", "index.html");
+        sessionStorage.setItem("formPath","form.html");      
+      }
+    </script>
+
     <script>
       var d = new Date("2019-02-22");
       // default example

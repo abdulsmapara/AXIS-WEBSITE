@@ -105,12 +105,14 @@
                     country: "null",
                     //set remaining fields as null  
                 }).then(function onSuccess(res) {
-                     window.location.href = "form.html";
+                     var formPath = sessionStorage.getItem("formPath");  
+                     window.location.href = formPath;
                 });
             }
             else if (snapshot.val().phone == -1 && window.location.href !== "form.html")
             {
-                window.location.href = "form.html";
+                var formPath = sessionStorage.getItem("formPath"); 
+                window.location.href = formPath;
             }
             else
             {

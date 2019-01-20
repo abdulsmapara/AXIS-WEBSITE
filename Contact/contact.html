@@ -120,10 +120,9 @@
   <!-- Navigation Code starts here-->
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div onclick="showMyRegistrations('myEvents.html')">
+        <div onclick="showMyRegistrations('../myEvents.html')">
           <a href="#!" class="navLink myRegistrations" style="visibility: hidden;"><i class="icon-user"></i> My Registration</a>
         </div>
-        
         <a href="../index.html" class="navLink"><i class="icon-home"></i> Home</a>
         <a href="../events/category.html" class="navLink"><i class="icon-star"></i> Events</a>
         <a href="../MUN/index.html" target="__blank"  class="navLink"><i class="icon-globe"></i> MUN</a>
@@ -610,6 +609,14 @@
 
         </footer>
         <!-- JS includes -->
+
+    <script type="text/javascript">
+      if (typeof(Storage) !== "undefined")
+      {
+        sessionStorage.setItem("path", "Contact/contact.html");
+        sessionStorage.setItem("formPath","../form.html");
+      }
+    </script>
 
         <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
         <script src="assets/js/vendor/bootstrap.min.js"></script>

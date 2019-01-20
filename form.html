@@ -407,7 +407,21 @@
 	                    firebase.database().ref('/users/' + key).once('value').then(function (snapshot) {
 	                        var axisid = (snapshot.val() && snapshot.val().axisid) || null;
 	                        alert("Successfully Signed Up");
-                            window.location.href = "index.html";
+	                        var path = sessionStorage.getItem("path"); 
+							if(path == null){
+								window.location.href = "index.html";
+							}
+							else{
+								sessionStorage.removeItem("path");
+								sessionStorage.removeItem("formPath");								
+								sessionStorage.clear();
+								if(path == 'guestLectures.html')
+								{
+									alert("Now you can Register for guest lecture . Just click on Register button");
+								}
+								window.location.href = path;
+							}
+                            
 	                    });
 	                });
 	            }

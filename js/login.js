@@ -51,8 +51,7 @@
         var user = firebase.auth().currentUser;
         if(user)
         {
-            // user is logged in
-            alert("You are already logged in !");
+            
         }   
         else
         {

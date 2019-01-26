@@ -156,7 +156,90 @@
                                 {
                                     alert("Now you can Register for insomnia . Just click on Register button");
                                 }
-
+                                if( path == 'events/software_and_electronics/electroblitz.html' )
+                                {
+                                    alert("Now you can Register for electroblitz . Just click on Register button");
+                                }
+                                if(path == 'events/software_and_electronics/posterolic.html')
+                                {
+                                    alert("Now you can Register for posterolic . Just click on Register button");
+                                }
+                                if(path == 'events/software_and_electronics/Cryptocrux.html')
+                                {
+                                    alert("Now you can Register for Cryptocrux . Just click on Register button");
+                                }
+                                if(path == 'events/igniting_minds/kartavya.html')
+                                {
+                                    alert("Now you can Register for kartavya . Just click on Register button");    
+                                }
+                                if(path == 'events/igniting_minds/technodocx.html')
+                                {
+                                    alert("Now you can Register for technodocx . Just click on Register button");                               
+                                }
+                                if(path == 'events/construction_and_design/aquaskylark.html')
+                                {
+                                    alert("Now you can Register for aquaskylark . Just click on Register button");
+                                }
+                                if(path == 'events/construction_and_design/crepido.html')
+                                {
+                                    alert("Now you can Register for crepido. Just click on Register button");
+                                }
+                                if(path == 'events/construction_and_design/devise.html')
+                                {
+                                    alert("Now you can Register for Devise . Just click on Register button");    
+                                }
+                                if(path == 'events/construction_and_design/paradeigma.html')
+                                {
+                                    alert("Now you can Register for paradeigma . Just click on Register button");
+                                }
+                                if(path == 'events/construction_and_design/turboflux.html')
+                                {
+                                    alert("Now you can Register for turboflux . Just click on Register button");
+                                }
+                                if(path == 'events/automation_and_robotics/aquahunt.html')
+                                {
+                                    alert("Now you can Register for aquahunt . Just click on Register button");
+                                }
+                                if(path == 'events/automation_and_robotics/autobot.html')
+                                {
+                                    alert("Now you can Register for autobot . Just click on Register button");
+                                }
+                                if(path == 'events/automation_and_robotics/electrogt.html')
+                                {
+                                    alert("Now you can Register for electrogt . Just click on Register button");    
+                                }
+                                if(path == 'events/automation_and_robotics/manual_robotics.html')
+                                {
+                                    alert("Now you can Register for manual_robotics . Just click on Register button");
+                                }
+                                if(path == 'events/automation_and_robotics/mechatryst.html')
+                                {
+                                    alert("Now you can Register for mechatryst . Just click on Register button");
+                                }
+                                if(path == 'events/automation_and_robotics/robocup.html')
+                                {
+                                    alert("Now you can Register for robocup . Just click on Register button");
+                                }
+                                if(path == 'events/automation_and_robotics/robowar.html')
+                                {
+                                    alert("Now you can Register for robowar . Just click on Register button");
+                                }
+                                if(path == 'events/analytics_and_others/221B.html')
+                                {
+                                    alert("Now you can Register for 221B . Just click on Register button");
+                                }
+                                if(path == 'events/analytics_and_others/FOM.html')
+                                {
+                                    alert("Now you can Register for FOM . Just click on Register button");
+                                }
+                                if(path == 'events/analytics_and_others/laserlitt.html')
+                                {
+                                    alert("Now you can Register for laserlitt . Just click on Register button");
+                                }
+                                if(path == 'events/analytics_and_others/whoistheboss.html')
+                                {
+                                    alert("Now you can Register for who is the boss . Just click on Register button");
+                                }
                                 window.location.href = path;
                             }
                         });   

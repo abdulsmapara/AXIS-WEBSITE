@@ -91,7 +91,10 @@
   visibility: visible;
 }*/
 .googin a {
+
+  font-family: nexalight;
   width: 50px;
+  padding: 0px 2px;
   height: 50px;
   display: table;
   background: rgba(255, 255, 255, 1);
@@ -267,6 +270,9 @@
     font-size: 15px;
     font-family: nexalight;
     text-align: center;
+}
+.nameid{
+  color: aqua;
 }
 .logout{
   width: 100%;

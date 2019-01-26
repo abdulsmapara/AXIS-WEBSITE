@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>MUN Registration</title>
   
@@ -47,6 +47,7 @@
 <body style="background-color: black;">
 
   <center>
+    <div class="loginBUTTON"></div>
     <div class="axisLOGIN" style="visibility: hidden;font-size: 22px;color: white;">    
       <span class="glyphicon glyphicon-user" style="border: 1px solid gray;border-radius: 50%;padding: 10px;"></span>
       <span style="font-size: 15px;" class="clientName" id="clientName"></span>
@@ -60,18 +61,36 @@
       <div style="font-family:nexagold;font-size: 40px;color: white;">AXIS MUN REGISTRATION<hr></div>
     </center>
 
-    <div style="visibility: hidden;" id="registerForm" class="registerForm">
+    <div style="visibility: hidden;" id="myRegistrations" class="myRegistrations">
       <center>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfkNP8tiVkWObpA7yk4XHVdQbci2pgMBOK3Ko4jPwTAc_828A/viewform?embedded=true" width="640" height="2255" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
       </center>
     </div>
   </div>
 
-
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-  <script src="js/login.js" ></script>
+  <script src="../js/login.js" ></script>
+
+  <script type="text/javascript">
+    if (typeof(Storage) !== "undefined")
+    {
+      sessionStorage.setItem("path", "MUN/register.html");
+      sessionStorage.setItem("formPath","../form.html");
+    }
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+               
+        }
+        else
+        {       
+          login();
+        }
+    });
+    
+  </script>
   
 </body>
 

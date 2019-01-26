@@ -1,6 +1,5 @@
 
-function eventRegistration(eventName, teamName, key)
-{
+function eventRegistration(eventName, teamName, key){
 
     var oldRef = firebase.database().ref().child('/users/'+ key);
     var newRef = firebase.database().ref().child('eventRegistration/'+ eventName + '/' + teamName + '/' + key);
@@ -8,7 +7,6 @@ function eventRegistration(eventName, teamName, key)
      oldRef.once('value', function(snap)  {
 
         var info = {
-
             username : snap.val().username,
             email : snap.val().email,
             phone : snap.val().phone,
@@ -19,12 +17,10 @@ function eventRegistration(eventName, teamName, key)
                if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
           });
           oldRef.child('Competitions/'+eventName).set("Registered");
-     });
+    });
 }
 
-function lectureRegistration(lecturer,key)
-{
-
+function lectureRegistration(lecturer,key){
     var oldRef = firebase.database().ref().child('/users/'+ key);
     var newRef = firebase.database().ref().child('GUEST LECTURES/' + lecturer + '/' + 'Registration' + '/' + key);
 
@@ -43,21 +39,14 @@ function lectureRegistration(lecturer,key)
           alert("You have successfully registered for guest lecture of " + lecturer + " !");
      });
 }
-function checkEntry(name,id,email,contact,college) {
 
-    if(name!="" || id!="" || email!="" || contact!="" || college !="" )
+function checkEntry(id,email,name) {
+
+    if(id!="" || email!="" || name!="")
     {
-        if(name!="" && id!="" && email!="" && contact!="" && college !="")
+        if(id!="" && email!="" && name!="")
         {
-            if(contact.length != 10)
-            {
-                alert("Enter valid contact number of " + name);
-                return 2;   // invalid entry
-            }
-            else
-            {
-                return 1; // all correct   
-            }
+            return 1;
         }
         else
         {
@@ -79,44 +68,30 @@ function register(){
     var name1 = document.forms["myForm"]["name1"].value;
     var id1 = document.forms["myForm"]["id1"].value;
     var email1 = document.forms["myForm"]["email1"].value;
-    var contact1 = document.forms["myForm"]["contact1"].value;
-    var college1 = document.forms["myForm"]["college1"].value;
-
+    
     var name2 = document.forms["myForm"]["name2"].value;
     var id2 = document.forms["myForm"]["id2"].value;
     var email2 = document.forms["myForm"]["email2"].value;
-    var contact2 = document.forms["myForm"]["contact2"].value;
-    var college2 = document.forms["myForm"]["college2"].value;
 
     var name3 = document.forms["myForm"]["name3"].value;
     var id3 = document.forms["myForm"]["id3"].value;
     var email3 = document.forms["myForm"]["email3"].value;
-    var contact3 = document.forms["myForm"]["contact3"].value;
-    var college3 = document.forms["myForm"]["college3"].value;
 
     var name4 = document.forms["myForm"]["name4"].value;
     var id4 = document.forms["myForm"]["id4"].value;
     var email4 = document.forms["myForm"]["email4"].value;
-    var contact4 = document.forms["myForm"]["contact4"].value;
-    var college4 = document.forms["myForm"]["college4"].value;
     
     var name5 = document.forms["myForm"]["name5"].value;
     var id5 = document.forms["myForm"]["id5"].value;
     var email5 = document.forms["myForm"]["email5"].value;
-    var contact5 = document.forms["myForm"]["contact5"].value;
-    var college5 = document.forms["myForm"]["college5"].value;
-    
+
     var name6 = document.forms["myForm"]["name6"].value;
     var id6 = document.forms["myForm"]["id6"].value;
     var email6 = document.forms["myForm"]["email6"].value;
-    var contact6 = document.forms["myForm"]["contact6"].value;   
-    var college6 = document.forms["myForm"]["college6"].value;
 
     var name = [];
     var id = [];
     var email = [];
-    var contact = [];
-    var college = [];
     var key = [];
     
     if (teamName == -1) {
@@ -128,7 +103,7 @@ function register(){
     var allEntriesValid = true;
     var status ;
 
-    status = checkEntry(name1,id1,email1,contact1,college1); 
+    status = checkEntry(id1,email1,name1); 
     if( status == 1)
     {
         name.push(name1);
@@ -139,15 +114,13 @@ function register(){
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
         key.push(key1);
-        contact.push(contact1);
-        college.push(college1);
     }
     else if(status == 2)
     {
         allEntriesValid = false;
     }
     
-    status = checkEntry(name2,id2,email2,contact2,college2);
+    status = checkEntry(id2,email2,name2);
     if(status == 1)
     {
         name.push(name2);
@@ -158,15 +131,13 @@ function register(){
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
         key.push(key1);
-        contact.push(contact2);
-        college.push(college2);
     }
     else if(status == 2)
     {
         allEntriesValid = false;
     }
 
-    status = checkEntry(name3,id3,email3,contact3,college3);
+    status = checkEntry(id3,email3,name3);
     if( status == 1)
     {
 
@@ -177,8 +148,6 @@ function register(){
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
         key.push(key1);
-        contact.push(contact3);
-        college.push(college3);
     }
     else if(status == 2)
     {
@@ -186,7 +155,7 @@ function register(){
     }
 
 
-    status = checkEntry(name4,id4,email4,contact4,college4); 
+    status = checkEntry(id4,email4,name4); 
     if(status == 1)
     {
         name.push(name4);
@@ -197,15 +166,13 @@ function register(){
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
         key.push(key1);
-        contact.push(contact4);
-        college.push(college4);
     }
     else if(status == 2)
     {
         allEntriesValid = false;
     }
 
-    status = checkEntry(name5,id5,email5,contact5,college5);
+    status = checkEntry(id5,email5,name5);
     if(status == 1)
     {
         name.push(name5);
@@ -216,15 +183,13 @@ function register(){
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
         key.push(key1);
-        contact.push(contact5);
-        college.push(college5);
     }
     else if(status == 2)
     {
         allEntriesValid = false;
     }
 
-    status = checkEntry(name6,id6,email6,contact6,college6);
+    status = checkEntry(id6,email6,name6);
     if( status == 1)
     {
         name.push(name6);
@@ -235,8 +200,6 @@ function register(){
         key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
         
         key.push(key1);
-        contact.push(contact6);
-        college.push(college6);
     }
     else if(status == 2)
     {
@@ -245,14 +208,14 @@ function register(){
 
     if(allEntriesValid && key.length > 0)
     {
-        isTeamNameValid(eventName,teamName,key,id,contact,college,name);    
+        isTeamNameValid(eventName,teamName,key,id,name);    
     }
 
     return false;
 }
 
-function checkUsers(eventName , teamName , key, id, name, i, len)
-{
+function checkUsers(eventName , teamName , key, id, name, i, len){
+
     var isValidEmail = false;
     var flag = false;
     firebase.database().ref('/users/' + key[i]).once('value').then(function(snapshot) {
@@ -289,12 +252,11 @@ function checkUsers(eventName , teamName , key, id, name, i, len)
             {
                 checkUsers(eventName , teamName , key, id, name, i, len);
             }
-        });
-    
+        });   
 }
 
-function isTeamNameValid(eventName, teamName, key , id , contact , college , name)
-{
+function isTeamNameValid(eventName, teamName, key , id , name){
+
     firebase.database().ref('/eventRegistration/' + eventName + '/' + teamName).once('value').then(function(snapshot) {
 
         if (snapshot.exists()) {
@@ -303,8 +265,6 @@ function isTeamNameValid(eventName, teamName, key , id , contact , college , nam
         else
         {
             var len = key.length;
-            var flag = true;
-            var isValidEmail = true;
             checkUsers(eventName , teamName , key,id, name, 0, len);    
         }
     });
@@ -339,6 +299,7 @@ function guestLecturesRegister(lecturer){
         alert("Please Sign up before Registration ");
     }
 }
+
 function submitQuery(lecturer,key,query){
 
     var oldRef = firebase.database().ref().child('/users/'+ key);
@@ -395,86 +356,172 @@ function AskQuery(lecturer){
 
 function myRegistrations(){
     
-    var user = firebase.auth().currentUser;
-    if(user)
-    {
-        var emailkey = user.email;
-        var key = emailkey.slice(0,emailkey.search('@'));
-        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
-        
-
-        firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
-            document.getElementById("name").innerHTML = snapshot.val().username;
-            document.getElementById("id").innerHTML = snapshot.val().axisid;
-            document.getElementById("email").innerHTML = snapshot.val().email; 
-        });
-
-        var CompetitionRef = firebase.database().ref().child('/users/'+ key + '/Competitions');
-        var GuestLecRef = firebase.database().ref().child('/users/'+ key+ '/GUEST LECTURES');
-        var workshopRef = firebase.database().ref().child('/users/'+ key+ '/WORKSHOPS');
-
-        var retval = "";
-        var count = 0;
-        CompetitionRef.once('value').then(function(snapshot) {
-            retval = retval + "<div class='heading'> EVENTS </div><div class='eventsName'><ul>" ; 
-            snapshot.forEach(function (element)
-            {
-                retval =  retval + "<li>" + element.key + "</li>" ;
-                count = count + 1;
-            });
-            retval = retval + "</ul></div>";
+    firebase.auth().onAuthStateChanged(function(user) {
+        if(user)
+        {
+            var emailkey = user.email;
+            var key = emailkey.slice(0,emailkey.search('@'));
+            key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
             
-        }).then(function onSuccess(res) {
-            if(count > 0)
-            {
-                document.getElementById("myEvent").innerHTML = retval;                
-            }
-        });
 
-        var guestLecture = "";    
-        count2 = 0;
-        GuestLecRef.once('value').then(function(snapshot) {
-            guestLecture = guestLecture + "<div class='heading'> GUEST LECTURES </div><div class='eventsName'><ul>" ; 
-            snapshot.forEach(function (element)
-            {
-                guestLecture = guestLecture + "<li>" + element.key + "</li>" ;
-                count2 = count2 + 1;
+            firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+                document.getElementById("name").innerHTML = snapshot.val().username;
+                document.getElementById("id").innerHTML = snapshot.val().axisid;
+                document.getElementById("email").innerHTML = snapshot.val().email; 
             });
-            guestLecture = guestLecture + "</ul></div>";
-            
-        }).then(function onSuccess(res) {
-            if( count2 > 0 )
-            {
-                document.getElementById("myLect").innerHTML = guestLecture;
-            }
-        });
 
-        var workshop = "";    
-        count3 = 0;
-        workshopRef.once('value').then(function(snapshot) {
-            workshop = workshop + "<div class='heading'> WORKSHOPS </div><div class='eventsName'><ul>" ; 
-            snapshot.forEach(function (element)
-            {
-                workshop = workshop + "<li>" + element.key + "</li>" ;
-                count3 = count3 + 1;
+            var CompetitionRef = firebase.database().ref().child('/users/'+ key + '/Competitions');
+            var GuestLecRef = firebase.database().ref().child('/users/'+ key+ '/GUEST LECTURES');
+            var workshopRef = firebase.database().ref().child('/users/'+ key+ '/WORKSHOPS');
+
+            var retval = "";
+            var count = 0;
+            CompetitionRef.once('value').then(function(snapshot) {
+                retval = retval + "<div class='heading'> EVENTS </div><div class='eventsName'><ul>" ; 
+                snapshot.forEach(function (element)
+                {
+                    retval =  retval + "<li>" + element.key + "</li>" ;
+                    count = count + 1;
+                });
+                retval = retval + "</ul></div>";
+                
+            }).then(function onSuccess(res) {
+                if(count > 0)
+                {
+                    document.getElementById("myEvent").innerHTML = retval;                
+                }
             });
-            workshop = workshop + "</ul></div>";
-            
-        }).then(function onSuccess(res) {
-            if( count3 > 0 )
-            {
-                document.getElementById("workshop").innerHTML = workshop;
-            }
-        });
 
-      
-    }
-    
+            var guestLecture = "";    
+            count2 = 0;
+            GuestLecRef.once('value').then(function(snapshot) {
+                guestLecture = guestLecture + "<div class='heading'> GUEST LECTURES </div><div class='eventsName'><ul>" ; 
+                snapshot.forEach(function (element)
+                {
+                    guestLecture = guestLecture + "<li>" + element.key + "</li>" ;
+                    count2 = count2 + 1;
+                });
+                guestLecture = guestLecture + "</ul></div>";
+                
+            }).then(function onSuccess(res) {
+                if( count2 > 0 )
+                {
+                    document.getElementById("myLect").innerHTML = guestLecture;
+                }
+            });
+
+            var workshop = "";    
+            count3 = 0;
+            workshopRef.once('value').then(function(snapshot) {
+                workshop = workshop + "<div class='heading'> WORKSHOPS </div><div class='eventsName'><ul>" ; 
+                snapshot.forEach(function (element)
+                {
+                    workshop = workshop + "<li>" + element.key + "</li>" ;
+                    count3 = count3 + 1;
+                });
+                workshop = workshop + "</ul></div>";
+                
+            }).then(function onSuccess(res) {
+                if( count3 > 0 )
+                {
+                    document.getElementById("workshop").innerHTML = workshop;
+                }
+            }); 
+        }
+        else 
+        {
+            alert("else");
+        }
+    });
 }
+
 function showMyRegistrations(path){
     var user = firebase.auth().currentUser;
     if(user)
     {
         window.location.href = path;        
+    }
+}
+
+function singleEventRegister(eventName){
+    var user = firebase.auth().currentUser;
+    if(user)
+    {
+        // if user is logged in
+        var emailkey = user.email;
+        var key = emailkey.slice(0,emailkey.search('@'));
+        key = key.replace(/[^a-zA-Z0-9 ]/g, "") ;
+        eventRegistration(eventName, key, key);
+        alert("You have successfully registered for the event " + eventName + " !");
+    }
+    else
+    {
+        // if user is not logged in then redirect to google sign in ...
+        alert("Please Sign up before Registration. You will be redirected to google sign in.");
+        var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+        firebase.auth().signInWithPopup(provider).then(function onSuccess(result) {
+            /*
+            document.getElementsByClassName("loginBUTTON")[0].style.visibility = 'hidden';
+            document.getElementsByClassName("axisLOGIN")[0].style.visibility = 'visible';
+            document.getElementsByClassName("myRegistrations")[0].style.visibility = 'visible';
+            */
+            var user = firebase.auth().currentUser;
+            var emailkey = user.email;
+            var key = emailkey.slice(0,emailkey.search('@'));
+            key = key.replace(/[^a-zA-Z0-9 ]/g, "") ;
+            
+            firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+                // if signing in for the first time we cannot find any related entry in the database
+                if (snapshot.val() == null) 
+                {           
+                    var formPath = sessionStorage.getItem("formPath");
+                    alert("Sign Up first ");
+                    window.location.href = formPath;                        
+                }
+                else if( snapshot.val().phone == -1 && window.location.href !== "form.html" )
+                {
+                    var formPath = sessionStorage.getItem("formPath");
+                    alert("Complete your registration ");  
+                    window.location.href = formPath;   
+                }
+                else
+                {
+                    var user = firebase.auth().currentUser;
+                    var emailkey = user.email;
+                    var key = emailkey.slice(0,emailkey.search('@'));
+                    key = key.replace(/[^a-zA-Z0-9 ]/g, "") ;
+                    
+                    eventRegistration(eventName, key, key);
+                    alert("You have successfully registered for the event " + eventName + " !");
+                    /*
+                    var axisid = (snapshot.val() && snapshot.val().axisid) || null;
+                    document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
+                    document.getElementsByClassName("AXISid")[0].innerHTML = axisid;*/
+                }
+            });
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
+    }
+}
+
+function checkIfLogin(){
+    var user = firebase.auth().currentUser;
+    if(user)
+    {
+        $("#myModal").modal();
+    }
+    else
+    {
+        alert("Please sign in to register your team . You will be redirected to google sign in");
+        login();   
     }
 }

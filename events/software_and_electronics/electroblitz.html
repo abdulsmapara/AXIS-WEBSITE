@@ -64,7 +64,7 @@
                     <div class="eventHeading">ELECTROBLITZ</div>
                     
                     <div id="RegisterContainer">
-                      <a class="semi-transparent-button" data-toggle="modal" data-target="#myModal" id="semi-transparent-button" >REGISTER </a>
+                      <a class="semi-transparent-button" onclick="singleEventRegister('ELECTROBLITZ')" id="semi-transparent-button" >REGISTER</a>
                     </div>
                 </div>
             </div>
@@ -434,7 +434,13 @@ Make a working circuit on breadboard based on problem statement. (Components wil
         </div>
     </div>
     <!-- /#wrapper -->
-
+    <script type="text/javascript">
+        if (typeof(Storage) !== "undefined")
+        {
+            sessionStorage.setItem("path", "events/software_and_electronics/electroblitz.html");
+            sessionStorage.setItem("formPath","../../form.html");
+        }
+    </script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="../../js/login.js" ></script>
     <script src="../registration.js"></script>

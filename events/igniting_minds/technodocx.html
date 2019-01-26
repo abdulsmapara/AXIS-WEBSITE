@@ -67,7 +67,7 @@
                     <div class="eventHeading">TECHNO.DOCX</div>
                     
                     <div id="RegisterContainer">
-                      <a class="semi-transparent-button" data-toggle="modal" data-target="#myModal" id="semi-transparent-button" >REGISTER </a>
+                      <a class="semi-transparent-button" onclick="checkIfLogin()" id="semi-transparent-button" >REGISTER </a>
                     </div>
                 </div>
             </div>
@@ -349,6 +349,20 @@ same problem?
               <div class="modal-body">
                     <form name="myForm" method="post" onsubmit="return register()" autocomplete>
                         <div class="md-form">
+                            <div class="row" style="margin-bottom: 40px;">
+                                <div class="col-md-12">
+                                    <center>
+                                        <div class="googin loginBUTTON">
+                                        </div>
+                                        <div class="logon axisLOGIN" id="axisLOGIN" style="color: white;font-family: nexalight;" title="user">
+                                            <div style="text-align: center;"><span class="nameid">NAME : </span><span class="clientName" id="clientName" title="name"></span></div>
+                                            <div style="text-align: center;"><span class="nameid">AXIS ID : </span><span class="AXISid" id="AXISid" title="axis id"></span></div>
+                                        </div>
+                                        <div class="myRegistrations"></div>
+                                    </center>
+                                </div>
+                            </div>
+
 
                             <div class="row" style="margin-bottom: 40px;">
                                 <div class="col-md-12">
@@ -359,122 +373,74 @@ same problem?
                                 </div>
                             </div>
 
+
                             <br />
                             <div class="row">
-                                <div class="col-md-2 flex-center">
+                                <div class="col-md-3 flex-center">
                                     <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Team Leader</span>
-
                                 </div>
-
-                                <div class="col-md-2">
+                                
+                                <div class="col-md-3">
                                   <input type="text"  name="name1" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="text" name="id1" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="email" name="email1" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="contact1" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="college1" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
                                 </div>
                             </div>
-
                             <br />
+
                             <div class="row">
-                                <div class="col-md-2 flex-center">
+                                <div class="col-md-3 flex-center">
                                     <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 2</span>
-
                                 </div>
-
-                                <div class="col-md-2">
-                                  <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
+                                <div class="col-md-3">
+                                  <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate"/>
                                 </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="id2" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
+                                <div class="col-md-3">
+                                  <input type="text" name="id2" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate"/>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="email" name="email2" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="contact2" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="college2" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                 </div>
                             </div>
-
                             <br />
+
                             <div class="row">
-                                <div class="col-md-2 flex-center">
+                                <div class="col-md-3 flex-center">
                                     <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 3</span>
-
                                 </div>
-
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="text"  name="name3" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                 </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="id3" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
+                                <div class="col-md-3">
+                                  <input type="text" name="id3" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="email" name="email3" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="contact3" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="college3" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                 </div>
                             </div>
-
                             <br />
+
                             <div class="row">
-                                <div class="col-md-2 flex-center">
+                                <div class="col-md-3 flex-center">
                                     <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 4</span>
-
                                 </div>
 
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="text"  name="name4" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                 </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="id4" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
+                                <div class="col-md-3">
+                                  <input type="text" name="id4" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="email" name="email4" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="contact4" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="college4" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                 </div>
                             </div>
-                            <br />
+                            <br/>
+
                             <center>
                                 <div>You can have team of 4 or less.</div>
                             </center>
@@ -557,17 +523,14 @@ same problem?
         </div>
     </div>
 
-    <div style="visibility: hidden;">
-        <div class="loginBUTTON" title="login">
-        </div>
-        <div class="axisLOGIN" id="axisLOGIN" title="user">
-            <span class="clientName" id="clientName" title="name"></span>
-            <span class="AXISid" id="AXISid" title="axis id"></span>
-            <button>LOGOUT</button>
-        </div>
-        </div>
-    </div>
-    <!-- /#wrapper -->
+
+    <script type="text/javascript">
+        if (typeof(Storage) !== "undefined")
+        {
+            sessionStorage.setItem("path", "events/igniting_minds/technodocx.html");
+            sessionStorage.setItem("formPath","../../form.html");
+        }
+    </script>
 
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="../../js/login.js" ></script>

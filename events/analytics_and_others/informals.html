@@ -297,17 +297,14 @@
         </div>
     </div>
 
-    <div style="visibility: hidden;">
-        <div class="loginBUTTON" title="login">
-        </div>
-        <div class="axisLOGIN" id="axisLOGIN" title="user">
-            <span class="clientName" id="clientName" title="name"></span>
-            <span class="AXISid" id="AXISid" title="axis id"></span>
-            <button>LOGOUT</button>
-        </div>
-        </div>
-    </div>
-    <!-- /#wrapper -->
+    <script type="text/javascript">
+        if (typeof(Storage) !== "undefined")
+        {
+            sessionStorage.setItem("path", "events/analytics_and_others/informals.html");
+            sessionStorage.setItem("formPath","../../form.html");
+        }
+    </script>
+
 
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="../../js/login.js" ></script>

@@ -39,6 +39,9 @@
   font-family: nexalight;
   src: url("../fonts/nexa/nexalight.otf") format("opentype");
 }
+#axisLOGIN{
+  color: white;
+}
 .eventInfo > li{
   margin-bottom: 10px;
 

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>EVENT</title>  
+
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/ico" href="../images/favlogo.ico">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/myStyle.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
+
+  <style type="text/css">
+    ::placeholder {
+      color: white;
+    }
+    body
+    {
+
+        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        height: -webkit-fill-available;       
+        background-repeat: no-repeat;
+    }
+    #countDown{
+      color: white;
+      font-family: nexalight;
+      position: fixed;
+      font-size: 22px;
+      top: 50px;
+      right: 15px;
+    }
+    #eventName{
+      font-family: nexabold;
+      font-size: 30px;
+      text-align: center;
+      color: white;
+    }
+    #info{
+      font-size: 15px;
+      font-family: nexalight;
+      position: fixed;
+      top: 50px;
+      left: 15px;
+      color: white;
+      text-align: center;
+    }
+    #questionContainer{
+      margin-top: 80px;
+      color: white;
+      font-family: nexalight;
+    }
+    input{
+      margin-bottom: 25px;
+    }
+    #submitButton{
+      font-weight: 1000;
+      padding: 5px;
+      color: black;
+      font-size: 20px;
+      font-family: nexabold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="eventName" id="eventName">
+  </div>
+
+  <div  id="questionContainer" style="visibility: hidden;">
+  <div class="countDown" id="countDown">
+    00:45:00 
+  </div>  
+  <div class="info" id="info">
+    <div class="name" id="name">
+    </div>
+    <div class="id" id="id">
+    </div>
+  </div>
+
+  <div class="container" style="width: 70%;">
+    <form method="post" name="myForm" onsubmit="return submitAnswers()">
+      
+      <div id="ques1" style="visibility: hidden;">
+        <div class="question1" id="question1">
+          first question .  
+        </div>
+        <div id="quesT1" style="visibility: hidden;">
+          Answer : <input type="text" name="questionT1">
+        </div>
+        <div id="quesR1" style="visibility: hidden;" class="row">
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR1" value="" id="question1R1"> <span id="option1R1"></span>  
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR1" value="" id="question2R1"> <span id="option2R1"></span>  
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR1" value="" id="question3R1"> <span id="option3R1"></span>  
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR1" value="" id="question4R1"> <span id="option4R1"></span>  
+          </div>
+        </div>
+      </div>
+
+
+      <div id="ques2" style="visibility: hidden;">
+        <div class="question2" id="question2">
+          first question .  
+        </div>
+        <div id="quesT2" style="visibility: hidden;">
+          Answer : <input type="text" name="questionT2">
+        </div>
+        <div id="quesR2" style="visibility: hidden;" class="row">
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR2" value="" id="question1R2"> <span id="option1R2"></span>  
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR2" value="" id="question2R2"> <span id="option2R2"></span>  
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR2" value="" id="question3R2"> <span id="option3R2"></span>  
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-12">
+            <input type="radio" name="questionR2" value="" id="question4R2"> <span id="option4R2"></span>  
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <center>
+        <button class="btn peach-gradient" value="SUBMIT" type="submit" id="submitButton">SUBMIT</button>
+      </center>
+    </form>
+    
+  </div>
+      
+  </div>   
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
+  <script src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="registration.js"></script>
+  
+  <script type="text/javascript">
+    function ifLogin(){
+      firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+              var emailkey = user.email;
+              var key = emailkey.slice(0,emailkey.search('@'));
+              key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+              firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+                  document.getElementById("name").innerHTML = snapshot.val().username;
+                  document.getElementById("id").innerHTML = snapshot.val().axisid;
+                  checkIfRegister(key);
+              });  
+          }
+          else
+          {
+            window.location.href = "../index.html";
+          }
+      });
+    }
+
+    function checkIfRegister(key){
+        var user = firebase.auth().currentUser;
+        var eventName = sessionStorage.getItem("onlineEvent"); 
+        if(eventName != null)
+        {  
+          firebase.database().ref('/eventRegistration/' + eventName + '/' + key  ).once('value').then(function(snapshot) {
+              if (snapshot.val() == null) 
+              {           
+                  alert("You have not register for event " + eventName);
+                  window.location.href = "../index.html";                        
+              }
+              else
+              {
+                  checkIfAlreadyAttempted(eventName,key,user);
+              }
+          });
+        }
+        else
+        {
+          window.location.href = "../index.html";                                
+        }
+    }
+
+    function checkIfAlreadyAttempted(eventName,key,user){
+      firebase.database().ref('/eventRegistration/' + eventName + '/' + key + '/attempted/'  ).once('value').then(function(snapshot) {
+            if (snapshot.val() == null) 
+            {           
+
+                document.getElementById("eventName").innerHTML = eventName ;
+                document.getElementById("questionContainer").style.visibility = 'visible';
+                var attempted = 'attempted';
+                var usersRef = firebase.database().ref().child('/eventRegistration/' + eventName + '/' + key + '/' );
+                /*
+                usersRef.child(attempted).set({
+                            attempted: 'true',
+                        }).then(function onSuccess(res) {
+                            alert("Don't reload page or Don't go back ");
+                            setInterval();
+                            showQuestions();
+
+                        });   */
+                /*var formPath = sessionStorage.getItem("formPath");  
+                window.location.href = formPath;*/ 
+                showQuestions(eventName);             
+            }
+            else
+            {
+                alert("You have already attempted this event");
+                window.location.href = "../index.html";                                
+            }
+        });
+    }
+
+    var countDownDate = new Date().getTime() + 1800000 + 5000;
+    //var countDownDate = new Date().getTime() + 10000;
+    
+    function showQuestions(eventName){
+      if(eventName != null)
+      {
+        var set = 'set';
+        //var setNumber =  Math.floor((Math.random() * 10 ))%5 + 1 ;
+        var setNumber =  Math.floor((Math.random() * 10 ))%1 + 1 ;
+
+        set = set + setNumber;
+        var fillInTheBlacks = firebase.database().ref().child('/onlineEvents/'+ eventName + '/'+ set + '/' + 'fill in the blacks' );
+        
+        var count = 0;
+        fillInTheBlacks.once('value').then(function(snapshot) {
+            snapshot.forEach(function (element)
+            {
+                count = count + 1;
+                showFillInTheBlack(eventName,count,set,element.key);
+            });
+        }).then(function onSuccess(res) {
+            showQuestions2(eventName,set,count);
+        });
+      }
+      else
+      {
+        window.location.href = "../index.html";        
+      } 
+    }
+
+    function showQuestions2(eventName,set,count){
+      if(eventName != null)
+      {
+        var mcq = firebase.database().ref().child('/onlineEvents/'+ eventName + '/'+ set + '/' + 'mcq' );
+        
+        mcq.once('value').then(function(snapshot) {
+            snapshot.forEach(function (element)
+            {
+                count = count + 1;
+                showMcq(eventName,count,set,element.key);
+            });
+        }).then(function onSuccess(res) {
+
+        });
+      }
+      else
+      {
+        window.location.href = "../index.html";        
+      } 
+    }
+
+    function showFillInTheBlack(eventName,count,set,key){
+      
+      firebase.database().ref('/onlineEvents/'+ eventName + '/'+ set + '/' + 'fill in the blacks' + '/' + key).once('value').then(function(snapshot){
+        
+        document.getElementById("ques" + count).style.visibility = 'visible';
+        document.getElementById("quesT" + count).style.visibility = 'visible';
+        document.getElementById("quesR" + count).style.height = '0px';
+        if(snapshot.val() != null)
+        {
+          document.getElementById("question" + count).innerHTML =  count + ". " + snapshot.val().question;  
+        }
+      });
+    }
+    function showMcq(eventName,count,set,key){
+
+      firebase.database().ref('/onlineEvents/'+ eventName + '/'+ set + '/' + 'mcq' + '/' + key).once('value').then(function(snapshot){
+        
+        document.getElementById("ques" + count).style.visibility = 'visible';
+        document.getElementById("quesR" + count).style.visibility = 'visible';
+        document.getElementById("quesT" + count).style.height = '0px';
+        if(snapshot.val() != null)
+        {
+          document.getElementById("question" + count).innerHTML =  count + ". " + snapshot.val().question;
+          document.getElementById("option1R" + count).innerHTML =  snapshot.val().option1;
+          document.getElementById("option2R" + count).innerHTML =  snapshot.val().option2;
+          document.getElementById("option3R" + count).innerHTML =  snapshot.val().option3;
+          document.getElementById("option4R" + count).innerHTML =  snapshot.val().option4;
+          
+          document.getElementById("question1R" + count).value =  snapshot.val().option1;
+          document.getElementById("question2R" + count).value =  snapshot.val().option2;
+          document.getElementById("question3R" + count).value =  snapshot.val().option3;
+          document.getElementById("question4R" + count).value =  snapshot.val().option4;
+            
+        }
+      });
+    }
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;/*
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));*/
+      var hours = '00';
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countDown").innerHTML = hours + " : " + minutes + " : " + seconds;
+        
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countDown").innerHTML = "EXPIRED";
+        submitAnswers();
+      }
+    }, 1000);
+
+    function submitAnswers(){
+      alert("Submitted your answers ");
+
+      return false;
+    }
+    ifLogin();
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+</body>
+
+</html>

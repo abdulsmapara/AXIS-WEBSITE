@@ -1,4 +1,15 @@
 
+var config = {
+    apiKey: "AIzaSyAOzIIUWqCvEUGxTeHBFpHXk-AL-Am7u4o",
+    authDomain: "axis2019-47b13.firebaseapp.com",
+    databaseURL: "https://axis2019-47b13.firebaseio.com",
+    projectId: "axis2019-47b13",
+    storageBucket: "axis2019-47b13.appspot.com",
+    messagingSenderId: "282546345277"
+};
+firebase.initializeApp(config);
+var usersRef = firebase.database().ref().child('users');
+
 function eventRegistration(eventName, teamName, key){
 
     var oldRef = firebase.database().ref().child('/users/'+ key);
@@ -430,7 +441,6 @@ function myRegistrations(){
         }
         else 
         {
-            alert("else");
         }
     });
 }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>EVENT</title>  
+
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/ico" href="../images/favlogo.ico">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/myStyle.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
+
+  <style type="text/css">
+    ::placeholder {
+      color: white;
+    }
+    body
+    {
+
+        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        height: -webkit-fill-available;       
+        background-repeat: no-repeat;
+    }
+    #countDown{
+      color: white;
+      font-family: nexalight;
+      position: fixed;
+      font-size: 22px;
+      top: 50px;
+      right: 15px;
+    }
+    #eventName{
+      font-family: nexabold;
+      font-size: 30px;
+      text-align: center;
+      color: white;
+    }
+    #info{
+      font-size: 15px;
+      font-family: nexalight;
+      position: fixed;
+      top: 50px;
+      left: 15px;
+      color: white;
+      text-align: center;
+    }
+    #questionContainer{
+      margin-top: 80px;
+      color: white;
+      font-family: nexalight;
+    }
+    input{
+      margin-bottom: 25px;
+    }
+    #submitButton{
+      font-weight: 1000;
+      padding: 5px;
+      color: black;
+      font-size: 20px;
+      font-family: nexabold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- <button onclick="restore()">FIRE</button>
+   -->
+  <script type="text/javascript">
+    /*if (typeof(Storage) !== "undefined")
+    {
+      sessionStorage.setItem("path", "myEvents.html");
+      sessionStorage.setItem("formPath","form.html");
+    }*/
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
+  <script src="../js/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/script.js"></script>
+  <script type="text/javascript" src="registration.js"></script>
+  
+  <script type="text/javascript">
+    function restore2(key,eventName){
+
+    var oldRef = firebase.database().ref().child('/eventRegistration/'+ eventName + '/'+ key + '/' + key );
+    var newRef = firebase.database().ref().child('/users/' + key);
+
+
+     oldRef.once('value', function(snap)  {
+        var info = {
+            username : snap.val().username,
+            email : snap.val().email,
+            phone : snap.val().phone,
+            college : snap.val().college,
+            axisid : snap.val().axisid
+        };
+
+          firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            if(snapshot.val() == null)
+            {
+              newRef.set( info, function(error) {
+                   if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
+              });
+            }
+          }).then(function onSuccess(res) {
+            newRef.child('Competitions/'+eventName).set("Registered");  
+          });
+
+             
+    });
+
+    }
+    function restore(){
+      
+            var eventName = 'DEVISE';
+            var CompetitionRef = firebase.database().ref().child('/eventRegistration/' + eventName);
+            
+            var count = 0;
+
+            CompetitionRef.once('value').then(function(snapshot) {
+                snapshot.forEach(function (element)
+                {
+                    //teamR(element.key,eventName);
+                    restore2(element.key,eventName);
+                    count = count + 1;
+                });
+                
+            }).then(function onSuccess(res) {
+                alert(count);
+            });
+        }
+
+        function teamR(teamName,eventName){
+          var CompetitionRef = firebase.database().ref().child('/eventRegistration/' + eventName + '/' + teamName );
+            
+            CompetitionRef.once('value').then(function(snapshot) {
+                snapshot.forEach(function (element)
+                {
+                  restore2(element.key,eventName);
+                });
+                
+            }).then(function onSuccess(res) {
+                
+            });
+        }
+    
+  </script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+</body>
+
+</html>

@@ -24,14 +24,29 @@
                 key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
 
                 document.getElementsByClassName("clientName")[0].innerHTML = user.displayName;
-                                
+                        
                 firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
-                    
+                    /*
                     document.getElementsByClassName("AXISid")[0].innerHTML = snapshot.val().axisid;
                     if (snapshot.val().phone == -1 && window.location.href !== "form.html")
                     {
                         var formPath = sessionStorage.getItem("formPath"); 
                         window.location.href = formPath;
+                    }*/
+                    
+                    if(snapshot.val() == null && window.location.href !== "http://www.axisvnit.org/form.html")
+                    {
+                        var formPath = sessionStorage.getItem("formPath"); 
+                        window.location.href = formPath;
+                    }
+                    else if ( snapshot.val() != null && snapshot.val().phone == -1 && window.location.href !== "form.html")
+                    {
+                        var formPath = sessionStorage.getItem("formPath"); 
+                        window.location.href = formPath;
+                    }
+                    else if(snapshot.val() != null)
+                    {
+                        document.getElementsByClassName("AXISid")[0].innerHTML = snapshot.val().axisid;
                     }
                 });   
             }

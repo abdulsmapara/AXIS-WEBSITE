@@ -31,6 +31,27 @@ function eventRegistration(eventName, teamName, key){
     });
 }
 
+function eventRegistration2(eventName, teamName, key  ,department){
+
+    var oldRef = firebase.database().ref().child('/users/'+ key);
+    var newRef = firebase.database().ref().child('eventRegistration/'+ eventName + '/' + department + '/' +  teamName + '/' + key);
+
+     oldRef.once('value', function(snap)  {
+
+        var info = {
+            username : snap.val().username,
+            email : snap.val().email,
+            phone : snap.val().phone,
+            college : snap.val().college,
+            axisid : snap.val().axisid
+        };
+          newRef.set( info, function(error) {
+               if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
+          });
+          oldRef.child('Competitions/'+eventName).set("Registered");
+    });
+}
+
 function lectureRegistration(lecturer,key){
     var oldRef = firebase.database().ref().child('/users/'+ key);
     var newRef = firebase.database().ref().child('GUEST LECTURES/' + lecturer + '/' + 'Registration' + '/' + key);
@@ -225,6 +246,160 @@ function register(){
     return false;
 }
 
+function register2(){
+
+    var eventName = document.forms["myForm"]["eventName"].value;
+    var teamName = document.forms["myForm"]["teamName"].value;
+    var department = document.forms["myForm"]["department"].value;
+
+    var name1 = document.forms["myForm"]["name1"].value;
+    var id1 = document.forms["myForm"]["id1"].value;
+    var email1 = document.forms["myForm"]["email1"].value;
+    
+    var name2 = document.forms["myForm"]["name2"].value;
+    var id2 = document.forms["myForm"]["id2"].value;
+    var email2 = document.forms["myForm"]["email2"].value;
+
+    var name3 = document.forms["myForm"]["name3"].value;
+    var id3 = document.forms["myForm"]["id3"].value;
+    var email3 = document.forms["myForm"]["email3"].value;
+
+    var name4 = document.forms["myForm"]["name4"].value;
+    var id4 = document.forms["myForm"]["id4"].value;
+    var email4 = document.forms["myForm"]["email4"].value;
+    
+    var name5 = document.forms["myForm"]["name5"].value;
+    var id5 = document.forms["myForm"]["id5"].value;
+    var email5 = document.forms["myForm"]["email5"].value;
+
+    var name6 = document.forms["myForm"]["name6"].value;
+    var id6 = document.forms["myForm"]["id6"].value;
+    var email6 = document.forms["myForm"]["email6"].value;
+
+    var name = [];
+    var id = [];
+    var email = [];
+    var key = [];
+    
+    if (teamName == -1) {
+        var key1 = email1.slice(0,email1.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        teamName = key1;
+    }
+
+    var allEntriesValid = true;
+    var status ;
+
+    status = checkEntry(id1,email1,name1); 
+    if( status == 1)
+    {
+        name.push(name1);
+        id.push(id1);
+        email.push(email1);
+
+        var key1 = email1.slice(0,email1.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+        key.push(key1);
+    }
+    else if(status == 2)
+    {
+        allEntriesValid = false;
+    }
+    
+    status = checkEntry(id2,email2,name2);
+    if(status == 1)
+    {
+        name.push(name2);
+        id.push(id2);
+        email.push(email2);
+
+        var key1 = email2.slice(0,email2.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+        key.push(key1);
+    }
+    else if(status == 2)
+    {
+        allEntriesValid = false;
+    }
+
+    status = checkEntry(id3,email3,name3);
+    if( status == 1)
+    {
+
+        name.push(name3);
+        id.push(id3);
+        email.push(email3);
+        var key1 = email3.slice(0,email3.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+        key.push(key1);
+    }
+    else if(status == 2)
+    {
+        allEntriesValid = false;
+    }
+
+
+    status = checkEntry(id4,email4,name4); 
+    if(status == 1)
+    {
+        name.push(name4);
+        id.push(id4);
+        email.push(email4);
+
+        var key1 = email4.slice(0,email4.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+        key.push(key1);
+    }
+    else if(status == 2)
+    {
+        allEntriesValid = false;
+    }
+
+    status = checkEntry(id5,email5,name5);
+    if(status == 1)
+    {
+        name.push(name5);
+        id.push(id5);
+        email.push(email5);
+
+        var key1 = email5.slice(0,email5.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+        key.push(key1);
+    }
+    else if(status == 2)
+    {
+        allEntriesValid = false;
+    }
+
+    status = checkEntry(id6,email6,name6);
+    if( status == 1)
+    {
+        name.push(name6);
+        id.push(id6);
+        email.push(email6);
+
+        var key1 = email6.slice(0,email6.search('@'));
+        key1 = key1.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+        
+        key.push(key1);
+    }
+    else if(status == 2)
+    {
+        allEntriesValid = false;
+    }
+
+    if(allEntriesValid && key.length > 0)
+    {
+        isTeamNameValid2(eventName,teamName,key,id,name,department);    
+    }
+
+    return false;
+}
 function checkUsers(eventName , teamName , key, id, name, i, len){
 
     var isValidEmail = false;
@@ -248,7 +423,6 @@ function checkUsers(eventName , teamName , key, id, name, i, len){
             {
                 flag = true;
                 isValidEmail = true;
-
             } 
         }).then(function onSuccess(res) {
             i++;
@@ -257,11 +431,68 @@ function checkUsers(eventName , teamName , key, id, name, i, len){
                 for (j = 0; j < len; j++) {
                   eventRegistration(eventName, teamName , key[j]);
                 } 
-                alert("Successfully Registered !");   
+                if(eventName == 'BRAINSTORM')
+                {
+                    alert("In order to confirm your registration , make the registration payment refering to the payment policy .");
+                }
+                else if( eventName == 'TECHNODOCX' )
+                {
+                    alert("In order to confirm your registration , Please fill ");
+                }
+                else
+                {
+                    alert("Successfully Registered !");
+                }   
             }
             else if(isValidEmail && flag)
             {
                 checkUsers(eventName , teamName , key, id, name, i, len);
+            }
+        });   
+}
+function checkUsers2(eventName , teamName , key, id, name, i, len,department){
+
+    var isValidEmail = false;
+    var flag = false;
+    firebase.database().ref('/users/' + key[i]).once('value').then(function(snapshot) {
+            if (snapshot.val() == null)
+            {
+                isValidEmail = false;
+                alert( name[i] + " you have not Sign up . Please sign up in www.axisvnit.org and get the Axis ID !" );
+            }
+            else if( snapshot.val().axisid != id[i] )
+            {
+                flag = false;
+                alert(  name[i] + " your ID not valid . You can check your axis id by login in www.axisvnit.org " );
+            }
+            else if( snapshot.val().phone == -1 )
+            {
+                alert(name[i] + " Please Complete your registration in www.axisvnit.org ");
+            }
+            else
+            {
+                flag = true;
+                isValidEmail = true;
+            } 
+        }).then(function onSuccess(res) {
+            i++;
+            if(i == len && isValidEmail && flag)
+            {
+                for (j = 0; j < len; j++) {
+                  eventRegistration2(eventName, teamName , key[j] , department);
+                } 
+                if(eventName == 'BRAINSTORM')
+                {
+                    alert("In order to confirm your registration , make the registration payment refering to the payment policy .");
+                }
+                else
+                {
+                    alert("Successfully Registered !");
+                }   
+            }
+            else if(isValidEmail && flag)
+            {
+                checkUsers2(eventName , teamName , key, id, name, i, len,department);
             }
         });   
 }
@@ -277,6 +508,20 @@ function isTeamNameValid(eventName, teamName, key , id , name){
         {
             var len = key.length;
             checkUsers(eventName , teamName , key,id, name, 0, len);    
+        }
+    });
+}
+function isTeamNameValid2(eventName, teamName, key , id , name,department){
+
+    firebase.database().ref('/eventRegistration/' + eventName + '/' + department + '/' + teamName).once('value').then(function(snapshot) {
+
+        if (snapshot.exists()) {
+            alert("team name already exists . Please take another team name.");
+        }
+        else
+        {
+            var len = key.length;
+            checkUsers2(eventName , teamName , key,id, name, 0, len , department);    
         }
     });
 }

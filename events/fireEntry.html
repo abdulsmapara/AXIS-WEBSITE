@@ -86,9 +86,12 @@
   <script type="text/javascript" src="registration.js"></script>
   
   <script type="text/javascript">
-    function restore2(key,eventName){
+    function restore2(teamName,key,eventName){
 
-    var oldRef = firebase.database().ref().child('/eventRegistration/'+ eventName + '/'+ key + '/' + key );
+    /*var oldRef = firebase.database().ref().child('/eventRegistration/'+ eventName + '/'+ key + '/' + key );
+    */
+
+    var oldRef = firebase.database().ref().child('/eventRegistration/'+ eventName + '/'+ teamName + '/' + key );
     var newRef = firebase.database().ref().child('/users/' + key);
 
 
@@ -102,6 +105,7 @@
         };
 
           firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            
             if(snapshot.val() == null)
             {
               newRef.set( info, function(error) {
@@ -114,11 +118,40 @@
 
              
     });
+   }
+
+    function single(key,eventName){
+
+    var oldRef = firebase.database().ref().child('/eventRegistration/'+ eventName + '/' + key );
+    var newRef = firebase.database().ref().child('/users/' + key);
+
+
+     oldRef.once('value', function(snap)  {
+        var info = {
+            username : snap.val().username,
+            email : snap.val().email,
+            phone : snap.val().phone,
+            college : snap.val().college,
+            axisid : snap.val().axisid
+        };
+
+          firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+            
+            if(snapshot.val() == null)
+            {
+              newRef.set( info, function(error) {
+                   if( error && typeof(console) !== 'undefined' && console.error ) {  console.error(error); }
+              });
+            }
+          }).then(function onSuccess(res) {
+            newRef.child('Competitions/'+eventName).set("Registered");  
+          });
+    });
 
     }
     function restore(){
       
-            var eventName = 'DEVISE';
+            var eventName = 'AXISMUN';
             var CompetitionRef = firebase.database().ref().child('/eventRegistration/' + eventName);
             
             var count = 0;
@@ -126,11 +159,10 @@
             CompetitionRef.once('value').then(function(snapshot) {
                 snapshot.forEach(function (element)
                 {
-                    //teamR(element.key,eventName);
-                    restore2(element.key,eventName);
+                    single(element.key,eventName);
+                    //restore2(element.key,eventName);
                     count = count + 1;
-                });
-                
+                });  
             }).then(function onSuccess(res) {
                 alert(count);
             });
@@ -142,9 +174,8 @@
             CompetitionRef.once('value').then(function(snapshot) {
                 snapshot.forEach(function (element)
                 {
-                  restore2(element.key,eventName);
+                  restore2(teamName,element.key,eventName);
                 });
-                
             }).then(function onSuccess(res) {
                 
             });

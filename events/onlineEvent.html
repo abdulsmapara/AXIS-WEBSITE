@@ -21,6 +21,36 @@
     ::placeholder {
       color: white;
     }
+    :-webkit-full-screen {
+
+        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        height: -webkit-fill-available;       
+        background-repeat: no-repeat;
+    }
+
+    /* Firefox syntax */
+    :-moz-full-screen {
+
+        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        height: -webkit-fill-available;       
+        background-repeat: no-repeat;
+    }
+
+    /* IE/Edge syntax */
+    :-ms-fullscreen {
+
+        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        height: -webkit-fill-available;       
+        background-repeat: no-repeat;
+    }
+
+    /* Standard syntax */
+    :fullscreen {
+        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
+        height: -webkit-fill-available;       
+        background-repeat: no-repeat;
+    }
+
     body
     {
 
@@ -214,7 +244,8 @@
                         });   */
                 /*var formPath = sessionStorage.getItem("formPath");  
                 window.location.href = formPath;*/ 
-                showQuestions(eventName);             
+                openFullscreen();
+                //showQuestions(eventName);             
             }
             else
             {
@@ -327,6 +358,20 @@
         submitAnswers();
       }
     }, 1000);
+
+    
+    function openFullscreen() {
+      var elem = document.documentElement;
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+      } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+      }
+    }
 
     function submitAnswers(){
       alert("Submitted your answers ");

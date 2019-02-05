@@ -21,35 +21,6 @@
     ::placeholder {
       color: white;
     }
-    :-webkit-full-screen {
-
-        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
-        height: -webkit-fill-available;       
-        background-repeat: no-repeat;
-    }
-
-    /* Firefox syntax */
-    :-moz-full-screen {
-
-        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
-        height: -webkit-fill-available;       
-        background-repeat: no-repeat;
-    }
-
-    /* IE/Edge syntax */
-    :-ms-fullscreen {
-
-        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
-        height: -webkit-fill-available;       
-        background-repeat: no-repeat;
-    }
-
-    /* Standard syntax */
-    :fullscreen {
-        background-image: linear-gradient(-45deg, #1F202E, #031F0E, #13071E, #030106);
-        height: -webkit-fill-available;       
-        background-repeat: no-repeat;
-    }
 
     body
     {
@@ -103,78 +74,94 @@
 
   <div class="eventName" id="eventName">
   </div>
-
-  <div  id="questionContainer" style="visibility: hidden;">
-  <div class="countDown" id="countDown">
-    00:45:00 
-  </div>  
+  
   <div class="info" id="info">
     <div class="name" id="name">
     </div>
     <div class="id" id="id">
     </div>
   </div>
+  
+  <div class="countDown" id="countDown">
+  </div>
+    
+  <div  id="questionContainer" style="visibility: hidden;">
 
-  <div class="container" style="width: 70%;">
-    <form method="post" name="myForm" onsubmit="return submitAnswers()">
+    <div class="container" style="width: 70%;">
+      <form method="post" name="myForm" onsubmit="return submitAnswers()">
+        
+        <div id="ques1" style="visibility: hidden;">
+          <div class="question1" id="question1">
+            first question .  
+          </div>
+          <div id="quesT1" style="visibility: hidden;">
+            Answer : <input type="text" name="questionT1">
+          </div>
+          <div id="quesR1" style="visibility: hidden;" class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR1" value="" id="question1R1"> <span id="option1R1"></span>  
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR1" value="" id="question2R1"> <span id="option2R1"></span>  
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR1" value="" id="question3R1"> <span id="option3R1"></span>  
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR1" value="" id="question4R1"> <span id="option4R1"></span>  
+            </div>
+          </div>
+        </div>
+
+
+        <div id="ques2" style="visibility: hidden;">
+          <div class="question2" id="question2">
+            first question .  
+          </div>
+          <div id="quesT2" style="visibility: hidden;">
+            Answer : <input type="text" name="questionT2">
+          </div>
+          <div id="quesR2" style="visibility: hidden;" class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR2" value="" id="question1R2"> <span id="option1R2"></span>  
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR2" value="" id="question2R2"> <span id="option2R2"></span>  
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR2" value="" id="question3R2"> <span id="option3R2"></span>  
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+              <input type="radio" name="questionR2" value="" id="question4R2"> <span id="option4R2"></span>  
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <center>
+          <button class="btn peach-gradient" value="SUBMIT" type="submit" id="submitButton">SUBMIT</button>
+        </center>
+      </form>
       
-      <div id="ques1" style="visibility: hidden;">
-        <div class="question1" id="question1">
-          first question .  
-        </div>
-        <div id="quesT1" style="visibility: hidden;">
-          Answer : <input type="text" name="questionT1">
-        </div>
-        <div id="quesR1" style="visibility: hidden;" class="row">
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR1" value="" id="question1R1"> <span id="option1R1"></span>  
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR1" value="" id="question2R1"> <span id="option2R1"></span>  
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR1" value="" id="question3R1"> <span id="option3R1"></span>  
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR1" value="" id="question4R1"> <span id="option4R1"></span>  
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>   
 
-
-      <div id="ques2" style="visibility: hidden;">
-        <div class="question2" id="question2">
-          first question .  
-        </div>
-        <div id="quesT2" style="visibility: hidden;">
-          Answer : <input type="text" name="questionT2">
-        </div>
-        <div id="quesR2" style="visibility: hidden;" class="row">
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR2" value="" id="question1R2"> <span id="option1R2"></span>  
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR2" value="" id="question2R2"> <span id="option2R2"></span>  
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR2" value="" id="question3R2"> <span id="option3R2"></span>  
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-12">
-            <input type="radio" name="questionR2" value="" id="question4R2"> <span id="option4R2"></span>  
-          </div>
-        </div>
-      </div>
+  <div id="instructions" style="position: fixed;top: 150px;width: 100%;height: auto;visibility: hidden;">
+    <div class="container" style="width: 70%;color: white;border: 1px solid white;">
+      <p>
+        instructions here
+      </p>
 
       <br>
       <br>
       <center>
-        <button class="btn peach-gradient" value="SUBMIT" type="submit" id="submitButton">SUBMIT</button>
+        <button class="btn peach-gradient" onclick="openFullscreen();" id="submitButton">START NOW</button>
       </center>
-    </form>
-    
+    </div>
+  
   </div>
-      
-  </div>   
+
 
   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
   <script src="../js/jquery.min.js"></script>
@@ -191,30 +178,40 @@
               firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
                   document.getElementById("name").innerHTML = snapshot.val().username;
                   document.getElementById("id").innerHTML = snapshot.val().axisid;
+                  document.getElementById('instructions').style.visibility = 'visible';
                   checkIfRegister(key);
               });  
           }
           else
           {
-            window.location.href = "../index.html";
+            window.location.href = '../index.html';
           }
       });
     }
 
     function checkIfRegister(key){
-        var user = firebase.auth().currentUser;
         var eventName = sessionStorage.getItem("onlineEvent"); 
         if(eventName != null)
         {  
+
+          document.getElementById("eventName").innerHTML = eventName ;
+          var user = firebase.auth().currentUser;
+          var emailkey = user.email;
+          var key = emailkey.slice(0,emailkey.search('@'));
+          key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+
+          eventRegistration(eventName, key, key);
+                    
           firebase.database().ref('/eventRegistration/' + eventName + '/' + key  ).once('value').then(function(snapshot) {
               if (snapshot.val() == null) 
               {           
                   alert("You have not register for event " + eventName);
+                  // auto register...
                   window.location.href = "../index.html";                        
               }
               else
               {
-                  checkIfAlreadyAttempted(eventName,key,user);
+                  //checkIfAlreadyAttempted(eventName,key,user);
               }
           });
         }
@@ -229,7 +226,6 @@
             if (snapshot.val() == null) 
             {           
 
-                document.getElementById("eventName").innerHTML = eventName ;
                 document.getElementById("questionContainer").style.visibility = 'visible';
                 var attempted = 'attempted';
                 var usersRef = firebase.database().ref().child('/eventRegistration/' + eventName + '/' + key + '/' );
@@ -244,8 +240,9 @@
                         });   */
                 /*var formPath = sessionStorage.getItem("formPath");  
                 window.location.href = formPath;*/ 
-                openFullscreen();
-                //showQuestions(eventName);             
+                //openFullscreen();
+                startTime();
+                showQuestions(eventName);             
             }
             else
             {
@@ -254,10 +251,7 @@
             }
         });
     }
-
-    var countDownDate = new Date().getTime() + 1800000 + 5000;
-    //var countDownDate = new Date().getTime() + 10000;
-    
+  
     function showQuestions(eventName){
       if(eventName != null)
       {
@@ -343,25 +337,35 @@
       });
     }
 
-    var x = setInterval(function() {
-      var now = new Date().getTime();
-      var distance = countDownDate - now;/*
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));*/
-      var hours = '00';
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-      document.getElementById("countDown").innerHTML = hours + " : " + minutes + " : " + seconds;
-        
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countDown").innerHTML = "EXPIRED";
-        submitAnswers();
-      }
-    }, 1000);
+    function startTime(){
+      var countDownDate = new Date().getTime() + 1800000 + 5000;
+      var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;/*
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));*/
+        var hours = '00';
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById("countDown").innerHTML = hours + " : " + minutes + " : " + seconds;
+          
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countDown").innerHTML = "EXPIRED";
+          submitAnswers();
+        }
+      }, 1000);
+    }    
 
-    
     function openFullscreen() {
       var elem = document.documentElement;
+
+      var eventName = sessionStorage.getItem("onlineEvent"); 
+      var user = firebase.auth().currentUser;
+      var emailkey = user.email;
+      var key = emailkey.slice(0,emailkey.search('@'));
+      key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+      document.getElementById('instructions').style.visibility = 'hidden';
+
       if (elem.requestFullscreen) {
         elem.requestFullscreen();
       } else if (elem.mozRequestFullScreen) { /* Firefox */
@@ -371,14 +375,15 @@
       } else if (elem.msRequestFullscreen) { /* IE/Edge */
         elem.msRequestFullscreen();
       }
+      checkIfAlreadyAttempted(eventName,key,user);
     }
 
+    ifLogin();
     function submitAnswers(){
       alert("Submitted your answers ");
-
+      
       return false;
     }
-    ifLogin();
   </script>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

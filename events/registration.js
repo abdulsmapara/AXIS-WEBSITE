@@ -31,6 +31,59 @@ function eventRegistration(eventName, teamName, key){
     });
 }
 
+function startEvent(eventName){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+            sessionStorage.setItem("onlineEvent",eventName);
+            window.location.href = '../onlineEvent.html';  
+      }
+      else
+      {
+        alert("Please login to start test . You will be redirected to google sign in.");
+        var provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+        firebase.auth().signInWithPopup(provider).then(function onSuccess(result) {
+            
+            var user = firebase.auth().currentUser;
+            var emailkey = user.email;
+            var key = emailkey.slice(0,emailkey.search('@'));
+            key = key.replace(/[^a-zA-Z0-9 ]/g, "") ;
+            
+            firebase.database().ref('/users/' + key).once('value').then(function(snapshot) {
+                // if signing in for the first time we cannot find any related entry in the database
+                if (snapshot.val() == null) 
+                {           
+                    var formPath = sessionStorage.getItem("formPath");
+                    alert("Sign Up first ");
+                    window.location.href = formPath;                        
+                }
+                else if( snapshot.val().phone == -1 && window.location.href !== "form.html" )
+                {
+                    var formPath = sessionStorage.getItem("formPath");
+                    alert("Complete your registration ");  
+                    window.location.href = formPath;   
+                }
+                else
+                {
+                    sessionStorage.setItem("onlineEvent","WHO IS THE BOSS");
+                    window.location.href = '../onlineEvent.html';
+                }
+            });
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
+      }
+  });
+}
+
+
 function eventRegistration2(eventName, teamName, key  ,department){
 
     var oldRef = firebase.database().ref().child('/users/'+ key);

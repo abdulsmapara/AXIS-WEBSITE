@@ -46,6 +46,67 @@
 </head>
 
 <body>
+  <!-- Central Modal Medium Info-->
+  <div class="modal fade" id="basicExampleModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-white" style="background-image: linear-gradient(to bottom right, rgba(40, 27, 34, 0.95), rgba(27, 35, 39, 0.95));">
+          <div class="modal-header" style="border: none;">
+            <div class="modal-title w-100 text-center" style="font-size:35px;font-weight: 900;font-family:nexabold;" id="myModalLabel">QnA</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" style="color: white;">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <center>
+              <img src="images/Guest_Lectures/qna.jpg" style="width: 50%;min-width: 300px; height: auto;">
+            </center>
+        
+            <div class="container" style="font-family: nexalight; text-align: justify;margin-top: 20px;">
+              AXIS'19 is honoured to host its guest for the QnA- Knowing the Unknown, Col Tejendra Pal Tyagi and Neelam Saxena Chandra.
+              <br><br>
+              QnA-Knowing the Unknown is aimed at bridging the gap between leaders of today and tomorrow by hosting passionate, successful and eminent personalities through one-of-a-kind format which would help the youth understand why the 'path less travelled by' is an important one
+              <br><br>
+              <b style="font-size: 22px;">Neelam Saxena Chandra : </b>
+              <br>
+              She is an Indian poet and author. She has received several awards including the Rabindranath Tagore International Award in 2014 given by Xpress Publications: Kerala, India. An IES Officer of 1993 batch, she has also served as Joint Secretary of Union Public Service Commission (UPSC).She is currently serving as General Manager of Pune Metro.
+              <br><br>
+              <b style="font-size: 22px;">Col Tejendra Pal Tyagi : </b>
+              <br>
+              Known for his great display of gallantry, determination and leadership, Vir Chakra Col Tejendra Pal Tyagi had played a crucial role during Indo-Pakistani War of 1971. His words are definitely going to leave you spellbound.
+            </div>
+
+            <div class="container" style="font-size: 16px;font-family:nexalight; font-weight: 700;margin-top: 25px;margin-bottom: 10px;">
+               DATE : <span style="font-weight:0;font-size: 14px;color: aqua;"> 17<sup>th</sup> February 2019 </span>
+              <br>
+              VENUE : <span style="font-weight:0;font-size: 14px;color: aqua;"> CSE DEPARTMENT VNIT </span>
+              <br>
+              TIMING : <span style="font-weight:0;font-size: 14px;color: aqua;"> 06.00 PM </span>
+              <br>
+              CONTACT NO :<span style="font-weight:0;font-size: 14px;color: aqua;"> 7463864568 , 7972477691 </span>
+            </div>
+          </div>
+          <center>
+            <form style="width: 100%;" method="post" name="myForm" onsubmit="return AskQuery('JAAP HAARTSEN')">
+              <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" name="query" placeholder="ASK YOUR QUERIES HERE" />
+              <button type="submit" style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;"> <i class="fa fa-paper-plane"></i> </button>
+            </form>
+          </center>
+      
+          <br>
+
+          <center>
+
+            <button type="button" onclick="guestLecturesRegister('QnA')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER <i class="fa fa-pen"></i>
+            </button>
+            
+            <button type="button" data-dismiss="modal" aria-label="Close" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;"> CLOSE 
+            </button>
+
+          </center>
+          <br>
+        </div>
+      </div>
+  </div>
 
   <!-- Central Modal Medium Info-->
   <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -105,7 +166,44 @@
     </div>
     
     <div class="row">
-      
+
+      <div class="col-md-4 col-sm-6 col-xs-12" >
+        <!-- Card -->
+        <div class="card guestCard" style="background-image:url('images/Guest_Lectures/qna.jpg')";>
+          <div class="guestCardGradient">
+            <!-- Card image -->
+            <div class="view overlay" style="padding: 1px;">
+              <!-- <img class="card-img-top" src="images/Guest_Lectures/JAAP_HAARTSEN.jpg" alt="Card image cap"> -->
+              <a href="#!"  data-toggle="modal" data-target="#basicExampleModal">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <div class="card-body">
+
+              <a href="" style="text-decoration: none;color: black;" data-toggle="modal" data-target="#basicExampleModal2">
+                <div class="card-title text-white" style="font-size: 0px;">
+                  <span style="font-size: 25px;font-family: nexabold;">QnA</span>
+                  <br>
+                  <span class="text-white" style="font-size: 15px;">
+                    <span>Knowing the Unknown</span><br>
+                    <span> <i style="color: red;font-size: 10px;" class="fa fa-circle animated flash slower infinite"></i> Live Webinar</span>
+                  </span>
+                </div>
+
+                <p class="card-text text-white" style="margin-top: 100px;">AXIS'19 is honoured to host its guest for the QnA- Knowing the Unknown, Col Tejendra Pal Tyagi and Neelam Saxena Chandra.
+                <span class="card-text text-white" style="margin-top:"><u>Read more</u></span>
+                </p>
+              </a>
+              <div class="" style="color:aqua;">
+                17 <sup>th</sup> February 2019 , 06.00 pm . 
+              </div>
+              <button type="button" onclick="guestLecturesRegister('QnA')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER</button>
+            </div>
+          </div>
+        </div>
+      </div>
+            
       <div class="col-md-4 col-sm-6 col-xs-12" >
         <!-- Card -->
         <div class="card guestCard" style="background-image:url('images/Guest_Lectures/JAAP_HAARTSEN.jpg')";>
@@ -143,6 +241,7 @@
           </div>
         </div>
       </div>
+
     </div>
 
       <br>

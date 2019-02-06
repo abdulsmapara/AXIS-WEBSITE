@@ -16,9 +16,11 @@
    font-family: nexalight;
    background-repeat:no-repeat;
    height: 380px;
-   
    background-size: cover;
    margin-top: 25px;
+  background-size: cover;
+  background-position: center;
+  
 }
 .guestCardGradient{
   background-image: linear-gradient(-180deg, rgba(0,0,0,0.4), rgba(0,0,0,1)); 

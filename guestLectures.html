@@ -41,11 +41,70 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
     }
-
+    
   </style>
 </head>
 
 <body>
+
+  <!-- Central Modal Medium Info-->
+  <div class="modal fade" id="basicExampleModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content text-white" style="background-image: linear-gradient(to bottom right, rgba(40, 27, 34, 0.95), rgba(27, 35, 39, 0.95));">
+          <div class="modal-header" style="border: none;">
+            <div class="modal-title w-100 text-center" style="font-size:35px;font-weight: 900;font-family:nexabold;" id="myModalLabel">SUNITA WILLIAMS</div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" style="color: white;">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <center>
+              <img src="images/Guest_Lectures/sunita.jpg" style="width: 50%;min-width: 300px; height: auto;">
+            </center>
+        
+            <div class="container" style="font-family: nexalight; text-align: justify;margin-top: 20px;">
+            AXIS'19 is extremely honoured to host Hon'ble Sunita L. Williams as the guest for the live webinar session.
+            <br>  
+            <br>
+            A woman of flawless mettle, Ms Sunita Williams is an Indian-American Astronaut and the United States Navy Officer of Indo-Slovenian descent. She was selected as an astronaut by NASA in 1998 and is a veteran of two space missions Expeditions 14/15 and 32/33. She is currently training for the first post-certification mission of Boeing’s Starliner spacecraft – the second crewed flight for that vehicle – and her third long duration mission aboard the International Space Station.<br><br>
+            Williams and her crewmates are working closely with Boeing to develop their new spacecraft systems, which will provide roundtrip crew transportation services to the International Space Station and, along with SpaceX’s CrewDragon, return the ability to launch humans into space from United States soil.<br><br>
+            She is a former record holder for total spacewalks by a woman, total spacewalk time by a woman and the first person to run a marathon in space.
+            <br>
+            </div>
+
+            <div class="container" style="font-size: 16px;font-family:nexalight; font-weight: 700;margin-top: 25px;margin-bottom: 10px;">
+               DATE : <span style="font-weight:0;font-size: 14px;color: aqua;"> 11<sup>th</sup> February 2019 </span>
+              <br>
+              VENUE : <span style="font-weight:0;font-size: 14px;color: aqua;"> CSE DEPARTMENT VNIT </span>
+              <br>
+              TIMING : <span style="font-weight:0;font-size: 14px;color: aqua;"> 06.00 PM </span>
+              <br>
+              CONTACT NO :<span style="font-weight:0;font-size: 14px;color: aqua;"> 7972477691 </span>
+            </div>
+          </div>
+          <center>
+            <form style="width: 100%;" method="post" name="myForm" onsubmit="return AskQuery('SUNITA WILLIAMS')">
+              <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" name="query" placeholder="ASK YOUR QUERIES HERE" />
+              <button type="submit" style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;"> <i class="fa fa-paper-plane"></i> </button>
+            </form>
+          </center>
+      
+          <br>
+
+          <center>
+
+            <button type="button" onclick="guestLecturesRegister('SUNITA WILLIAMS')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER <i class="fa fa-pen"></i>
+            </button>
+            
+            <button type="button" data-dismiss="modal" aria-label="Close" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;"> CLOSE 
+            </button>
+
+          </center>
+          <br>
+        </div>
+      </div>
+  </div>
+
   <!-- Central Modal Medium Info-->
   <div class="modal fade" id="basicExampleModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
@@ -86,7 +145,7 @@
             </div>
           </div>
           <center>
-            <form style="width: 100%;" method="post" name="myForm" onsubmit="return AskQuery('JAAP HAARTSEN')">
+            <form style="width: 100%;" method="post" name="myForm" onsubmit="return AskQuery('QnA')">
               <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" name="query" placeholder="ASK YOUR QUERIES HERE" />
               <button type="submit" style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;"> <i class="fa fa-paper-plane"></i> </button>
             </form>
@@ -167,17 +226,41 @@
     
     <div class="row">
 
+            
+      <div class="col-md-4 col-sm-6 col-xs-12" >
+        <!-- Card -->
+        <div class="card guestCard" style="background-image:url('images/Guest_Lectures/sunita.jpg')";>
+          <div class="guestCardGradient">
+
+            <div class="card-body">
+
+              <a href="" style="text-decoration: none;color: black;" data-toggle="modal" data-target="#basicExampleModal3">
+                <div class="card-title text-white" style="font-size: 0px;">
+                  <span style="font-size: 25px;font-family: nexabold;">SUNITA WILLIAMS</span>
+                  <br>
+                  <span class="text-white" style="font-size: 15px;">
+                    <span>Indian-American Astronaut and the United States Navy Officer.</span><br>
+                    <span> <i style="color: red;font-size: 10px;" class="fa fa-circle animated flash slower infinite"></i> Live Webinar</span>
+                  </span>
+                </div>
+
+                <p class="card-text text-white" style="margin-top: 100px;">AXIS'19 is extremely honoured to host Hon'ble Sunita L. Williams as the guest for the live webinar session.
+                <span class="card-text text-white" style="margin-top:"><u>Read more</u></span>
+                </p>
+              </a>
+              <div class="" style="color:aqua;">
+                11 <sup>th</sup> February 2019 , 06.00 pm . 
+              </div>
+              <button type="button" onclick="guestLecturesRegister('SUNITA WILLIAMS')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="col-md-4 col-sm-6 col-xs-12" >
         <!-- Card -->
         <div class="card guestCard" style="background-image:url('images/Guest_Lectures/qna.jpg')";>
           <div class="guestCardGradient">
-            <!-- Card image -->
-            <div class="view overlay" style="padding: 1px;">
-              <!-- <img class="card-img-top" src="images/Guest_Lectures/JAAP_HAARTSEN.jpg" alt="Card image cap"> -->
-              <a href="#!"  data-toggle="modal" data-target="#basicExampleModal">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
 
             <div class="card-body">
 
@@ -197,6 +280,7 @@
               <div class="" style="color:aqua;">
                 17 <sup>th</sup> February 2019 , 06.00 pm . 
               </div>
+              <br>
               <button type="button" onclick="guestLecturesRegister('QnA')" style="border-color:white;background: rgba(0,0,0,0);color: white;font-size: 14px;margin-top: 12PX; padding:5px 20px;">REGISTER</button>
             </div>
           </div>
@@ -207,14 +291,7 @@
         <!-- Card -->
         <div class="card guestCard" style="background-image:url('images/Guest_Lectures/JAAP_HAARTSEN.jpg')";>
           <div class="guestCardGradient">
-            <!-- Card image -->
-            <div class="view overlay" style="padding: 1px;">
-              <!-- <img class="card-img-top" src="images/Guest_Lectures/JAAP_HAARTSEN.jpg" alt="Card image cap"> -->
-              <a href="#!"  data-toggle="modal" data-target="#basicExampleModal">
-                <div class="mask rgba-white-slight"></div>
-              </a>
-            </div>
-
+            
             <div class="card-body">
 
               <a href="" style="text-decoration: none;color: black;" data-toggle="modal" data-target="#basicExampleModal">
@@ -240,6 +317,7 @@
           </div>
         </div>
       </div>
+
 
     </div>
 

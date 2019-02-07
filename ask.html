@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Guest Lectures</title>  
+
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/ico" href="images/favlogo.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
+  <link href="css/guestStyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/myStyle.css">
+  
+  <link rel="stylesheet" href="css/icomoon.css">
+
+  <style type="text/css">
+    
+    body:after{
+
+      content:"";
+      position:fixed; /* stretch a fixed position to the whole screen */
+      top:0;
+      height:100vh; /* fix for mobile browser address bar appearing disappearing */
+      left:0;
+      right:0;
+      z-index:-1; /* needed to keep in the background */
+
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      
+      background-image: url('images/sunita.jpg');
+      background-position: center;
+      background-color: black;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div style="font-size: 45px;font-family: nexabold; color: white;margin-top: 25px;margin-bottom: 30px;"  class="text-center">
+      ASK SUNITA
+    </div>
+      <br>
+      <br>
+      <br>
+          <center>
+            <form style="width: 100%;" method="post" name="myForm" onsubmit="return AskQuery('SUNITA WILLIAMS')">
+              
+              <textarea style="width:70%;padding: 8px;border-color: white;" name="query" autofocus />
+              </textarea>
+              <br>
+              <button type="submit" class="btn blue-gradient" style="color: black; border-color: white;font-size: 17px;padding: 7px;">SEND <i class="fa fa-paper-plane"></i> </button>
+            </form>
+          </center>
+  </div>
+
+
+    <div class="navlog active" title="navbar" onclick="openNav()">
+      <a href="#"><i class="icon-menu"></i></a>
+    </div>
+    <div class="googin loginBUTTON" title="login">
+      <a href="#!" onclick="login()">
+        <!-- <i class="icon-google"></i> -->
+        Sign in
+      </a>
+    </div>
+    <div class="logon axisLOGIN" id="axisLOGIN" title="user">
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="icon-user"></i></a>
+        <div class="dropdown-content">
+          <div style="text-align: center;"><span class="clientName" id="clientName" title="name"></span></div>
+          <div style="text-align: center;"><span class="AXISid" id="AXISid" title="axis id"></span></div>
+          <div style="text-align: center;"><button onclick="logout()" class="logout" title="logout">LOGOUT</button></div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Navigation Code starts here-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div onclick="showMyRegistrations('myEvents.html')">
+          <a href="#!" class="navLink myRegistrations" style="visibility: hidden;"><i class="icon-user"></i> My Registration</a>
+        </div>
+        
+        <a href="index.html" class="navLink"><i class="icon-home"></i> Home</a>
+        <a href="events/category.html" class="navLink"><i class="icon-star"></i> Events</a>
+        <a href="MUN/index.html" target="__blank"  class="navLink"><i class="icon-globe"></i> MUN</a>
+        <a href="guestLectures.html" class="navLink"><i class="icon-bag"></i> Guest Lectures</a>
+        <a href="workshop.html" class="navLink"><i class="icon-list"></i> Workshops</a>
+        <a href="comingsoon.html" class="navLink"><i class="icon-grid"></i> Attractions</a>
+        <a href="comingsoon.html" class="navLink"><i class="icon-star"></i> Exhibitons</a>
+        <a href="social.html" class="navLink"><i class="icon-help"></i> Social Initiatives</a>
+        <a href="comingsoon.html" class="navLink"><i class="icon-document"></i> Blogs</a>
+        <a href="sponsors.html" class="navLink"><i class="icon-address"></i> Previous Sponsors</a>
+        <a href="Contact/contact.html" class="navLink"><i class="icon-users"></i> Our Team</a>
+        <div class="dropup">
+        <a href="#!" class="navLink" class="dropbtn2"><i class="icon-home"></i> Accommodation</a>
+        <div class="dropup-content2">
+          <a href="https://drive.google.com/file/d/1g5RW8WkpBogooHKQDR3WBKAj24IwIbB1/view?usp=sharing" target="_blank">ACCOMMODATION POLICY</a>
+          <a href="https://bit.ly/2PzXiyV" target="_blank">ACCOMMODATION FORM</a>
+        </div>
+        </div>
+        
+        <a href="https://goo.gl/forms/i3w23TlcnlwrOdfM2" target="_blank" class="navLink" style=""><img src="images/shirt1.jpg" style="height: 60px;width: 60px;border-radius: 50%;"> T-SHIRT </a>
+        
+        <br>
+        <a href="https://www.facebook.com/axisvnit" target="_blank" class="navSocial" ><i class="icon-facebook"></i></a>
+        <a href="https://www.instagram.com/axis_vnit/" target="_blank" class="navSocial" ><i class="icon-instagram"></i></a>
+        <a href="https://www.youtube.com/user/AXISVNIT" target="_blank" class="navSocial"><i class="icon-youtube"></i></a>
+        <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank" class="navSocial"><i class="icon-linkedin"></i></a>
+    </div>
+  <!-- Navigation Code ends here -->
+  <script type="text/javascript">
+    if (typeof(Storage) !== "undefined")
+    {
+      sessionStorage.setItem("path", "guestLectures.html");
+      sessionStorage.setItem("formPath","form.html");
+    }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="events/registration.js"></script>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+
+</body>
+
+</html>

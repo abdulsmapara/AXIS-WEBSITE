@@ -259,43 +259,6 @@
                             }
                         });   
                 }
-                else
-                {
-                    usersRef.child(key).set({
-                            username: user.displayName,
-                            email: user.email,
-                            gender: gender,
-                            DOB: dob,
-                            college: college,
-                            phone: phone,
-                            city: city,
-                            //set remaining fields as null  
-                        }).then(function onSuccess(res) {
-                            
-                            alert("Successfully Signed Up \nAxis ID : " + axis_id + "\nYou can check your AXIS ID in myRegistrations tab");                
-                            
-                            var path = sessionStorage.getItem("path"); 
-                            if(path == null){
-                                window.location.href = "index.html";
-                            }
-                            else{
-                                sessionStorage.removeItem("path");
-                                sessionStorage.removeItem("formPath");                              
-                                sessionStorage.clear();
-                                if(path == 'guestLectures.html')
-                                {
-                                    alert("Now you can Register for guest lecture . Just click on Register button");
-                                }
-                                if(path == 'events/software_and_electronics/insomnia.html')
-                                {
-                                    alert("Now you can Register for insomnia . Just click on Register button");
-                                }
-
-                                window.location.href = path;
-                            }
-                        });   
-                }
-
             });
         }
         else

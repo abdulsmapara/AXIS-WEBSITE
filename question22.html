@@ -220,8 +220,7 @@ height: 100%;
           
           ans_correct1 = snapshot.val().Question22a;
 
-          ans_correct2 = snapshot.val().Question22b;
-          if(ans.toLowerCase() == ans_correct1.toLowerCase() || ans.toLowerCase() == ans_correct2.toLowerCase()){
+          if(ans.toLowerCase() == ans_correct1.toLowerCase()){
             alert('Congrats ! Your answer is correct');
             start(23);
             return true;

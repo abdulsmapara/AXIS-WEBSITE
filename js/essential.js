@@ -9,6 +9,8 @@ function getData(key,current_question_number){
 				event_baker.child(key).set({
 					started: true,
 					attempted : init_attempted,
+					last_attempted_time : "-1",
+					time_when_last_attempted: "-1",
 				}).then(function onSuccess(res){
 					alert('The event begins now !');
 					window.location.href = 'question1.html';
@@ -22,6 +24,8 @@ function getData(key,current_question_number){
 					event_baker.child(key).set({
 						started : true,
 						attempted : Number(current_question_number) - 1,
+						last_attempted_time : new Date().toString(),
+						time_when_last_attempted : new Date().getTime(),
 					}).then(function onSuccess(res){
 
 						if(Number(last_attempted) + 2 == Number(current_question_number)){

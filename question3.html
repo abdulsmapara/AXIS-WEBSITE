@@ -220,7 +220,7 @@ height: 100%;
       var ans = document.getElementById('ans3').value;
           
           ans_correct1 = snapshot.val().Question3a;
-          if(ans.toLowerCase() == ans_correct1.toLowerCase() || ans.toLowerCase() == ans_correct2.toLowerCase()){
+          if(ans.toLowerCase() == ans_correct1.toLowerCase()){
             alert('Congrats ! Your answer is correct');
             start(4);
             return true;

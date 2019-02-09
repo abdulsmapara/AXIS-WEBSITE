@@ -629,10 +629,11 @@ function submitQuery(lecturer,key,query){
      });
 }
 
-function AskQuery(lecturer){
+function AskQuery(lecturer,formName,queryName){
 
 
-    var query = document.forms["myForm"]["query"].value;
+    var query = document.forms[formName][queryName].value;
+    query = query.replace(/[^a-zA-Z0-9 ]/g, "") ; 
 
     var user = firebase.auth().currentUser;
     if (user) {
@@ -652,6 +653,11 @@ function AskQuery(lecturer){
             }
             else
             {
+
+                var emailkey = user.email;
+                var key = emailkey.slice(0,emailkey.search('@'));
+                key = key.replace(/[^a-zA-Z0-9 ]/g, "") ; 
+
                 submitQuery(lecturer,key,query);    
             }
         });

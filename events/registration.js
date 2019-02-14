@@ -839,3 +839,15 @@ function checkIfLogin(){
         login();   
     }
 }
+function checkIfLogin2(){
+    var user = firebase.auth().currentUser;
+    if(user)
+    {
+        $("#myModal2").modal();
+    }
+    else
+    {
+        alert("Please sign in to register your team . You will be redirected to google sign in");
+        login();   
+    }
+}

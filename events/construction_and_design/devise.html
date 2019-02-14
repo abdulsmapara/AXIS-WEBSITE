@@ -103,9 +103,15 @@
                                   
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
-                                     The event capitalizes your creativity, and translates it all into architectural design. The event evolved out of a need to test the architectural understanding of students. Any innovation is highly appreciable and welcome in design, using appropriate technologies. The event has been framed to invite creativity from all fields. Stay updated for the brief!
-                                     <i><b>Problem statement releasing soon!!</b></i>
-
+                                     The event capitalizes your creativity, and translates it all into architectural design. The event evolved out of a need to test the architectural understanding of students. Any innovation is highly appreciable and welcome in design, using appropriate technologies. The event has been framed to invite creativity from all fields. 
+                                     <br><b>Number of maximum members in a team is 3</b> <br>
+                                     <i>click here to download problem statement</i>
+                                     <br><br>
+                                     <a href="https://drive.google.com/open?id=1n3LKYoMUjvEeBsTkC_z530KLYh1tjfOO" target="_blank" class="semi-transparent-button" id="semi-transparent-button" >PROBLEM STATEMENT</a>
+                                     <br><br>
+                                     <div id="RegisterContainer">
+                      <a class="semi-transparent-button" onclick="checkIfLogin2()" id="semi-transparent-button" >REGISTER </a>
+                    </div>
 
                                     </div>
                                 </div>
@@ -131,7 +137,14 @@
                                 <div class="feed-item-body">
                                     <div class="text eventInfo"">
                                        Design-o brings out the product designer in you. The participants are required to use their design skills to produce a functional product for a better today. It is an event which fuses invention and innovation with imagination, to come up with an ideal product, with its own utilitarian. Stay updated for the brief!
-                                      <i><b>Problem statement releasing soon!!</b></i>
+                                      <br><b>Number of maximum members in a team is 3</b><br>
+                                      <i>click here to download problem statement</i>
+                                      <br><br>
+                                      <a href="https://drive.google.com/open?id=1yQnajorvDy2rfsdL2yuC9Qsz0uSpxggA" target="_blank" class="semi-transparent-button" id="semi-transparent-button" >PROBLEM STATEMENT</a>
+                                      <BR><BR>
+
+                                     <div id="RegisterContainer">
+                      <a class="semi-transparent-button" onclick="checkIfLogin()" id="semi-transparent-button" >REGISTER </a>
 
                                     </div>
                                 </div>
@@ -158,6 +171,9 @@
                                     <div class="text eventInfo">
     							Ephemeral capitalizes your creativity and thinking capability under time constraints. You’ve got 4 hours to bring the best out of yourself. Gear up and be prepared for the on-spot challenge coming your way!
                                <i><b>Problem statement releasing soon!!</b></i>
+                               <div id="RegisterContainer">
+                                  <a class="semi-transparent-button" onclick="singleEventRegister('EPHEMERAl')" id="semi-transparent-button" >REGISTER</a>
+                                </div>
 
                                     </div>
                                 </div>
@@ -177,7 +193,10 @@
                             <section class="feed-item">
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
-                                Get your brain cells charged up as the most exciting and exuberant quiz of the year begins! Prepare yourself to witness an intense combat of the quick witted and sharp sighted. Here's presenting the Archi Quiz'19 which is sure to keep you on the edge of your seat and guessing till the very end.....
+                                Get your brain cells charged up as the most exciting and exuberant quiz of the year begins! Prepare yourself to witness an intense combat of the quick witted and sharp sighted. Here's presenting the Archi Quiz'19 which is sure to keep you on the edge of your seat and guessing till the very end....
+                                <div id="RegisterContainer">
+                                 <a class="semi-transparent-button" onclick="singleEventRegister('ARCHIQUIZ')" id="semi-transparent-button" >REGISTER</a>
+                                   </div>
 
                                     </div>
                                 </div>
@@ -201,6 +220,9 @@
                                     <div class="text eventInfo">
 						              Convey your idea through MINIMALISM and design a logo which should become an identity; for the people, by the people!<br>
                                       <b><i>Problem statement releasing soon!!</i></b>
+                                      <div id="RegisterContainer">
+                                       <a class="semi-transparent-button" onclick="singleEventRegister('INSIGNIA')" id="semi-transparent-button" >REGISTER</a>
+                                       </div>
 
 							    </div>
                                 </div>
@@ -225,6 +247,9 @@
                                      It’s time to dust off that camera and start shooting because the best picture you will ever take might be the one you click tomorrow. Devise 2019 presents PHOTOSTAT, it’s your opportunity to showcase your photography skills. If you have any picture no matter how unconventional but suitable for the theme bring it to us and get a chance to be declared the best.
                                      <br>
                                      <b><i>Problem statement releasing soon!!</i></b>
+                                     <div id="RegisterContainer">
+                                          <a class="semi-transparent-button" onclick="singleEventRegister('PHOTOSTAT')" id="semi-transparent-button" >REGISTER</a>
+                                     </div>
 
                                 </div>
                                 </div>
@@ -247,6 +272,9 @@
                                 <div class="feed-item-body">
                                     <div class="text eventInfo">
                                       Some other small on the spot events focusing on creativity which tests your innovativeness and provide with a sense of refreshment as well.
+                                      <div id="RegisterContainer">
+                                      <a class="semi-transparent-button" onclick="singleEventRegister('DEVISEINFORMALS')" id="semi-transparent-button" >REGISTER</a>
+                                      </div>
 
 
                                 </div>
@@ -319,9 +347,10 @@
 		
         </div>
         
-									
+
     <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog" style="width: 90%;max-width: 90%;">
+            <!-- Modal content-->
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" style="color: white;" class="close" data-dismiss="modal">&times;</button>
@@ -332,45 +361,79 @@
               <div class="modal-body">
                     <form name="myForm" method="post" onsubmit="return register()" autocomplete>
                         <div class="md-form">
+                            <div class="row" style="margin-bottom: 40px;">
+                                <div class="col-md-12">
+                                    <center>
+                                        <div class="googin loginBUTTON">
+                                        </div>
+                                        <div class="logon axisLOGIN" id="axisLOGIN" style="color: white;font-family: nexalight;" title="user">
+                                            <div style="text-align: center;"><span class="nameid">NAME : </span><span class="clientName" id="clientName" title="name"></span></div>
+                                            <div style="text-align: center;"><span class="nameid">AXIS ID : </span><span class="AXISid" id="AXISid" title="axis id"></span></div>
+                                        </div>
+                                        <div class="myRegistrations"></div>
+                                    </center>
+                                </div>
+                            </div>
 
                             <div class="row" style="margin-bottom: 40px;">
                                 <div class="col-md-12">
                                     <center>
-                                        <input type="text" name="teamName" value="-1"  placeholder="Team Name" style="color: white;font-size: 17px;max-width: 40%;" id="inputValidationEx" class="form-control validate" hidden />
-                                        <input type="text" name="eventName" value="DEVISE" hidden />
+                                        <input type="text" name="teamName"  placeholder="Team Name" style="color: white;font-size: 17px;max-width: 40%;" id="inputValidationEx" class="form-control validate" required="true" />
+                                        <input type="text" name="eventName" value="DESIGNO" hidden />
                                     </center>
                                 </div>
                             </div>
 
                             <br />
                             <div class="row">
-                                <div class="col-md-2 flex-center">
-                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;">MEMBER </span>
-
+                                <div class="col-md-3 flex-center">
+                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Team Leader</span>
                                 </div>
-
-                                <div class="col-md-2">
+                                
+                                <div class="col-md-3">
                                   <input type="text"  name="name1" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="text" name="id1" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                   <input type="email" name="email1" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="contact1" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
-                                </div>
-                                <div class="col-md-2">
-                                  <input type="text" name="college1" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
-
                                 </div>
                             </div>
+
                             <br />
+                            <div class="row">
+                                <div class="col-md-3 flex-center">
+                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 2</span>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate"/>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text" name="id2" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate"/>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="email" name="email2" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="row">
+                                <div class="col-md-3 flex-center">
+                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 3</span>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text"  name="name3" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text" name="id3" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="email" name="email3" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                            </div>
+
+
                             <div class="row">
                                 <div class="col-md-12">
                                     <center>
@@ -379,152 +442,62 @@
                                     </center>
                                 </div>
                             </div>
+
+                            <br />
+                            <center>
+                                <div>You can have team of 3 or less.</div>
+                            </center>
+                            <br />
+
                             <div style="visibility: hidden;">
                                 <br />
                                 <div class="row">
-                                    <div class="col-md-2 flex-center">
-                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 2</span>
-
-                                    </div>
-
-                                    <div class="col-md-2">
-                                      <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="id2" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="email" name="email2" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="contact2" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="college2" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                </div>
-
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-2 flex-center">
-                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 3</span>
-
-                                    </div>
-
-                                    <div class="col-md-2">
-                                      <input type="text"  name="name3" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="id3" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="email" name="email3" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="contact3" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="college3" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                </div>
-
-                                <br />
-                                <div class="row">
-                                    <div class="col-md-2 flex-center">
+                                    <div class="col-md-3 flex-center">
                                         <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 4</span>
-
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="text"  name="name4" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="id4" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
+                                    <div class="col-md-3">
+                                      <input type="text" name="id4" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="email" name="email4" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="contact4" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="college4" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
                                 </div>
 
-                                <br />
                                 <div class="row">
-                                    <div class="col-md-2 flex-center">
+                                    <div class="col-md-3 flex-center">
                                         <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 5</span>
-
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="text"  name="name5" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="text" name="id5" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="email" name="email5" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="contact5" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="college5" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
                                 </div>
 
-                                <br />
                                 <div class="row">
-                                    <div class="col-md-2 flex-center">
-                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member6</span>
-
+                                    <div class="col-md-3 flex-center">
+                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 6</span>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="text"  name="name6" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="text" name="id6" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                       <input type="email" name="email6" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="contact6" placeholder="Contact No." style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
-                                    </div>
-                                    <div class="col-md-2">
-                                      <input type="text" name="college6" placeholder="College" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
-
                                     </div>
                                 </div>
-                                
                             </div>
                         </div>
                     </form>
@@ -532,7 +505,167 @@
             </div>
         </div>
     </div>
+    
 
+    <div id="myModal2" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width: 90%;max-width: 90%;">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" style="color: white;" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                    <center> REGISTRATION </center>
+                </h4>
+              </div>
+              <div class="modal-body">
+                    <form name="myForm" method="post" onsubmit="return register()" autocomplete>
+                        <div class="md-form">
+                            <!-- <div class="row" style="margin-bottom: 40px;">
+                                <div class="col-md-12">
+                                    <center>
+                                        <div class="googin loginBUTTON">
+                                        </div>
+                                        <div class="logon axisLOGIN" id="axisLOGIN" style="color: white;font-family: nexalight;" title="user">
+                                            <div style="text-align: center;"><span class="nameid">NAME : </span><span class="clientName" id="clientName" title="name"></span></div>
+                                            <div style="text-align: center;"><span class="nameid">AXIS ID : </span><span class="AXISid" id="AXISid" title="axis id"></span></div>
+                                        </div>
+                                        <div class="myRegistrations"></div>
+                                    </center>
+                                </div>
+                            </div>
+ -->
+                            <div class="row" style="margin-bottom: 40px;">
+                                <div class="col-md-12">
+                                    <center>
+                                        <input type="text" name="teamName"  placeholder="Team Name" style="color: white;font-size: 17px;max-width: 40%;" id="inputValidationEx" class="form-control validate" required="true" />
+                                        <input type="text" name="eventName" value="ARCHITECH" hidden />
+                                    </center>
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="row">
+                                <div class="col-md-3 flex-center">
+                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Team Leader</span>
+                                </div>
+                                
+                                <div class="col-md-3">
+                                  <input type="text"  name="name1" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text" name="id1" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="email" name="email1" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" required />
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="row">
+                                <div class="col-md-3 flex-center">
+                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 2</span>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text"  name="name2" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate"/>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text" name="id2" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate"/>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="email" name="email2" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                            </div>
+
+                            <br />
+                            <div class="row">
+                                <div class="col-md-3 flex-center">
+                                    <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 3</span>
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text"  name="name3" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="text" name="id3" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                                <div class="col-md-3">
+                                  <input type="email" name="email3" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <center>
+                                        <input type="submit" name="Submit" value="Submit" class="btn btn-warning" />
+
+                                    </center>
+                                </div>
+                            </div>
+
+                            <br />
+                            <center>
+                                <div>You can have team of 3 or less.</div>
+                            </center>
+                            <br />
+
+                            <div style="visibility: hidden;">
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-3 flex-center">
+                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 4</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                      <input type="text"  name="name4" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="text" name="id4" placeholder="AXIS ID" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="email" name="email4" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 flex-center">
+                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 5</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                      <input type="text"  name="name5" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="text" name="id5" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="email" name="email5" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 flex-center">
+                                        <span class="flex-center" style="padding: 10px;font-size: 19px; vertical-align: baseline;text-decoration: none;"> Member 6</span>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                      <input type="text"  name="name6" placeholder="Name" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="text" name="id6" placeholder="AXIS ID" style="color:white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                    <div class="col-md-3">
+                                      <input type="email" name="email6" placeholder="Email" style="color: white;font-size: 17px;max-width: 90%;" id="inputValidationEx" class="form-control validate" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+        
     <div style="visibility: hidden;">
         <div class="loginBUTTON" title="login">
         </div>

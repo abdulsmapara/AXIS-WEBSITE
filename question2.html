@@ -15,6 +15,13 @@
       -->
 <head>
 
+<script type="text/javascript">
+  var url = window.location.toString();
+  arr = url.split('/');
+  if(document.referrer.includes(arr[2]) && (document.referrer.includes('question1.html') || document.referrer.includes('baker_home.html') || document.referrer.includes('question2.html'))){ ; }
+  else { alert('Please do not change urls (Go as you are being directed.) To refresh the page, right click and reload or press the reload icon.');window.location.href='baker_home.html';}
+</script>
+
 
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
 
@@ -33,8 +40,7 @@
             if (user) {
             check_validity(2); 
         }else{
-          window.location.href = 'baker_home.html';
-          
+          window.location.href = 'baker_home.html';       
         }
 
             
@@ -212,28 +218,6 @@ height: 100%;
   </style>
   <title></title>
 <script type="text/javascript">
-  function check_correctness() {
-      firebase.database().ref('/Baker_Street_Solutions').once('value').then(function(snapshot){
-        
-          var ans_correct="0";
-
-      var ans = document.getElementById('ans2').value;
-          
-          ans_correct1 = snapshot.val().Question2a;
-          ans_correct2 = snapshot.val().Question2b;
-          if(ans.toLowerCase() == ans_correct1.toLowerCase() || ans.toLowerCase() == ans_correct2.toLowerCase()){
-            alert('Congrats ! Your answer is correct');
-            start(3);
-            return true;
-          }else{
-            alert('WRONG ! Please try again !');
-            return false;
-          }
-          
-        
-      });
-
-  }
   function hints(){
     firebase.database().ref('/Baker_Street_Hints').once('value').then(function(snapshot){
         
@@ -365,7 +349,7 @@ height: 100%;
                   <span style="font-size: 25px;font-family: nexabold;"><center>221B BakerStreet</center></span>
                   <br>
                   <span class="text-white" style="font-size: 15px;">
-                    <span><b>Question 2</b></span>
+                    <span><b>Question 1.2</b></span>
                     
                   </span>
                 </div>
@@ -374,7 +358,7 @@ height: 100%;
                 <br />
               <center>
                 <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" id="ans2" placeholder="Write your answer here" />&nbsp;
-                <button style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;" onclick="check_correctness();"> <i class="fa fa-paper-plane"></i> </button>
+                <button style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;" onclick="check_correctness(2);"> <i class="fa fa-paper-plane"></i> </button>
                 </center>
             </div>
           </div>

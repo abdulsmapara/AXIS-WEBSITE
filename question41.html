@@ -15,13 +15,15 @@
       -->
 <head>
 
-
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script><script>
-var url = window.location.toString();
+<script type="text/javascript">
+  var url = window.location.toString();
   arr = url.split('/');
-  if(document.referrer.includes(arr[2]) && (document.referrer.includes('question15.html') || document.referrer.includes('baker_home.html') || document.referrer.includes('question16.html'))){ ; }
+  if(document.referrer.includes(arr[2]) && (document.referrer.includes('question40.html') || document.referrer.includes('baker_home.html') || document.referrer.includes('question41.html'))){ ; }
   else { alert('Please do not change urls (Go as you are being directed.) To refresh the page, right click and reload or press the reload icon.');window.location.href='baker_home.html';}
 </script>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
 
 <!-- Add additional services that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
@@ -36,7 +38,7 @@ var url = window.location.toString();
 <script type="text/javascript">
   firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-            check_validity(16); 
+            check_validity(41); 
         }else{
           window.location.href = 'baker_home.html';
           
@@ -222,12 +224,12 @@ height: 100%;
         
           var hints = "No Hints as of now !";
 
-          var updation = snapshot.val().hint16;
+          var updation = snapshot.val().hint41;
 
           if(updation != "no" && updation != undefined){
             hints = updation;
           }
-          document.getElementById('hints').innerHTML = "<br /><center>" + "HINT FOR Que 16" + "</center>" + "<br /><b>" + hints + "</b>";
+          document.getElementById('hints').innerHTML = "<br /><center>" + "HINT FOR Que 2" + "</center>" + "<br /><b>" + hints + "</b>";
         
       });
   }
@@ -348,16 +350,16 @@ height: 100%;
                   <span style="font-size: 25px;font-family: nexabold;"><center>221B BakerStreet</center></span>
                   <br>
                   <span class="text-white" style="font-size: 15px;">
-                    <span><b>Question 6.2</b></span>
-                    <br /><b><center>Please Enter Blank</center></b>
+                    <span><b>Question 41</b></span>
+                    
                   </span>
                 </div>
 
-                <center><img src="221b/16.jpg" class="img-fluid" ></center>
+                <center><img src="221b/41.jpg" class="img-fluid" ></center>
                 <br />
               <center>
-                <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" id="ans16" placeholder="Write your answer here" />&nbsp;
-                <button style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;" onclick="check_correctness(16);"> <i class="fa fa-paper-plane"></i> </button>
+                <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" id="ans41" placeholder="Write your answer here" />&nbsp;
+                <button style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;" onclick="check_correctness(41);"> <i class="fa fa-paper-plane"></i> </button>
                 </center>
             </div>
           </div>
@@ -372,7 +374,7 @@ height: 100%;
   <script type="text/javascript">
     if (typeof(Storage) !== "undefined")
     {
-      sessionStorage.setItem("path", "question16.html");
+      sessionStorage.setItem("path", "question41.html");
       sessionStorage.setItem("formPath","form.html");
     }
   </script>

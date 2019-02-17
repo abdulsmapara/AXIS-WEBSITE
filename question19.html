@@ -16,7 +16,12 @@
 <head>
 
 
-<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script><script>
+var url = window.location.toString();
+  arr = url.split('/');
+  if(document.referrer.includes(arr[2]) && (document.referrer.includes('question18.html') || document.referrer.includes('baker_home.html') || document.referrer.includes('question19.html'))){ ; }
+  else { alert('Please do not change urls (Go as you are being directed.) To refresh the page, right click and reload or press the reload icon.');window.location.href='baker_home.html';}
+</script>
 
 <!-- Add additional services that you want to use -->
 <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
@@ -212,27 +217,6 @@ height: 100%;
   </style>
   <title></title>
 <script type="text/javascript">
-  function check_correctness() {
-      firebase.database().ref('/Baker_Street_Solutions').once('value').then(function(snapshot){
-        
-          var ans_correct="0";
-
-      var ans = document.getElementById('ans19').value;
-          
-          ans_correct1 = snapshot.val().Question19a;
-          if(ans.toLowerCase() == ans_correct1.toLowerCase()){
-            alert('Congrats ! Your answer is correct');
-            start(20);
-            return true;
-          }else{
-            alert('WRONG ! Please try again !');
-            return false;
-          }
-          
-        
-      });
-
-  }
   function hints(){
     firebase.database().ref('/Baker_Street_Hints').once('value').then(function(snapshot){
         
@@ -364,8 +348,8 @@ height: 100%;
                   <span style="font-size: 25px;font-family: nexabold;"><center>221B BakerStreet</center></span>
                   <br>
                   <span class="text-white" style="font-size: 15px;">
-                    <span><b>Question 19</b></span>
-                    
+                    <span><b>Question 7.2</b></span>
+                    <br /><b><center>Please Enter Blank</center></b>
                   </span>
                 </div>
 
@@ -373,7 +357,7 @@ height: 100%;
                 <br />
               <center>
                 <input style="background-color:gray;color:white;width:70%;padding: 8px;border-color: white;" id="ans19" placeholder="Write your answer here" />&nbsp;
-                <button style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;" onclick="check_correctness();"> <i class="fa fa-paper-plane"></i> </button>
+                <button style="background: rgba(0,0,0,0);border-color: white;color: white;font-size: 17px;width:44px;height:44px;" onclick="check_correctness(19);"> <i class="fa fa-paper-plane"></i> </button>
                 </center>
             </div>
           </div>

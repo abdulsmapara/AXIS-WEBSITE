@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/ico" href="images/favlogo.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/css/mdb.min.css" rel="stylesheet">
+	<title>221B Leaderboard</title>
+	<link href="css/guestStyle.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/myStyle.css">
+  
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+
+<!-- Add additional services that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-functions.js"></script>
+
+  <script type="text/javascript" src="js/login.js"></script>
+  <script type="text/javascript" src="js/essential.js"></script>
+  <script type="text/javascript" src="js/ranking.js"></script>
+  <link rel="stylesheet" href="css/icomoon.css">
+
+     <script type="text/javascript">
+     
+     function createTable(){
+     	
+     	var arr = [];
+		var query = firebase.database().ref("/Baker_Street2").orderByKey();
+query.on("value", function(snapshot) {
+	arr = [];
+  snapshot.forEach(function(childSnapshot) {
+    var key = childSnapshot.key;
+    arr.push(childSnapshot);
+  });
+  tbody = document.getElementById("id");
+  tbody2 = document.getElementById("id2");
+  arr.sort(function(a,b){if(a.val().attempted != b.val().attempted) {return Number(b.val().attempted) - Number(a.val().attempted)}else{return Number(a.val().time_when_last_attempted) - Number(b.val().time_when_last_attempted);}});
+  tbody.innerHTML = "";tbody2.innerHTML = "";
+     	for (var i = 0,j=0; i < arr.length; i++) {
+	        /*tr = tbody.insertRow(tbody.rows.length);
+	        td = tr.insertCell(tr.cells.length);
+	        td.innerHTML = i+1;
+	        td = tr.insertCell(tr.cells.length);
+	        td.innerHTML = arr[i].key;
+	        td = tr.insertCell(tr.cells.length);
+	        td.innerHTML = arr[i].val().attempted;*/
+
+	        if(arr[i].val().disqualified == false){
+	     	   tbody.innerHTML += "<tr><td>"+ Number(j+1) + "</td> <td>" + arr[i].key +"</td><td><center>"+ arr[i].val().attempted +"</center></td></tr>";j=j+1;
+	    }else{
+	    	tbody2.innerHTML += "<tr><td>"+ "" + "</td> <td><center>" + arr[i].key +"</center></td><td>"+ "" +"</td></tr>"
+	    }
+	        
+	        
+    	}
+}, function(error) {
+  console.error(error);
+});
+		
+     }
+
+     createTable();
+     
+     </script>
+	<style type="text/css">		
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width:100%;
+
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(0,0,0,0.3);
+ }
+.tbl-content{
+  height:70vh;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: linear-gradient(to bottom ,#555,#000);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+}
+
+
+/* follow me template */
+.made-with-love {
+  margin-top: 40px;
+  padding: 10px;
+  clear: left;
+  text-align: center;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #F50057;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+	</style>
+</head>
+<body>
+	<section style="padding-top: 5vh">
+  <!--for demo wrap-->
+  <h1> 221B BakerStreet Leaderboard </h1>
+  <br /><br /><br />
+  <div class="tbl-header">
+
+
+
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>RANK</th>
+          <th>USERNAME</th>
+          <th><center>LEVEL REACHED</center></th>
+          
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody id="id">
+      </tbody>
+    </table>
+
+  </div>
+  <br />
+  <br />
+   <div class="tbl-header">
+
+   <h1>Disqualified</h1>
+
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th></th>
+          <th><center>USERNAME</center></th>
+          <th></th>
+          
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody id="id2">
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<script type="text/javascript">
+	// '.tbl-content' consumed little space for vertical scrollbar, scrollbar width depend on browser/os/platfrom. Here calculate the scollbar width .
+</script>
+<div class="navlog active" title="navbar" onclick="openNav()">
+      <a href="#"><i class="icon-menu"></i></a>
+    </div>
+    <div class="googin loginBUTTON" title="login">
+      <a href="#!" onclick="login()">
+        <!-- <i class="icon-google"></i> -->
+        Sign in
+      </a>
+    </div>
+    <div class="logon axisLOGIN" id="axisLOGIN" title="user">
+      <div class="dropdown">
+        <a href="#" class="dropbtn"><i class="icon-user"></i></a>
+        <div class="dropdown-content">
+          <div style="text-align: center;"><span class="clientName" id="clientName" title="name"></span></div>
+          <div style="text-align: center;"><span class="AXISid" id="AXISid" title="axis id"></span></div>
+          <div style="text-align: center;"><button onclick="logout()" class="logout" title="logout">LOGOUT</button></div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Navigation Code starts here-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div onclick="showMyRegistrations('myEvents.html')">
+          <a href="#!" class="navLink myRegistrations" style="visibility: hidden;"><i class="icon-user"></i> My Registration</a>
+        </div>
+        
+        <a href="index.html" class="navLink"><i class="icon-home"></i> Home</a>
+        <a href="events/category.html" class="navLink"><i class="icon-star"></i> Events</a>
+        <a href="MUN/index.html" target="__blank"  class="navLink"><i class="icon-globe"></i> MUN</a>
+        <a href="guestLectures.html" class="navLink"><i class="icon-bag"></i> Guest Lectures</a>
+        <a href="workshop.html" class="navLink"><i class="icon-list"></i> Workshops</a>
+        <a href="comingsoon.html" class="navLink"><i class="icon-grid"></i> Attractions</a>
+        <a href="comingsoon.html" class="navLink"><i class="icon-star"></i> Exhibitons</a>
+        <a href="social.html" class="navLink"><i class="icon-help"></i> Social Initiatives</a>
+        <a href="comingsoon.html" class="navLink"><i class="icon-document"></i> Blogs</a>
+        <a href="sponsors.html" class="navLink"><i class="icon-address"></i> Previous Sponsors</a>
+        <a href="Contact/contact.html" class="navLink"><i class="icon-users"></i> Our Team</a>
+        <div class="dropup">
+        <a href="#!" class="navLink" class="dropbtn2"><i class="icon-home"></i> Accommodation</a>
+        <div class="dropup-content2">
+          <a href="https://drive.google.com/file/d/1g5RW8WkpBogooHKQDR3WBKAj24IwIbB1/view?usp=sharing" target="_blank">ACCOMMODATION POLICY</a>
+          <a href="https://bit.ly/2PzXiyV" target="_blank">ACCOMMODATION FORM</a>
+        </div>
+        </div>
+        
+        <a href="https://goo.gl/forms/i3w23TlcnlwrOdfM2" target="_blank" class="navLink" style=""><img src="images/shirt1.jpg" style="height: 60px;width: 60px;border-radius: 50%;"> T-SHIRT </a>
+        
+        <br>
+        <a href="https://www.facebook.com/axisvnit" target="_blank" class="navSocial" ><i class="icon-facebook"></i></a>
+        <a href="https://www.instagram.com/axis_vnit/" target="_blank" class="navSocial" ><i class="icon-instagram"></i></a>
+        <a href="https://www.youtube.com/user/AXISVNIT" target="_blank" class="navSocial"><i class="icon-youtube"></i></a>
+        <a href="https://in.linkedin.com/company/axis-vnit-nagpur" target="_blank" class="navSocial"><i class="icon-linkedin"></i></a>
+    </div> 
+  <!-- Navigation Code ends here -->
+  <script type="text/javascript">
+    if (typeof(Storage) !== "undefined")
+    {
+      sessionStorage.setItem("path", "baker_leaderboard.html");
+      
+    }
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>  
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+  
+  <script type="text/javascript" src="events/registration.js"></script>
+  
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+
+</body>
+
+</html>

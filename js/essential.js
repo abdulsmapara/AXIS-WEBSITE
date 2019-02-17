@@ -4,51 +4,51 @@
     var event_baker = firebase.database().ref().child('Baker_Street2');
     var init_attempted = 0;
 function getData(key,current_question_number){
-	firebase.database().ref('/Baker_Street2/' + key).once('value').then(function(snapshot) {
-			if(snapshot.val() == null){
-				event_baker.child(key).set({
-					started: true,
-					attempted : init_attempted,
-					last_attempted_time : "-1",
-					time_when_last_attempted: "-1",
-					disqualified: false,
-				}).then(function onSuccess(res){
-					alert('The event begins now !');
-					window.location.href = 'question1.html';
-				});
-			}else{
+  firebase.database().ref('/Baker_Street2/' + key).once('value').then(function(snapshot) {
+      if(snapshot.val() == null){
+        event_baker.child(key).set({
+          started: true,
+          attempted : init_attempted,
+          last_attempted_time : "-1",
+          time_when_last_attempted: "-1",
+          disqualified: false,
+        }).then(function onSuccess(res){
+          alert('The event begins now !');
+          window.location.href = 'question1.html';
+        });
+      }else{
 
-				var last_attempted = snapshot.val().attempted;
-				var disqualified_val = snapshot.val().disqualified;
-				if(window.location.href.includes("baker_home.html") && snapshot.val().started == true){
-					window.location.href = "question" + (Number(last_attempted) + 1) + ".html";
-				}else{
-					event_baker.child(key).set({
-						started : true,
-						attempted : Number(current_question_number) - 1,
-						last_attempted_time : new Date().toString(),
-						time_when_last_attempted : new Date().getTime(),
-						disqualified: disqualified_val,
-					}).then(function onSuccess(res){
+        var last_attempted = snapshot.val().attempted;
+        var disqualified_val = snapshot.val().disqualified;
+        if(window.location.href.includes("baker_home.html") && snapshot.val().started == true){
+          window.location.href = "question" + (Number(last_attempted) + 1) + ".html";
+        }else{
+          event_baker.child(key).set({
+            started : true,
+            attempted : Number(current_question_number) - 1,
+            last_attempted_time : new Date().toString(),
+            time_when_last_attempted : new Date().getTime(),
+            disqualified: disqualified_val,
+          }).then(function onSuccess(res){
 
-						if(Number(last_attempted) + 2 == Number(current_question_number)){
-							window.location.href="question" + current_question_number + ".html";
-						}
-					});
-				}
-			}
-		});
-	
+            if(Number(last_attempted) + 2 == Number(current_question_number)){
+              window.location.href="question" + current_question_number + ".html";
+            }
+          });
+        }
+      }
+    });
+  
 }
 
 function check_login(current_question_number){
-	//check if the user is logged in and registered for the event
+  //check if the user is logged in and registered for the event
 
-	firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-            	
-            	//alert('You are Logged in');
-            	var emailkey = user.email;
+              
+              //alert('You are Logged in');
+              var emailkey = user.email;
 
             var key = emailkey.slice(0,emailkey.search('@'));
             key = key.replace(/[^a-zA-Z0-9 ]/g, "") ;
@@ -56,8 +56,8 @@ function check_login(current_question_number){
             
             
         }else{
-        	alert('Please log in before proceeding and attempting');
-        	window.location.href = 'baker_home.html';
+          alert('Please log in before proceeding and attempting');
+          window.location.href = 'baker_home.html';
         }
 
             
@@ -68,59 +68,59 @@ function registered(contest,key,current_question_number){
 
 
 
-			firebase.database().ref('/eventRegistration/' + contest + '/' + key).once('value').then(function(snapshot){
-				if(snapshot.val() != null){
-					//alert('Congrats ! You have already registered for the event !');
-					getData(key,current_question_number);
-					return true;
-				}else{
-					alert('Please register for 221B baker street');
-					return false;
-				}
-			});
-		
-	
+      firebase.database().ref('/eventRegistration/' + contest + '/' + key).once('value').then(function(snapshot){
+        if(snapshot.val() != null){
+          //alert('Congrats ! You have already registered for the event !');
+          getData(key,current_question_number);
+          return true;
+        }else{
+          alert('Please register for 221B baker street');
+          return false;
+        }
+      });
+    
+  
 }
 function start(current_question_number){
 
 
-	current_question_number = Number(current_question_number);
-	var email = check_login(current_question_number);
+  current_question_number = Number(current_question_number);
+  var email = check_login(current_question_number);
 }
 
 function check_data(key,current_question_number){
-	firebase.database().ref('/Baker_Street2/' + key).once('value').then(function(snapshot) {
-			if(snapshot.val() == null){
-				window.location.href = 'baker_home.html';
+  firebase.database().ref('/Baker_Street2/' + key).once('value').then(function(snapshot) {
+      if(snapshot.val() == null){
+        window.location.href = 'baker_home.html';
 
-			}else{
-				if(Number(snapshot.val().attempted) + 1 == Number(current_question_number)){
-					
-				;
-				}else{
-					window.location.href = "question" + (Number(snapshot.val().attempted) + 1) + ".html";
-				}
-			}
-		});
-	
+      }else{
+        if(Number(snapshot.val().attempted) + 1 == Number(current_question_number)){
+          
+        ;
+        }else{
+          window.location.href = "question" + (Number(snapshot.val().attempted) + 1) + ".html";
+        }
+      }
+    });
+  
 }
 
 function check_reg(key,current_question_number,contest){
-	firebase.database().ref('/eventRegistration/' + contest + '/' + key).once('value').then(function(snapshot){
-				if(snapshot.val() != null){
-					//alert('Congrats ! You have already registered for the event !');
-					
-					check_data(key,current_question_number);	
-					return true;
-				}else{
-					alert('Please register for 221B baker street');
-					window.location.href = 'baker_home.html';
-					return false;
-				}
-			});
+  firebase.database().ref('/eventRegistration/' + contest + '/' + key).once('value').then(function(snapshot){
+        if(snapshot.val() != null){
+          //alert('Congrats ! You have already registered for the event !');
+          
+          check_data(key,current_question_number);  
+          return true;
+        }else{
+          alert('Please register for 221B baker street');
+          window.location.href = 'baker_home.html';
+          return false;
+        }
+      });
 }
 function check_validity(current_question_number){
-		firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
             var emailkey = user.email;
 
@@ -129,7 +129,7 @@ function check_validity(current_question_number){
             check_reg(key,current_question_number,"221B");
             
         }else{
-        	window.location.href = 'baker_home.html';        
+          window.location.href = 'baker_home.html';        
         }
 
             
@@ -142,112 +142,126 @@ function check_correctness(question_number) {
       var ans = document.getElementById('ans'+question_number).value;
       var ans_correct1="";
       var ans_correct2=undefined;
+        var ans_correct3 = undefined;
           if(question_number == 1){
-				ans_correct1 = snapshot.val().Question1a;
+        ans_correct1 = snapshot.val().Question1a;
           }else if(question_number == 2){
-				ans_correct1 = snapshot.val().Question2a;
+        ans_correct1 = snapshot.val().Question2a;
           }else if(question_number == 3){
-				ans_correct1 = snapshot.val().Question3a;
+        ans_correct1 = snapshot.val().Question3a;
           }else if(question_number == 4){
-				ans_correct1 = snapshot.val().Question4a;
+        ans_correct1 = snapshot.val().Question4a;
           }else if(question_number == 5){
-				ans_correct1 = snapshot.val().Question5a;
+        ans_correct1 = snapshot.val().Question5a;
           }else if(question_number == 6){
-				ans_correct1 = snapshot.val().Question6a;
+        ans_correct1 = snapshot.val().Question6a;
           }else if(question_number == 7){
-				ans_correct1 = snapshot.val().Question7a;
+        ans_correct1 = snapshot.val().Question7a;
           }else if(question_number == 8){
-				ans_correct1 = snapshot.val().Question8a;
+        ans_correct1 = snapshot.val().Question8a;
           }else if(question_number == 9){
-				ans_correct1 = snapshot.val().Question9a;
+        ans_correct1 = snapshot.val().Question9a;
           }else if(question_number == 10){
-				ans_correct1 = snapshot.val().Question10a;
+        ans_correct1 = snapshot.val().Question10a;
           }else if(question_number == 11){
-				ans_correct1 = snapshot.val().Question11a;
+        ans_correct1 = snapshot.val().Question11a;
           }else if(question_number == 12){
-				ans_correct1 = snapshot.val().Question12a;
+        ans_correct1 = snapshot.val().Question12a;
           }else if(question_number == 13){
-				ans_correct1 = snapshot.val().Question13a;
+        ans_correct1 = snapshot.val().Question13a;
           }else if(question_number == 14){
-				ans_correct1 = snapshot.val().Question14a;
+        ans_correct1 = snapshot.val().Question14a;
           }else if(question_number == 15){
-				ans_correct1 = snapshot.val().Question15a;
+        ans_correct1 = snapshot.val().Question15a;
           }else if(question_number == 16){
-				ans_correct1 = snapshot.val().Question16a;
+        ans_correct1 = snapshot.val().Question16a;
           }else if(question_number == 17){
-				ans_correct1 = snapshot.val().Question17a;
+        ans_correct1 = snapshot.val().Question17a;
           }else if(question_number == 18){
-				ans_correct1 = snapshot.val().Question18a;
+        ans_correct1 = snapshot.val().Question18a;
           }else if(question_number == 19){
-				ans_correct1 = snapshot.val().Question19a;
+        ans_correct1 = snapshot.val().Question19a;
           }else if(question_number == 20){
-				ans_correct1 = snapshot.val().Question20a;
+        ans_correct1 = snapshot.val().Question20a;
           }else if(question_number == 21){
-				ans_correct1 = snapshot.val().Question21a;
+        ans_correct1 = snapshot.val().Question21a;
           }else if(question_number == 22){
-				ans_correct1 = snapshot.val().Question22a;
+        ans_correct1 = snapshot.val().Question22a;
           }else if(question_number == 23){
-				ans_correct1 = snapshot.val().Question23a;
+        ans_correct1 = snapshot.val().Question23a;
           }else if(question_number == 24){
-				ans_correct1 = snapshot.val().Question24a;
+        ans_correct1 = snapshot.val().Question24a;
           }else if(question_number == 25){
-				ans_correct1 = snapshot.val().Question25a;
+        ans_correct1 = snapshot.val().Question25a;
           }else if(question_number == 26){
-				ans_correct1 = snapshot.val().Question26a;
+        ans_correct1 = snapshot.val().Question26a;
           }else if(question_number == 27){
-				ans_correct1 = snapshot.val().Question27a;
+        ans_correct1 = snapshot.val().Question27a;
           }else if(question_number == 28){
-				ans_correct1 = snapshot.val().Question28a;
+        ans_correct1 = snapshot.val().Question28a;
           }else if(question_number == 29){
-				ans_correct1 = snapshot.val().Question29a;
+        ans_correct1 = snapshot.val().Question29a;
 
-				ans_correct2 = snapshot.val().Question29b;
+        ans_correct2 = snapshot.val().Question29b;
+          ans_correct3 = snapshot.val().Question29c;
+          
           }else if(question_number == 30){
-				ans_correct1 = snapshot.val().Question30a;
+        ans_correct1 = snapshot.val().Question30a;
           }else if(question_number == 31){
-				ans_correct1 = snapshot.val().Question31a;
+        ans_correct1 = snapshot.val().Question31a;
           }else if(question_number == 32){
-				ans_correct1 = snapshot.val().Question32a;
+        ans_correct1 = snapshot.val().Question32a;
           }else if(question_number == 33){
-				ans_correct1 = snapshot.val().Question33a;
+        ans_correct1 = snapshot.val().Question33a;
           }else if(question_number == 34){
-				ans_correct1 = snapshot.val().Question34a;
+        ans_correct1 = snapshot.val().Question34a;
           }else if(question_number == 35){
-				ans_correct1 = snapshot.val().Question35a;
+        ans_correct1 = snapshot.val().Question35a;
           }else if(question_number == 36){
-				ans_correct1 = snapshot.val().Question36a;
+        ans_correct1 = snapshot.val().Question36a;
           }else if(question_number == 37){
-				ans_correct1 = snapshot.val().Question37a;
+        ans_correct1 = snapshot.val().Question37a;
 
-				ans_correct2 = snapshot.val().Question37b;
+        ans_correct2 = snapshot.val().Question37b;
           }else if(question_number == 38){
-				ans_correct1 = snapshot.val().Question38a;
+        ans_correct1 = snapshot.val().Question38a;
           }else if(question_number == 39){
-				ans_correct1 = snapshot.val().Question39a;
+        ans_correct1 = snapshot.val().Question39a;
           }else if(question_number == 40){
-				ans_correct1 = snapshot.val().Question40a;
+        ans_correct1 = snapshot.val().Question40a;
           }else if(question_number == 41){
-				ans_correct1 = snapshot.val().Question41a;
+        ans_correct1 = snapshot.val().Question41a;
           }else if(question_number == 42){
-				ans_correct1 = snapshot.val().Question42a;
+        ans_correct1 = snapshot.val().Question42a;
           }
 
           if(Sha256.hash(ans.toLowerCase(),'string') == ans_correct1){
-          	if(ans != "")
-            	alert('Congrats ! Your answer is correct');
+            if(ans != "")
+              alert('Congrats ! Your answer is correct');
             start(question_number + 1);
             return true;
           }else if(ans_correct2 != undefined){
-	          	if(Sha256.hash(ans.toLowerCase(),'string') == ans_correct2){
-	          	if(ans != "")
-	            	alert('Congrats ! Your answer is correct');
-	            start(question_number + 1);
-	            return true;
-        	}else{
-        		alert('WRONG ! Please try again !');
-            	return false;	
-        	}
+              if(Sha256.hash(ans.toLowerCase(),'string') == ans_correct2){
+              if(ans != "")
+                alert('Congrats ! Your answer is correct');
+              start(question_number + 1);
+              return true;
+          }else{
+            alert('WRONG ! Please try again !');
+              return false; 
           }
+          }else if(ans_correct3 != undefined){
+              if(Sha256.hash(ans.toLowerCase(),'string') == ans_correct3){
+              if(ans != "")
+                alert('Congrats ! Your answer is correct');
+              start(question_number + 1);
+              return true;
+          }else{
+            alert('WRONG ! Please try again !');
+              return false;
+        }
+      
+    }
           else{
             alert('WRONG ! Please try again !');
             return false;

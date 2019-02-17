@@ -238,7 +238,7 @@ function check_correctness(question_number) {
             start(question_number + 1);
             return true;
           }else if(ans_correct2 != undefined){
-	          	if(Sha256.hash(ans.toLowerCase(),'string') == ans_correct1){
+	          	if(Sha256.hash(ans.toLowerCase(),'string') == ans_correct2){
 	          	if(ans != "")
 	            	alert('Congrats ! Your answer is correct');
 	            start(question_number + 1);

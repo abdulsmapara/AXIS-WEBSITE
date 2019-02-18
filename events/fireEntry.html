@@ -71,7 +71,7 @@
 
 <body>
 
-  <!-- <button onclick="restore()">FIRE</button>
+  <!-- <button onclick="restoreAll()">FIRE</button>
    -->
   <script type="text/javascript">
     /*if (typeof(Storage) !== "undefined")
@@ -149,9 +149,8 @@
     });
 
     }
-    function restore(){
+    function restore(eventName){
       
-            var eventName = 'AXISMUN';
             var CompetitionRef = firebase.database().ref().child('/eventRegistration/' + eventName);
             
             var count = 0;
@@ -159,14 +158,33 @@
             CompetitionRef.once('value').then(function(snapshot) {
                 snapshot.forEach(function (element)
                 {
-                    single(element.key,eventName);
+                    //single(element.key,eventName);
                     //restore2(element.key,eventName);
+                    teamR(element.key,eventName);
+                    count = count + 1;
+                });  
+            }).then(function onSuccess(res) {
+            });
+        }
+
+
+    function restoreAll(){
+      
+            var CompetitionRef = firebase.database().ref().child('/eventRegistration');
+            
+            var count = 0;
+
+            CompetitionRef.once('value').then(function(snapshot) {
+                snapshot.forEach(function (element)
+                {
+                    restore(element.key);
                     count = count + 1;
                 });  
             }).then(function onSuccess(res) {
                 alert(count);
             });
         }
+
 
         function teamR(teamName,eventName){
           var CompetitionRef = firebase.database().ref().child('/eventRegistration/' + eventName + '/' + teamName );

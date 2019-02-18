@@ -540,6 +540,7 @@
   <div id="instructions" style="position: fixed;top: 150px;width: 100%;height: auto;visibility: hidden;">
     <div class="container" style="width: 70%;color: white;border: 1px solid white;">
       <p>
+
         Instructions for Online Test<br>
         1) Game consists of 15 questions(20 minutes)<br>
         2) Questions are of fill in the blanks and MCQ type<br>
@@ -547,6 +548,7 @@
         4) Click on submit after answering all the questions and answers will be automatically submitted if the time is up<br>
         5) Short list candidates will be informed later<br>
         6) The decision taken by the AXIS Executive committee will be final and binding for all<br>
+        
       </p>
 
       <br>
@@ -634,7 +636,6 @@
                 usersRef.child(attempted).set({
                             attempted: 'true',
                         }).then(function onSuccess(res) {
-                            
                         });   
                 /*var formPath = sessionStorage.getItem("formPath");  
                 window.location.href = formPath;*/ 
@@ -656,7 +657,7 @@
         var set = 'set';
         //var setNumber =  Math.floor((Math.random() * 10 ))%5 + 1 ;
         //var setNumber =  Math.floor((Math.random() * 10 ))%1 + 1 ;
-        var setNumber = 1;
+        var setNumber = 2;
         set = set + setNumber;
         document.getElementById("set").innerHTML = set;
         var fillInTheblanks = firebase.database().ref().child('/onlineEvents/'+ eventName + '/'+ set + '/' + 'fill in the blanks' );

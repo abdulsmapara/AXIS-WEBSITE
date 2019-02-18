@@ -35,7 +35,7 @@ function startEvent(eventName){
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
             sessionStorage.setItem("onlineEvent",eventName);
-            window.location.href = '../onlineEvent.html';  
+            window.location.href = '../onlineEvent2.html';  
       }
       else
       {
@@ -66,7 +66,7 @@ function startEvent(eventName){
                 else
                 {
                     sessionStorage.setItem("onlineEvent","WHO IS THE BOSS");
-                    window.location.href = '../onlineEvent.html';
+                    window.location.href = '../onlineEvent2.html';
                 }
             });
         }).catch(function(error) {

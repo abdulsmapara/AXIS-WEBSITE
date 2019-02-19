@@ -296,3 +296,6 @@
         signUp(gender,dob,college,phone,city);
         return false;
     }
+    function registrationClosed(){
+        alert("Registration closed !");
+    }

@@ -653,7 +653,7 @@
         var set = 'set';
         //var setNumber =  Math.floor((Math.random() * 10 ))%5 + 1 ;
         //var setNumber =  Math.floor((Math.random() * 10 ))%1 + 1 ;
-        var setNumber = 2;
+        var setNumber = 5;
         set = set + setNumber;
         document.getElementById("set").innerHTML = set;
         var fillInTheblanks = firebase.database().ref().child('/onlineEvents/'+ eventName + '/'+ set + '/' + 'fill in the blanks' );

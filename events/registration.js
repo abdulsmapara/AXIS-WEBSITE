@@ -65,7 +65,7 @@ function startEvent(eventName){
                 }
                 else
                 {
-                    sessionStorage.setItem("onlineEvent","WHO IS THE BOSS");
+                    sessionStorage.setItem("onlineEvent",eventName);
                     window.location.href = '../onlineEvent.html';
                 }
             });
